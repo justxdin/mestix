@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mestix — Comparador nutricional de alimento para mascotas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito+Sans:wght@400;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css?v=8">
+</head>
+<body class="has-bottom-ad">
+
+<header class="site">
+  <div class="wrap header-bar">
+    <a href="index.html" class="logo"><img src="img/logo_mestix_white.svg" alt="Mestix"></a>
+    <nav class="main-nav">
+      <a href="index.html" class="active">Inicio</a>
+      <div class="nav-item">
+        <a href="categoria.html">Catálogo</a><span class="caret">▾</span>
+        <div class="dropdown">
+          <a href="categoria.html">🐶 Perros</a>
+          <a href="categoria.html#gatos">🐱 Gatos</a>
+        </div>
+      </div>
+      <a href="comparador.html">Comparar</a>
+      <a href="blog.html">Blog</a>
+    </nav>
+    <div class="header-search"><span>⌕</span><input type="text" placeholder="Buscar alimento o marca…"></div>
+    <button class="nav-toggle" id="navToggle" aria-label="Abrir menú"><span></span></button>
+  </div>
+</header>
+
+<div class="mobile-panel" id="mobilePanel">
+  <div class="wrap">
+    <a href="index.html" class="active">Inicio</a>
+    <a href="categoria.html">Catálogo</a>
+    <div class="mobile-sub">
+      <a href="categoria.html">🐶 Perros</a>
+      <a href="categoria.html#gatos">🐱 Gatos</a>
+    </div>
+    <a href="comparador.html">Comparar</a>
+    <a href="blog.html">Blog</a>
+    <div class="mobile-search"><span>⌕</span><input type="text" placeholder="Buscar alimento o marca…"></div>
+  </div>
+</div>
+
+<div class="wrap ad-top-wrap">
+  <div class="ad-slot ad-top"><span class="ad-label">Publicidad</span><span class="ad-size">728 × 90 · 320 × 50 en mobile</span></div>
+</div>
+
+<section class="hero">
+  <div class="hero-slides-wrap" id="heroSlidesWrap">
+
+    <!-- SLIDE 1: Comparador -->
+    <div class="hero-slide-full active" data-slide="0">
+      <div class="wrap hero-content" style="display:grid;grid-template-columns:1.3fr .7fr;gap:40px;align-items:center;background-image:url('img/hero-slide-1.png')">
+        <div class="hero-text">
+          <span class="eyebrow">Comparador nutricional · Chile</span>
+          <h1>Elige el alimento de tu mascota <span class="accent">con datos, no con marketing</span></h1>
+          <p class="lead">Mestix calcula un puntaje de 0 a 100 para cada alimento según su etiquetado real, y te deja comparar hasta 3 productos lado a lado — sin depender de lo que diga la bolsa.</p>
+          <div class="hero-ctas">
+            <a href="categoria.html" class="btn">Explorar catálogo →</a>
+            <a href="comparador.html" class="btn-outline">Cómo funciona el comparador</a>
+          </div>
+        </div>
+        <div class="hero-floating-card">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;">
+            <span class="eyebrow" style="margin:0;color:#D97A0C;">Versus rápido</span>
+            <span class="tag tag-clean">Limpio</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:14px;margin-bottom:10px;">
+            <div class="score-badge top" style="width:46px;height:46px;"><span class="n" style="font-size:15px;">86</span><span class="u">pts</span></div>
+            <div><div class="brand-tag">Nutrience</div><div style="font-family:'Fredoka';font-weight:600;font-size:14px;color:#17161A;">Grain Free Salmon, Nuez</div></div>
+          </div>
+          <div class="bar-track" style="margin-bottom:6px;"><div class="bar-fill" style="width:80%"></div></div>
+          <div class="bar-track" style="margin-bottom:6px;"><div class="bar-fill" style="width:60%"></div></div>
+          <div class="bar-track"><div class="bar-fill" style="width:42%"></div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 2: Metodología -->
+    <div class="hero-slide-full" data-slide="1">
+      <div class="wrap hero-content" style="display:grid;grid-template-columns:1.3fr .7fr;gap:40px;align-items:center;background-image:url('img/hero-slide-2.png')">
+        <div class="hero-text">
+          <span class="eyebrow">Metodología · respaldada por AAFCO y FEDIAF</span>
+          <h1>Un puntaje que <span class="accent">se puede defender</span>, no uno que se inventa</h1>
+          <p class="lead">Score, Etapas de vida, Raza y Alérgenos: cuatro capas independientes, cada una con fuentes técnicas citables — no criterio propio disfrazado de ciencia.</p>
+          <div class="hero-ctas">
+            <a href="#metodologia" class="btn">Ver la metodología →</a>
+            <a href="categoria.html" class="btn-outline">Explorar catálogo</a>
+          </div>
+        </div>
+        <div class="hero-floating-card">
+          <span class="eyebrow" style="margin:0 0 12px;color:#D97A0C;">Etapas de vida</span>
+          <div class="etapa-row"><span>Cachorro</span><span class="etapa-pill n" style="font-size:11px;">Info. insuficiente</span></div>
+          <div class="etapa-row"><span>Adulto</span><span class="etapa-pill g" style="font-size:11px;">Apto</span></div>
+          <div class="etapa-row"><span>Senior</span><span class="etapa-pill y" style="font-size:11px;">Podría consumir</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 3: Blog -->
+    <div class="hero-slide-full no-photo" data-slide="2">
+      <div class="wrap hero-content" style="display:grid;grid-template-columns:1.3fr .7fr;gap:40px;align-items:center;">
+        <div class="hero-text">
+          <span class="eyebrow">Blog Mestix · sin marketing, con fuentes</span>
+          <h1>Para entender lo que <span class="accent">realmente</span> come tu mascota</h1>
+          <p class="lead">Etiquetado, mitos del grain-free, alergias y etapas de vida — artículos basados en la misma metodología del comparador, no en opiniones sueltas.</p>
+          <div class="hero-ctas">
+            <a href="blog.html" class="btn">Ir al blog →</a>
+            <a href="categoria.html" class="btn-outline">Explorar catálogo</a>
+          </div>
+        </div>
+        <div class="hero-floating-card">
+          <span style="font-family:'JetBrains Mono';font-size:11px;color:#D97A0C;text-transform:uppercase;letter-spacing:.05em;font-weight:700;">Cachorros · Raza grande</span>
+          <div style="font-family:'Fredoka';font-weight:600;font-size:16px;margin:8px 0 6px;color:#17161A;">Por qué el calcio importa más en cachorros de raza grande</div>
+          <div style="font-family:'JetBrains Mono';font-size:11.5px;color:#96919B;">12 min de lectura · Fuentes AAFCO 2016</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <button class="hero-arrow prev" id="heroPrev" aria-label="Anterior">‹</button>
+  <button class="hero-arrow next" id="heroNext" aria-label="Siguiente">›</button>
+
+  <div class="hero-dots-global" id="heroDotsGlobal">
+    <button class="active" data-slide="0" aria-label="Slide 1"></button>
+    <button data-slide="1" aria-label="Slide 2"></button>
+    <button data-slide="2" aria-label="Slide 3"></button>
+  </div>
+</section>
+
+<div class="trust-strip">
+  <div class="wrap trust-strip-inner">
+    <div class="trust-item"><span class="dot"></span>Basado en AAFCO &amp; FEDIAF</div>
+    <div class="trust-item"><span class="dot"></span>Sin penalizaciones ocultas</div>
+    <div class="trust-item"><span class="dot"></span>Datos del etiquetado real</div>
+    <div class="trust-item"><span class="dot"></span>Perros y gatos</div>
+  </div>
+</div>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">Cómo funciona</span>
+        <h2>Tres pasos, sin letra chica</h2>
+      </div>
+    </div>
+    <div class="how-grid">
+      <div class="how-card">
+        <div class="num">1</div>
+        <h3>Elige hasta 3 alimentos</h3>
+        <p>Busca por marca, filtra por etapa de vida o estado de ingredientes, y selecciona los que quieras comparar.</p>
+      </div>
+      <div class="how-card">
+        <div class="num">2</div>
+        <h3>Mestix calcula el puntaje</h3>
+        <p>Proteína, grasa, carbohidratos, minerales y calidad de ingredientes — todo desde el etiquetado declarado.</p>
+      </div>
+      <div class="how-card">
+        <div class="num">3</div>
+        <h3>Compara y decide</h3>
+        <p>Verás quién gana y por qué, ventajas y desventajas explicadas, y si es apto para la etapa de tu mascota.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="layers-section" id="metodologia">
+  <div class="wrap">
+    <span class="eyebrow">La metodología</span>
+    <h2>Cuatro capas, cada una responde una pregunta distinta</h2>
+    <div class="layers-grid">
+      <div class="layer-card">
+        <span class="icon">📊</span>
+        <h4>Score</h4>
+        <p>¿Qué tan optimizado está el alimento, comparado con otros de su categoría?</p>
+      </div>
+      <div class="layer-card">
+        <span class="icon">🐾</span>
+        <h4>Etapas de vida</h4>
+        <p>¿Es seguro para un cachorro/gatito, adulto o senior — con 4 niveles, no solo sí o no?</p>
+      </div>
+      <div class="layer-card">
+        <span class="icon">🦴</span>
+        <h4>Raza</h4>
+        <p>Para perros: ¿el calcio está dentro del límite seguro si tu cachorro será de raza grande?</p>
+      </div>
+      <div class="layer-card">
+        <span class="icon">🔎</span>
+        <h4>Alérgenos</h4>
+        <p>Información neutral sobre ingredientes comúnmente asociados a alergias — nunca una alarma.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">Catálogo</span>
+        <h2>Alimentos mejor evaluados</h2>
+      </div>
+      <a href="categoria.html" class="see-all">Ver todo el catálogo →</a>
+    </div>
+    <div class="featured-grid">
+      <article class="product-card">
+        <div class="card-media">
+          <img src="img/producto_placeholder.svg" alt="Grain Free Salmon, Nuez">
+          <div class="score-badge-float score-badge top"><span class="n">86</span><span class="u">pts</span></div>
+        </div>
+        <div class="card-body">
+          <span class="brand-tag">Nutrience</span>
+          <h3>Grain Free Salmon, Nuez</h3>
+          <div class="stat-row"><span class="stat">Prot <b>40%</b></span><span class="stat">Carbs <b>21%</b></span></div>
+          <div class="card-foot"><span class="ing-tag clean"><span class="ic">✓</span>Limpios</span><a href="comparador.html" class="view-link">Ver ficha →</a></div>
+        </div>
+      </article>
+      <article class="product-card">
+        <div class="card-media">
+          <img src="img/producto_placeholder.svg" alt="Pro Plan Adulto Raza Mediana">
+          <div class="score-badge-float score-badge top"><span class="n">93</span><span class="u">pts</span></div>
+        </div>
+        <div class="card-body">
+          <span class="brand-tag">Purina</span>
+          <h3>Pro Plan Adulto Raza Mediana</h3>
+          <div class="stat-row"><span class="stat">Prot <b>26%</b></span><span class="stat">Carbs <b>36%</b></span></div>
+          <div class="card-foot"><span class="ing-tag warn"><span class="ic">!</span>Cuestionables</span><a href="comparador.html" class="view-link">Ver ficha →</a></div>
+        </div>
+      </article>
+      <article class="product-card">
+        <div class="card-media">
+          <img src="img/producto_placeholder.svg" alt="Chicken Adult Large/Medium">
+          <div class="score-badge-float score-badge top"><span class="n">92</span><span class="u">pts</span></div>
+        </div>
+        <div class="card-body">
+          <span class="brand-tag">Bravery</span>
+          <h3>Chicken Adult Large/Medium</h3>
+          <div class="stat-row"><span class="stat">Prot <b>26%</b></span><span class="stat">Carbs <b>40%</b></span></div>
+          <div class="card-foot"><span class="ing-tag clean"><span class="ic">✓</span>Limpios</span><a href="comparador.html" class="view-link">Ver ficha →</a></div>
+        </div>
+      </article>
+      <article class="product-card">
+        <div class="card-media">
+          <img src="img/producto_placeholder.svg" alt="Chicken Kitten">
+          <div class="score-badge-float score-badge mid"><span class="n">84</span><span class="u">pts</span></div>
+        </div>
+        <div class="card-body">
+          <span class="brand-tag">Bravery</span>
+          <h3>Chicken Kitten</h3>
+          <div class="stat-row"><span class="stat">Prot <b>38%</b></span><span class="stat">Carbs <b>26%</b></span></div>
+          <div class="card-foot"><span class="ing-tag clean"><span class="ic">✓</span>Limpios</span><a href="comparador.html" class="view-link">Ver ficha →</a></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<div class="wrap ad-infeed-wrap">
+  <div class="ad-slot ad-infeed"><span class="ad-label">Publicidad</span><span class="ad-size">Banner de contenido · 728 × 90</span></div>
+</div>
+
+<section class="section-sm">
+  <div class="wrap">
+    <div class="section-head">
+      <div><span class="eyebrow">Del blog</span><h2>Para entender mejor la etiqueta</h2></div>
+      <a href="blog.html" class="see-all">Ir al blog →</a>
+    </div>
+    <div class="blog-teaser">
+      <a href="blog.html" class="blog-teaser-card">
+        <div class="thumb"></div>
+        <div class="body">
+          <span class="tag-blog">Cachorros</span>
+          <h3>Por qué el calcio importa más en cachorros de raza grande</h3>
+          <p>La razón exacta por la que un exceso de calcio puede afectar el desarrollo óseo — y qué rango es seguro.</p>
+        </div>
+      </a>
+      <a href="blog.html" class="blog-teaser-card">
+        <div class="thumb"></div>
+        <div class="body">
+          <span class="tag-blog">Mitos</span>
+          <h3>Grain-free no siempre es mejor: lo que dice la evidencia</h3>
+          <p>Avena y arroz integral no son lo mismo que maíz de relleno — la diferencia está en la fuente, no en la palabra "grano".</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<div class="wrap">
+  <div class="cta-banner">
+    <h2>¿Ya sabes qué alimentos quieres comparar?</h2>
+    <p>Selecciona hasta 3 productos y Mestix te muestra quién gana, y por qué.</p>
+    <a href="comparador.html" class="btn">Ir al comparador →</a>
+  </div>
+</div>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="img/logo_mestix_white.svg" alt="Mestix" style="height:26px;margin-bottom:14px;">
+        <p>Comparador nutricional de alimentos para mascotas, basado en el etiquetado declarado por cada fabricante.</p>
+      </div>
+      <div>
+        <h4>Explorar</h4>
+        <ul><li><div class="nav-item">
+        <a href="categoria.html">Catálogo</a><span class="caret">▾</span>
+        <div class="dropdown">
+          <a href="categoria.html">🐶 Perros</a>
+          <a href="categoria.html#gatos">🐱 Gatos</a>
+        </div>
+      </div></li><li><a href="comparador.html">Comparador</a></li><li><a href="blog.html">Blog</a></li></ul>
+      </div>
+      <div>
+        <h4>Metodología</h4>
+        <ul><li><a href="#">Cómo evaluamos</a></li><li><a href="#">Fuentes técnicas</a></li><li><a href="#">Etapas de vida</a></li></ul>
+      </div>
+      <div>
+        <h4>Mestix</h4>
+        <ul><li><a href="#">Sobre nosotros</a></li><li><a href="#">Contacto</a></li><li><a href="#">Términos y privacidad</a></li></ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Mestix. Prototipo de diseño — datos de demostración.</span>
+      <span>Hecho en Chile 🇨🇱</span>
+    </div>
+  </div>
+</footer>
+
+<div class="ad-slot ad-rail ad-rail-left"><span class="ad-label">Publicidad</span><span class="ad-size">160 × 600</span></div>
+<div class="ad-slot ad-rail ad-rail-right"><span class="ad-label">Publicidad</span><span class="ad-size">160 × 600</span></div>
+
+<div class="ad-bottom-fixed">
+  <button class="ad-close">✕</button>
+  <div class="ad-slot"><span class="ad-label">Publicidad</span><span class="ad-size">728 × 90 · 320 × 50 en mobile · fijo</span></div>
+</div>
+
+<script>
+  (function(){
+    const slides = document.querySelectorAll('#heroSlidesWrap .hero-slide-full');
+    const dots = document.querySelectorAll('#heroDotsGlobal button');
+    let current = 0, timer;
+
+    function show(i){
+      current = (i + slides.length) % slides.length;
+      slides.forEach(s => s.classList.remove('active'));
+      dots.forEach(d => d.classList.remove('active'));
+      slides[current].classList.add('active');
+      dots[current].classList.add('active');
+    }
+    function next(){ show(current + 1); }
+    function prev(){ show(current - 1); }
+    function startAuto(){ timer = setInterval(next, 6000); }
+    function resetAuto(){ clearInterval(timer); startAuto(); }
+
+    dots.forEach((dot, i) => dot.addEventListener('click', () => { show(i); resetAuto(); }));
+    document.getElementById('heroNext').addEventListener('click', () => { next(); resetAuto(); });
+    document.getElementById('heroPrev').addEventListener('click', () => { prev(); resetAuto(); });
+    if (slides.length > 1) startAuto();
+  })();
+</script>
+
+<script>
+  document.getElementById('navToggle').addEventListener('click', function(){
+    this.classList.toggle('open');
+    document.getElementById('mobilePanel').classList.toggle('open');
+  });
+</script>
+
+</body>
+</html>

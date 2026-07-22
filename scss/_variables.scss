@@ -1,0 +1,64 @@
+// ============================================================
+// MESTIX — Variables de marca
+// ============================================================
+
+// Colores extraídos directamente del logo/paleta de referencia
+$ink:        #17161A; // texto principal, fondos oscuros (negro neutro, no azulado)
+$ink-soft:   #57545C; // texto secundario
+$ink-faint:  #96919B; // texto terciario / placeholders
+$orange:     #F8931D; // color primario de marca
+$orange-dark:#D97A0C;
+$amber:      #FDA925; // secundario — bloques/destacados
+$brown:      #782A04; // profundo — contraste alterno
+$cream:      #FFF8EF; // fondo cálido general del sitio
+$surface:    #FFFFFF; // tarjetas
+$line:       #EDE0CC; // bordes sutiles sobre fondo cálido
+$off-white:  #E8F2FB; // texto claro sobre fondo oscuro
+
+$ok:         #2F7A4D;
+$ok-bg:      #E6F2EA;
+$warn:       #B5651D;
+$warn-bg:    #FBEEDF;
+$danger:     #C23B3B;
+
+// Tipografía — redondeada/juguetona para títulos (coincide con el logo), limpia para cuerpo
+$font-display: 'Fredoka', sans-serif;
+$font-body:    'Nunito Sans', sans-serif;
+$font-mono:    'JetBrains Mono', monospace;
+
+// Radios y sombras
+$radius-sm: 10px;
+$radius:    18px;
+$radius-lg: 28px;
+$shadow: 0 2px 4px rgba(30,32,44,0.04), 0 10px 28px -10px rgba(30,32,44,0.14);
+$shadow-lift: 0 16px 40px -12px rgba(30,32,44,0.24);
+
+// Breakpoints
+$bp-tablet: 860px;
+$bp-mobile: 560px;
+
+@mixin tablet { @media (max-width: $bp-tablet) { @content; } }
+@mixin mobile { @media (max-width: $bp-mobile) { @content; } }
+
+@mixin panel {
+  background: $surface;
+  border: 1px solid $line;
+  border-radius: $radius;
+  box-shadow: $shadow;
+}
+
+@mixin btn-base {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: $font-display;
+  font-weight: 600;
+  font-size: 15px;
+  padding: 13px 26px;
+  border-radius: 100px;
+  border: none;
+  cursor: pointer;
+  transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
+  text-decoration: none;
+}

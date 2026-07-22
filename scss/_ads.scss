@@ -1,0 +1,67 @@
+@use 'variables' as *;
+
+// Base de cualquier espacio publicitario — placeholder visible, nunca se confunde con contenido real
+.ad-slot{
+  background:repeating-linear-gradient(45deg, #EDEBE6, #EDEBE6 10px, #E4E1DA 10px, #E4E1DA 20px);
+  border:1.5px dashed #B8B3A8;
+  border-radius:$radius-sm;
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  color:#8B857A;
+  font-family:$font-mono;
+  text-align:center;
+  margin:0 auto;
+  .ad-label{ font-size:11px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; }
+  .ad-size{ font-size:10px; opacity:.75; margin-top:3px; }
+}
+
+// ---------- Top banner (normal, debajo del header) ----------
+.ad-top-wrap{ padding:18px 0 0; display:flex; justify-content:center; }
+.ad-top{
+  width:728px; height:90px;
+  @include mobile{ width:320px; height:50px; }
+}
+
+// ---------- In-feed (normal, entre bloques de contenido) ----------
+.ad-infeed-wrap{ padding:36px 0; display:flex; justify-content:center; }
+.ad-infeed{ width:100%; max-width:728px; height:120px; }
+
+// ---------- Rail lateral (FIJO — sigue el scroll, solo en pantallas anchas) ----------
+.ad-rail{
+  position:fixed;
+  top:130px;
+  width:160px; height:600px;
+  z-index:30;
+  display:none;
+  @media (min-width:1500px){
+    display:flex;
+    &.ad-rail-left{ left:24px; }
+    &.ad-rail-right{ right:24px; }
+  }
+}
+
+// ---------- Barra inferior (FIJA — se queda pegada al viewport) ----------
+.ad-bottom-fixed{
+  position:fixed;
+  left:50%; bottom:0; transform:translateX(-50%);
+  z-index:70;
+  width:100%;
+  display:flex; justify-content:center;
+  padding:10px 0;
+  background:rgba(255,248,239,0.92);
+  backdrop-filter:blur(6px);
+  border-top:1px solid $line;
+}
+.ad-bottom-fixed .ad-slot{ width:728px; height:90px; @include mobile{ width:320px; height:50px; } }
+.ad-bottom-fixed .ad-close{
+  position:absolute; top:-10px; right:calc(50% - 364px);
+  width:22px; height:22px; border-radius:50%;
+  background:$ink; color:$off-white; border:none;
+  font-size:12px; display:flex; align-items:center; justify-content:center; cursor:pointer;
+  @include mobile{ right:calc(50% - 160px); }
+}
+
+// Deja aire abajo de la página para que la barra fija no tape el footer
+.has-bottom-ad{ padding-bottom:96px; @include mobile{ padding-bottom:66px; } }
+
+// Sidebar de categoría: variante de anuncio embebida en la columna de filtros (normal, no fija)
+.ad-in-sidebar{ width:100%; height:250px; }

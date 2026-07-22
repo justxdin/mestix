@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Comparador — Mestix</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito+Sans:wght@400;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css?v=5">
+</head>
+<body class="has-bottom-ad">
+
+<header class="site">
+  <div class="wrap header-bar">
+    <a href="index.html" class="logo"><img src="img/logo_mestix_white.svg" alt="Mestix"></a>
+    <nav class="main-nav">
+      <a href="index.html">Inicio</a>
+      <div class="nav-item">
+        <a href="categoria.html">Catálogo</a><span class="caret">▾</span>
+        <div class="dropdown">
+          <a href="categoria.html">🐶 Perros</a>
+          <a href="categoria.html#gatos">🐱 Gatos</a>
+        </div>
+      </div>
+      <a href="comparador.html" class="active">Comparar</a>
+      <a href="blog.html">Blog</a>
+    </nav>
+    <div class="header-search"><span>⌕</span><input type="text" placeholder="Buscar alimento o marca…"></div>
+    <button class="nav-toggle" id="navToggle" aria-label="Abrir menú"><span></span></button>
+  </div>
+</header>
+
+<div class="mobile-panel" id="mobilePanel">
+  <div class="wrap">
+    <a href="index.html">Inicio</a>
+    <a href="categoria.html">Catálogo</a>
+    <div class="mobile-sub">
+      <a href="categoria.html">🐶 Perros</a>
+      <a href="categoria.html#gatos">🐱 Gatos</a>
+    </div>
+    <a href="comparador.html" class="active">Comparar</a>
+    <a href="blog.html">Blog</a>
+    <div class="mobile-search"><span>⌕</span><input type="text" placeholder="Buscar alimento o marca…"></div>
+  </div>
+</div>
+
+<div class="wrap ad-top-wrap">
+  <div class="ad-slot ad-top"><span class="ad-label">Publicidad</span><span class="ad-size">728 × 90 · 320 × 50 en mobile</span></div>
+</div>
+
+<div class="wrap page-head">
+  <div class="breadcrumb"><a href="index.html">Inicio</a> / Comparación</div>
+  <h1 id="pageTitle">Bravery Light vs Amity vs Purina Pro Plan</h1>
+  <p style="color:#565A6B;font-size:15px;margin-top:8px;">Este prototipo muestra las tres variantes del comparador — con 1, 2 y 3 productos — para revisar juntos el diseño antes de conectarlo a datos reales.</p>
+
+  <div class="state-switcher">
+    <button data-state="1">Con 1 producto</button>
+    <button data-state="2">Con 2 productos</button>
+    <button data-state="3" class="active">Con 3 productos</button>
+  </div>
+</div>
+
+<!-- ===================== ESTADO: 1 PRODUCTO ===================== -->
+<div class="wrap comparador-state" id="state-1" style="display:none;">
+  <div class="versus-grid cols-1">
+    <div class="vcol ">
+      
+      <div class="vcol-media"><img src="img/producto_placeholder.svg" alt="Pro Plan Adulto Raza Mediana"></div>
+      <div class="vcol-head">
+        <span class="brand-tag">Purina</span><h3>Pro Plan Adulto Raza Mediana</h3>
+        <div class="score-big"><span class="num">93</span><span class="of">/ 100 pts</span></div>
+      </div>
+      <div class="macros">
+        <div class="section-label">Detalle del puntaje</div>
+        <div class="macro-group">
+          <div class="macro-group-label">Núcleo</div>
+          <div class="macro-row"><div class="macro-label"><span>Proteína</span><b>26%</b></div><div class="bar-track"><div class="bar-fill" style="width:52%"></div></div></div>
+          <div class="macro-row"><div class="macro-label"><span>Grasa</span><b>15%</b></div><div class="bar-track"><div class="bar-fill" style="width:50%"></div></div></div>
+          <div class="macro-row"><div class="macro-label"><span>Carbohidratos</span><b>35.5%</b></div><div class="bar-track"><div class="bar-fill warn" style="width:71%"></div></div></div>
+          <div class="macro-row"><div class="macro-label"><span>Ceniza</span><b>8.5%</b></div><div class="bar-track"><div class="bar-fill" style="width:71%"></div></div></div>
+          <div class="macro-row"><div class="macro-label"><span>Fibra</span><b>3%</b></div><div class="bar-track"><div class="bar-fill" style="width:30%"></div></div></div>
+          <div class="macro-row"><div class="macro-label"><span>Humedad</span><b>12%</b></div><div class="bar-track"><div class="bar-fill" style="width:75%"></div></div></div>
+        </div>
+        <div class="macro-group">
+          <div class="macro-group-label">Balance mineral</div>
+          <div class="macro-row"><div class="macro-label"><span>Calcio</span><b>1.6%</b></div><div class="bar-track"><div class="bar-fill" style="width:80%"></div></div></div>
+          <div class="macro-row"><div class="macro-label"><span>Fósforo</span><b>1.3%</b></div><div class="bar-track"><div class="bar-fill" style="width:65%"></div></div></div>
+        </div>
+      </div>
+      <div class="ingredients-full">
+        <div class="section-label">Ingredientes (declarados)</div>
+        <p>Maíz, subproductos de pollo, harina de maíz, grasa animal, pollo deshidratado, fibra de trigo, saborizante natural, cloruro de potasio, minerales, vitaminas, BHT (conservante).</p>
+      </div>
+      <div class="ingredients-block">
+        <div class="section-label">Ingredientes destacados</div>
+        <ul class="destacados-list"><li>pollo</li><li>omega 3 (ácidos grasos esenciales)</li></ul>
+      </div>
+      <div class="allergen-note"><strong>Alérgenos potenciales:</strong> pollo, trigo, maíz, cerdo</div>
+      <div class="adv-block pos"><div class="label">Ventajas</div><ul class="adv-list"><li>Alta proteína relativa</li><li>Contiene ácidos grasos omega 3</li></ul></div>
+      <div class="adv-block neg"><div class="label">Desventajas</div><ul class="adv-list"><li>Contiene maíz</li><li>Contiene subproductos</li><li>Contiene BHT</li></ul></div>
+      <div class="etapas-block">
+        <div class="section-label">Etapas de vida</div>
+        <div class="etapa-row"><span>Cachorro</span><span class="etapa-pill n">Información insuficiente</span></div><div class="etapa-row"><span>Adulto</span><span class="etapa-pill g">Apto</span></div><div class="etapa-row"><span>Senior</span><span class="etapa-pill y">Podría consumir</span></div>
+      </div>
+      <div class="etapas-block" style="border-bottom:none;">
+        <div class="section-label">Cachorro raza grande</div>
+        <span class="etapa-pill n">No aplica — producto formulado para adultos</span>
+      </div>
+      <div class="vcol-foot"><span class="ing-tag warn"><span class="ic">!</span>Ingredientes cuestionables</span></div>
+    </div></div>
+  <section class="methodology">
+    <h2>Ficha individual</h2>
+    <p>Cuando solo hay un producto seleccionado, el comparador se comporta como una ficha técnica completa — sin veredicto ni medallas, porque no hay nada que comparar todavía. El botón "Agregar otro producto" invita a completar la comparación.</p>
+  </section>
+</div>
+
+<!-- ===================== ESTADO: 2 PRODUCTOS ===================== -->
+<div class="wrap comparador-state" id="state-2" style="display:none;">
+
+  <div class="beam-zone">
+    <svg class="beam-svg" viewBox="0 0 1100 210" xmlns="http://www.w3.org/2000/svg">
+      <polygon points="550,150 522,190 578,190" fill="#17161A"/>
+      <circle cx="550" cy="150" r="7" fill="#FFF8EF" stroke="#17161A" stroke-width="3"/>
+      <g transform="rotate(-3 550 150)">
+        <rect x="230" y="146" width="640" height="7" rx="3.5" fill="#EDE0CC"/>
+        <line x1="320" y1="153" x2="320" y2="188" stroke="#EDE0CC" stroke-width="2"/>
+        <circle cx="320" cy="197" r="24" fill="#F8931D"/>
+        <text x="320" y="203" text-anchor="middle" font-family="JetBrains Mono" font-size="14" font-weight="700" fill="#17161A">87</text>
+        <line x1="780" y1="153" x2="780" y2="208" stroke="#EDE0CC" stroke-width="2"/>
+        <circle cx="780" cy="217" r="27" fill="#782A04"/>
+        <text x="780" y="223" text-anchor="middle" font-family="JetBrains Mono" font-size="15" font-weight="700" fill="#FFF8EF">93</text>
+      </g>
+      <text x="320" y="60" text-anchor="middle" font-family="Nunito Sans" font-size="13" font-weight="700" fill="#565A6B">Bravery Light Iberian Pork</text>
+      <text x="780" y="60" text-anchor="middle" font-family="Nunito Sans" font-size="13" font-weight="700" fill="#565A6B">Purina Pro Plan</text>
+    </svg>
+    <div class="beam-caption">la balanza se inclina hacia el mayor puntaje mestix</div>
+    <div class="beam-mobile">
+      <div class="bm-item"><span class="bm-medal">2do lugar</span><span class="score">87</span><span class="name">Bravery Light Iberian Pork</span></div>
+      <div class="bm-item win"><span class="bm-medal">1er lugar</span><span class="score">93</span><span class="name">Purina Pro Plan</span></div>
+    </div>
+  </div>
+
+  <div class="verdict">
+    <span class="trophy">🏆</span>
+    <div><h2>Gana Purina Pro Plan Adulto Raza Mediana</h2>
+    <p>Por <b>mayor nivel de proteína</b> frente a Bravery Light. Aunque Bravery Light tiene una carga de carbohidratos algo menor, no alcanza a compensar la diferencia de proteína.</p></div>
+  </div>
+
+<div class="wrap ad-infeed-wrap">
+  <div class="ad-slot ad-infeed"><span class="ad-label">Publicidad</span><span class="ad-size">Banner de contenido · 728 × 90</span></div>
+</div>
+
+  <div class="versus-grid cols-2">
+    <div class="vcol ">
+      <span class="medal g2">2do lugar</span>
+      <div class="vcol-media"><img src="img/producto_placeholder.svg" alt="Light Iberian Pork Mini Adult"></div>
+      <div class="vcol-head">
+        <span class="brand-tag">Bravery</span><h3>Light Iberian Pork Mini Adult</h3>
+        <div class="score-big"><span class="num">87</span><span class="of">/ 100 pts</span></div>
+      </div>
+      <div class="macros">
+        <div class="section-label">Detalle del puntaje</div>
+        <div class="macro-group">
+          <div class="macro-group-label">Núcleo</div>
+          <div class="macro-row"><div class="macro-label"><span>Proteína</span><b>30%</b></div><div class="bar-track"><div class="bar-fill" style="width:60%"></div></div></div>
+          <div class="macro-row"><div class="macro-label"><span>Grasa</span><b>12%</b></div><div class="bar-track"><div class="bar-fill" style="width:40%"></div></div></div>
+          <div class="macro-row"><div class="macro-label"><span>Carbohidratos</span><b>33.1%</b></div><div class="bar-track"><div class="bar-fill warn" style="width:66%"></div></div></div>
+          <div class="macro-row"><div class="macro-label"><span>Ceniza</span><b>7.9%</b></div><div class="bar-track"><div class="bar-fill" style="width:66%"></div></div></div>
+          <div class="macro-row"><div class="macro-label"><span>Fibra</span><b>2.5%</b></div><div class="bar-track"><div class="bar-fill" style="width:25%"></div></div></div>
+          <div class="macro-row"><div class="macro-label"><span>Humedad</span><b>9%</b></div><div class="bar-track"><div class="bar-fill" style="width:56%"></div></div></div>
+        </div>
+        <div class="macro-group">
+          <div class="macro-group-label">Balance mineral</div>
+          <div class="macro-row"><div class="macro-label"><span>Calcio</span><b>1.6%</b></div><div class="bar-track"><div class="bar-fill" style="width:80%"></div></div></div>
+          <div class="macro-row"><div class="macro-label"><span>Fósforo</span><b>0.95%</b></div><div class="bar-track"><div class="bar-fill" style="width:48%"></div></div></div>
+        </div>
+      </div>
+      <div class="ingredients-full">
+        <div class="section-label">Ingredientes (declarados)</div>
+        <p>Carne de cerdo ibérico deshidratada, tapioca, guisantes, grasa de ave, fibra de guisantes, celulosa natural, levadura y extracto de levadura (Saccharomyces cerevisiae), boniato, vaina de algarroba, pulpa de remolacha, aceite de pescado, proteína hidrolizada de cerdo, proteína de patata, inulina, minerales, fibra de Plantago ovata, aceites esenciales, hidrolizado de crustáceos, hidrolizado de cartílago, yuca, concentrado de zumo de melón liofilizado.</p>
+      </div>
+      <div class="ingredients-block">
+        <div class="section-label">Ingredientes destacados</div>
+        <ul class="destacados-list"><li>cerdo</li><li>boniato (carbohidrato de calidad)</li><li>omega 3 (ácidos grasos esenciales)</li></ul>
+      </div>
+      <div class="allergen-note"><strong>Alérgenos potenciales:</strong> cerdo</div>
+      <div class="adv-block pos"><div class="label">Ventajas</div><ul class="adv-list"><li>Bajo en cenizas</li><li>Sin maíz ni subproductos</li></ul></div>
+      <div class="adv-block neg"><div class="label">Desventajas</div><ul class="adv-list"><li style="opacity:.5;font-style:italic;">Ninguna detectada</li></ul></div>
+      <div class="etapas-block">
+        <div class="section-label">Etapas de vida</div>
+        <div class="etapa-row"><span>Cachorro</span><span class="etapa-pill n">Información insuficiente</span></div><div class="etapa-row"><span>Adulto</span><span class="etapa-pill g">Apto</span></div><div class="etapa-row"><span>Senior</span><span class="etapa-pill y">Podría consumir</span></div>
+      </div>
+      <div class="etapas-block" style="border-bottom:none;">
+        <div class="section-label">Cachorro raza grande</div>
+        <span class="etapa-pill n">No aplica — producto formulado para adultos</span>
+      </div>
+      <div class="vcol-foot"><span class="ing-tag clean"><span class="ic">✓</span>Ingredientes limpios</span></div>
+    </div>
+    <div class="vcol win">
+      <span class="medal g1">1er lugar</span>
+      <div class="vcol-media"><img src="img/producto_placeholder.svg" alt="Pro Plan Adulto Raza Mediana"></div>
+      <div class="vcol-head">
+        <span class="brand-tag">Purina</span><h3>Pro Plan Adulto Raza Mediana</h3>
+        <div class="score-big"><span class="num">93</span><span class="of">/ 100 pts</span></div>
+      </div>
+      <div class="macros">
+        <div class="section-label">Detalle del puntaje</div>
+        <div class="macro-group">
+          <div class="macro-group-label">Núcleo</div>
+          <div class="macro-row"><div class="macro-label"><span>Proteína</span><b>26%</b></div><div class="bar-track"><div class="bar-fill" style="width:52%"></div></div></div>
+          <div class="macro-row"><div class="macro-label"><span>Grasa</span><b>15%</b></div><div class="bar-track"><div class="bar-fill" style="width:50%"></div></div></div>
+          <div class="macro-row"><div class="macro-label"><span>Carbohidratos</span><b>35.5%</b></div><div class="bar-track"><div class="bar-fill warn" style="width:71%"></div></div></div>
+          <div class="macro-row"><div class="macro-label"><span>Ceniza</span><b>8.5%</b></div><div class="bar-track"><div class="bar-fill" style="width:71%"></div></div></div>
+          <div class="macro-row"><div class="macro-label"><span>Fibra</span><b>3%</b></div><div class="bar-track"><div class="bar-fill" style="width:30%"></div></div></div>
+          <div class="macro-row"><div class="macro-label"><span>Humedad</span><b>12%</b></div><div class="bar-track"><div class="bar-fill" style="width:75%"></div></div></div>
+        </div>
+        <div class="macro-group">
+          <div class="macro-group-label">Balance mineral</div>
+          <div class="macro-row"><div class="macro-label"><span>Calcio</span><b>1.6%</b></div><div class="bar-track"><div class="bar-fill" style="width:80%"></div></div></div>
+          <div class="macro-row"><div class="macro-label"><span>Fósforo</span><b>1.3%</b></div><div class="bar-track"><div class="bar-fill" style="width:65%"></div></div></div>
+        </div>
+      </div>
+      <div class="ingredients-full">
+        <div class="section-label">Ingredientes (declarados)</div>
+        <p>Maíz, subproductos de pollo, harina de maíz, grasa animal, pollo deshidratado, fibra de trigo, saborizante natural, cloruro de potasio, minerales, vitaminas, BHT (conservante).</p>
+      </div>
+      <div class="ingredients-block">
+        <div class="section-label">Ingredientes destacados</div>
+        <ul class="destacados-list"><li>pollo</li><li>omega 3 (ácidos grasos esenciales)</li></ul>
+      </div>
+      <div class="allergen-note"><strong>Alérgenos potenciales:</strong> pollo, trigo, maíz, cerdo</div>
+      <div class="adv-block pos"><div class="label">Ventajas</div><ul class="adv-list"><li>Alta proteína relativa</li><li>Contiene ácidos grasos omega 3</li></ul></div>
+      <div class="adv-block neg"><div class="label">Desventajas</div><ul class="adv-list"><li>Contiene maíz</li><li>Contiene subproductos</li><li>Contiene BHT</li></ul></div>
+      <div class="etapas-block">
+        <div class="section-label">Etapas de vida</div>
+        <div class="etapa-row"><span>Cachorro</span><span class="etapa-pill n">Información insuficiente</span></div><div class="etapa-row"><span>Adulto</span><span class="etapa-pill g">Apto</span></div><div class="etapa-row"><span>Senior</span><span class="etapa-pill y">Podría consumir</span></div>
+      </div>
+      <div class="etapas-block" style="border-bottom:none;">
+        <div class="section-label">Cachorro raza grande</div>
+        <span class="etapa-pill n">No aplica — producto formulado para adultos</span>
+      </div>
+      <div class="vcol-foot"><span class="ing-tag warn"><span class="ic">!</span>Ingredientes cuestionables</span></div>
+    </div></div>
+
+</div>
+
+<!-- ===================== ESTADO: 3 PRODUCTOS ===================== -->
+<div class="wrap comparador-state" id="state-3">
+
+  <div class="beam-zone">
+    <svg class="beam-svg" viewBox="0 0 1100 220" xmlns="http://www.w3.org/2000/svg">
+      <polygon points="550,150 522,190 578,190" fill="#17161A"/>
+      <circle cx="550" cy="150" r="7" fill="#FFF8EF" stroke="#17161A" stroke-width="3"/>
+      <g transform="rotate(-3 550 150)">
+        <rect x="140" y="146" width="820" height="7" rx="3.5" fill="#EDE0CC"/>
+        <line x1="230" y1="153" x2="230" y2="186" stroke="#EDE0CC" stroke-width="2"/>
+        <circle cx="230" cy="195" r="23" fill="#FDA925"/>
+        <text x="230" y="201" text-anchor="middle" font-family="JetBrains Mono" font-size="14" font-weight="700" fill="#17161A">87</text>
+        <line x1="550" y1="153" x2="550" y2="188" stroke="#EDE0CC" stroke-width="2"/>
+        <circle cx="550" cy="198" r="24" fill="#F8931D"/>
+        <text x="550" y="204" text-anchor="middle" font-family="JetBrains Mono" font-size="14" font-weight="700" fill="#17161A">91</text>
+        <line x1="870" y1="153" x2="870" y2="211" stroke="#EDE0CC" stroke-width="2"/>
+        <circle cx="870" cy="220" r="27" fill="#782A04"/>
+        <text x="870" y="226" text-anchor="middle" font-family="JetBrains Mono" font-size="15" font-weight="700" fill="#FFF8EF">93</text>
+      </g>
+      <text x="230" y="60" text-anchor="middle" font-family="Nunito Sans" font-size="12.5" font-weight="700" fill="#565A6B">Bravery Light Iberian Pork</text>
+      <text x="550" y="60" text-anchor="middle" font-family="Nunito Sans" font-size="12.5" font-weight="700" fill="#565A6B">Amity SP Low Grain</text>
+      <text x="870" y="60" text-anchor="middle" font-family="Nunito Sans" font-size="12.5" font-weight="700" fill="#565A6B">Purina Pro Plan</text>
+    </svg>
+    <div class="beam-caption">la balanza se inclina hacia el mayor puntaje mestix — no es una resta, es una comparación relativa</div>
+    <div class="beam-mobile">
+      <div class="bm-item"><span class="bm-medal">3er lugar</span><span class="score">87</span><span class="name">Bravery Light</span></div>
+      <div class="bm-item"><span class="bm-medal">2do lugar</span><span class="score">91</span><span class="name">Amity SP Low Grain</span></div>
+      <div class="bm-item win"><span class="bm-medal">1er lugar</span><span class="score">93</span><span class="name">Purina Pro Plan</span></div>
+    </div>
+  </div>
+
+  <div class="verdict">
+    <span class="trophy">🏆</span>
+    <div><h2>Gana Purina Pro Plan Adulto Raza Mediana</h2>
+    <p>Por <b>mayor nivel de proteína</b> frente a los otros dos productos. Aunque Bravery Light Iberian Pork y Amity SP Low Grain también destacan por su buena calidad de ingredientes, no logran igualar este perfil nutricional.</p></div>
+  </div>
+
+<div class="wrap ad-infeed-wrap">
+  <div class="ad-slot ad-infeed"><span class="ad-label">Publicidad</span><span class="ad-size">Banner de contenido · 728 × 90</span></div>
+</div>
+
+  <div class="versus-grid cols-3">
+    <div class="vcol ">
+      <span class="medal g3">3er lugar</span>
+      <div class="vcol-media"><img src="img/producto_placeholder.svg" alt="Light Iberian Pork Mini Adult"></div>
+      <div class="vcol-head">
+        <span class="brand-tag">Bravery</span><h3>Light Iberian Pork Mini Adult</h3>
+        <div class="score-big"><span class="num">87</span><span class="of">/ 100 pts</span></div>
+      </div>
+      <div class="macros">
+        <div class="section-label">Detalle del puntaje</div>
+        <div class="macro-group">
+          <div class="macro-group-label">Núcleo</div>
+          <div class="macro-row"><div class="macro-label"><span>Proteína</span><b>30%</b></div><div class="bar-track"><div class="bar-fill" style="width:60%"></div></div></div>
+          <div class="macro-row"><div class="macro-label"><span>Grasa</span><b>12%</b></div><div class="bar-track"><div class="bar-fill" style="width:40%"></div></div></div>
+          <div class="macro-row"><div class="macro-label"><span>Carbohidratos</span><b>33.1%</b></div><div class="bar-track"><div class="bar-fill warn" style="width:66%"></div></div></div>
+          <div class="macro-row"><div class="macro-label"><span>Ceniza</span><b>7.9%</b></div><div class="bar-track"><div class="bar-fill" style="width:66%"></div></div></div>
+          <div class="macro-row"><div class="macro-label"><span>Fibra</span><b>2.5%</b></div><div class="bar-track"><div class="bar-fill" style="width:25%"></div></div></div>
+          <div class="macro-row"><div class="macro-label"><span>Humedad</span><b>9%</b></div><div class="bar-track"><div class="bar-fill" style="width:56%"></div></div></div>
+        </div>
+        <div class="macro-group">
+          <div class="macro-group-label">Balance mineral</div>
+          <div class="macro-row"><div class="macro-label"><span>Calcio</span><b>1.6%</b></div><div class="bar-track"><div class="bar-fill" style="width:80%"></div></div></div>
+          <div class="macro-row"><div class="macro-label"><span>Fósforo</span><b>0.95%</b></div><div class="bar-track"><div class="bar-fill" style="width:48%"></div></div></div>
+        </div>
+      </div>
+      <div class="ingredients-full">
+        <div class="section-label">Ingredientes (declarados)</div>
+        <p>Carne de cerdo ibérico deshidratada, tapioca, guisantes, grasa de ave, fibra de guisantes, celulosa natural, levadura y extracto de levadura (Saccharomyces cerevisiae), boniato, vaina de algarroba, pulpa de remolacha, aceite de pescado, proteína hidrolizada de cerdo, proteína de patata, inulina, minerales, fibra de Plantago ovata, aceites esenciales, hidrolizado de crustáceos, hidrolizado de cartílago, yuca, concentrado de zumo de melón liofilizado.</p>
+      </div>
+      <div class="ingredients-block">
+        <div class="section-label">Ingredientes destacados</div>
+        <ul class="destacados-list"><li>cerdo</li><li>boniato (carbohidrato de calidad)</li><li>omega 3 (ácidos grasos esenciales)</li></ul>
+      </div>
+      <div class="allergen-note"><strong>Alérgenos potenciales:</strong> cerdo</div>
+      <div class="adv-block pos"><div class="label">Ventajas</div><ul class="adv-list"><li>Bajo en cenizas</li><li>Sin maíz ni subproductos</li></ul></div>
+      <div class="adv-block neg"><div class="label">Desventajas</div><ul class="adv-list"><li style="opacity:.5;font-style:italic;">Ninguna detectada</li></ul></div>
+      <div class="etapas-block">
+        <div class="section-label">Etapas de vida</div>
+        <div class="etapa-row"><span>Cachorro</span><span class="etapa-pill n">Información insuficiente</span></div><div class="etapa-row"><span>Adulto</span><span class="etapa-pill g">Apto</span></div><div class="etapa-row"><span>Senior</span><span class="etapa-pill y">Podría consumir</span></div>
+      </div>
+      <div class="etapas-block" style="border-bottom:none;">
+        <div class="section-label">Cachorro raza grande</div>
+        <span class="etapa-pill n">No aplica — producto formulado para adultos</span>
+      </div>
+      <div class="vcol-foot"><span class="ing-tag clean"><span class="ic">✓</span>Ingredientes limpios</span></div>
+    </div>
+    <div class="vcol ">
+      <span class="medal g2">2do lugar</span>
+      <div class="vcol-media"><img src="img/producto_placeholder.svg" alt="SP Low Grain Iberian Pork Adult"></div>
+      <div class="vcol-head">
+        <span class="brand-tag">Amity</span><h3>SP Low Grain Iberian Pork Adult</h3>
+        <div class="score-big"><span class="num">91</span><span class="of">/ 100 pts</span></div>
+      </div>
+      <div class="macros">
+        <div class="section-label">Detalle del puntaje</div>
+        <div class="macro-group">
+          <div class="macro-group-label">Núcleo</div>
+          <div class="macro-row"><div class="macro-label"><span>Proteína</span><b>28%</b></div><div class="bar-track"><div class="bar-fill" style="width:56%"></div></div></div>
+          <div class="macro-row"><div class="macro-label"><span>Grasa</span><b>16%</b></div><div class="bar-track"><div class="bar-fill" style="width:53%"></div></div></div>
+          <div class="macro-row"><div class="macro-label"><span>Carbohidratos</span><b>38.6%</b></div><div class="bar-track"><div class="bar-fill warn" style="width:77%"></div></div></div>
+          <div class="macro-row"><div class="macro-label"><span>Ceniza</span><b>7.9%</b></div><div class="bar-track"><div class="bar-fill" style="width:66%"></div></div></div>
+          <div class="macro-row"><div class="macro-label"><span>Fibra</span><b>2.5%</b></div><div class="bar-track"><div class="bar-fill" style="width:25%"></div></div></div>
+          <div class="macro-row"><div class="macro-label"><span>Humedad</span><b>9%</b></div><div class="bar-track"><div class="bar-fill" style="width:56%"></div></div></div>
+        </div>
+        <div class="macro-group">
+          <div class="macro-group-label">Balance mineral</div>
+          <div class="macro-row"><div class="macro-label"><span>Calcio</span><b>1.8%</b></div><div class="bar-track"><div class="bar-fill" style="width:90%"></div></div></div>
+          <div class="macro-row"><div class="macro-label"><span>Fósforo</span><b>1.0%</b></div><div class="bar-track"><div class="bar-fill" style="width:50%"></div></div></div>
+        </div>
+      </div>
+      <div class="ingredients-full">
+        <div class="section-label">Ingredientes (declarados)</div>
+        <p>Carne de cerdo deshidratada, arroz, grasa de ave, avena, guisantes, pulpa de remolacha, aceite de salmón, levadura de cerveza, cloruro de potasio, minerales quelatados, extracto de yuca schidigera, vitaminas, taurina, romero.</p>
+      </div>
+      <div class="ingredients-block">
+        <div class="section-label">Ingredientes destacados</div>
+        <ul class="destacados-list"><li>cerdo</li><li>avena (carbohidrato de calidad)</li><li>antioxidantes naturales</li></ul>
+      </div>
+      <div class="allergen-note"><strong>Alérgenos potenciales:</strong> cerdo</div>
+      <div class="adv-block pos"><div class="label">Ventajas</div><ul class="adv-list"><li>Bajo en cenizas</li><li>Sin maíz ni subproductos</li></ul></div>
+      <div class="adv-block neg"><div class="label">Desventajas</div><ul class="adv-list"><li style="opacity:.5;font-style:italic;">Ninguna detectada</li></ul></div>
+      <div class="etapas-block">
+        <div class="section-label">Etapas de vida</div>
+        <div class="etapa-row"><span>Cachorro</span><span class="etapa-pill n">Información insuficiente</span></div><div class="etapa-row"><span>Adulto</span><span class="etapa-pill g">Apto</span></div><div class="etapa-row"><span>Senior</span><span class="etapa-pill g">Apto</span></div>
+      </div>
+      <div class="etapas-block" style="border-bottom:none;">
+        <div class="section-label">Cachorro raza grande</div>
+        <span class="etapa-pill n">No aplica — producto formulado para adultos</span>
+      </div>
+      <div class="vcol-foot"><span class="ing-tag clean"><span class="ic">✓</span>Ingredientes limpios</span></div>
+    </div>
+    <div class="vcol win">
+      <span class="medal g1">1er lugar</span>
+      <div class="vcol-media"><img src="img/producto_placeholder.svg" alt="Pro Plan Adulto Raza Mediana"></div>
+      <div class="vcol-head">
+        <span class="brand-tag">Purina</span><h3>Pro Plan Adulto Raza Mediana</h3>
+        <div class="score-big"><span class="num">93</span><span class="of">/ 100 pts</span></div>
+      </div>
+      <div class="macros">
+        <div class="section-label">Detalle del puntaje</div>
+        <div class="macro-group">
+          <div class="macro-group-label">Núcleo</div>
+          <div class="macro-row"><div class="macro-label"><span>Proteína</span><b>26%</b></div><div class="bar-track"><div class="bar-fill" style="width:52%"></div></div></div>
+          <div class="macro-row"><div class="macro-label"><span>Grasa</span><b>15%</b></div><div class="bar-track"><div class="bar-fill" style="width:50%"></div></div></div>
+          <div class="macro-row"><div class="macro-label"><span>Carbohidratos</span><b>35.5%</b></div><div class="bar-track"><div class="bar-fill warn" style="width:71%"></div></div></div>
+          <div class="macro-row"><div class="macro-label"><span>Ceniza</span><b>8.5%</b></div><div class="bar-track"><div class="bar-fill" style="width:71%"></div></div></div>
+          <div class="macro-row"><div class="macro-label"><span>Fibra</span><b>3%</b></div><div class="bar-track"><div class="bar-fill" style="width:30%"></div></div></div>
+          <div class="macro-row"><div class="macro-label"><span>Humedad</span><b>12%</b></div><div class="bar-track"><div class="bar-fill" style="width:75%"></div></div></div>
+        </div>
+        <div class="macro-group">
+          <div class="macro-group-label">Balance mineral</div>
+          <div class="macro-row"><div class="macro-label"><span>Calcio</span><b>1.6%</b></div><div class="bar-track"><div class="bar-fill" style="width:80%"></div></div></div>
+          <div class="macro-row"><div class="macro-label"><span>Fósforo</span><b>1.3%</b></div><div class="bar-track"><div class="bar-fill" style="width:65%"></div></div></div>
+        </div>
+      </div>
+      <div class="ingredients-full">
+        <div class="section-label">Ingredientes (declarados)</div>
+        <p>Maíz, subproductos de pollo, harina de maíz, grasa animal, pollo deshidratado, fibra de trigo, saborizante natural, cloruro de potasio, minerales, vitaminas, BHT (conservante).</p>
+      </div>
+      <div class="ingredients-block">
+        <div class="section-label">Ingredientes destacados</div>
+        <ul class="destacados-list"><li>pollo</li><li>omega 3 (ácidos grasos esenciales)</li></ul>
+      </div>
+      <div class="allergen-note"><strong>Alérgenos potenciales:</strong> pollo, trigo, maíz, cerdo</div>
+      <div class="adv-block pos"><div class="label">Ventajas</div><ul class="adv-list"><li>Alta proteína relativa</li><li>Contiene ácidos grasos omega 3</li></ul></div>
+      <div class="adv-block neg"><div class="label">Desventajas</div><ul class="adv-list"><li>Contiene maíz</li><li>Contiene subproductos</li><li>Contiene BHT</li></ul></div>
+      <div class="etapas-block">
+        <div class="section-label">Etapas de vida</div>
+        <div class="etapa-row"><span>Cachorro</span><span class="etapa-pill n">Información insuficiente</span></div><div class="etapa-row"><span>Adulto</span><span class="etapa-pill g">Apto</span></div><div class="etapa-row"><span>Senior</span><span class="etapa-pill y">Podría consumir</span></div>
+      </div>
+      <div class="etapas-block" style="border-bottom:none;">
+        <div class="section-label">Cachorro raza grande</div>
+        <span class="etapa-pill n">No aplica — producto formulado para adultos</span>
+      </div>
+      <div class="vcol-foot"><span class="ing-tag warn"><span class="ic">!</span>Ingredientes cuestionables</span></div>
+    </div></div>
+
+  <section class="methodology">
+    <h2>¿Cómo se calcula el puntaje Mestix?</h2>
+    <p>El puntaje nace de una evaluación comparativa de proteína, grasa, carbohidratos, ceniza y otros minerales frente a otros productos de su categoría. No penalizamos: sumamos valor por cada atributo favorable y comunicamos las desventajas de forma explícita, sin restarlas del puntaje.</p>
+  </section>
+</div>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="img/logo_mestix_white.svg" alt="Mestix" style="height:26px;margin-bottom:14px;">
+        <p>Comparador nutricional de alimentos para mascotas, basado en el etiquetado declarado por cada fabricante.</p>
+      </div>
+      <div><h4>Explorar</h4><ul><li><div class="nav-item">
+        <a href="categoria.html">Catálogo</a><span class="caret">▾</span>
+        <div class="dropdown">
+          <a href="categoria.html">🐶 Perros</a>
+          <a href="categoria.html#gatos">🐱 Gatos</a>
+        </div>
+      </div></li><li><a href="comparador.html">Comparador</a></li><li><a href="blog.html">Blog</a></li></ul></div>
+      <div><h4>Metodología</h4><ul><li><a href="#">Cómo evaluamos</a></li><li><a href="#">Fuentes técnicas</a></li><li><a href="#">Etapas de vida</a></li></ul></div>
+      <div><h4>Mestix</h4><ul><li><a href="#">Sobre nosotros</a></li><li><a href="#">Contacto</a></li><li><a href="#">Términos y privacidad</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 Mestix. Prototipo de diseño — datos de demostración.</span><span>Hecho en Chile 🇨🇱</span></div>
+  </div>
+</footer>
+
+<script>
+  const buttons = document.querySelectorAll('.state-switcher button');
+  const titles = {
+    1: 'Purina Pro Plan Adulto Raza Mediana',
+    2: 'Bravery Light vs Purina Pro Plan',
+    3: 'Bravery Light vs Amity vs Purina Pro Plan'
+  };
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      buttons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      document.querySelectorAll('.comparador-state').forEach(el => el.style.display = 'none');
+      document.getElementById('state-' + btn.dataset.state).style.display = 'block';
+      document.getElementById('pageTitle').textContent = titles[btn.dataset.state];
+    });
+  });
+</script>
+
+<div class="ad-slot ad-rail ad-rail-left"><span class="ad-label">Publicidad</span><span class="ad-size">160 × 600</span></div>
+<div class="ad-slot ad-rail ad-rail-right"><span class="ad-label">Publicidad</span><span class="ad-size">160 × 600</span></div>
+
+<div class="ad-bottom-fixed">
+  <button class="ad-close">✕</button>
+  <div class="ad-slot"><span class="ad-label">Publicidad</span><span class="ad-size">728 × 90 · 320 × 50 en mobile · fijo</span></div>
+</div>
+
+<script>
+  document.getElementById('navToggle').addEventListener('click', function(){
+    this.classList.toggle('open');
+    document.getElementById('mobilePanel').classList.toggle('open');
+  });
+</script>
+
+</body>
+</html>
