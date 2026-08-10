@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Preguntas frecuentes — Metodología Mestix</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito+Sans:wght@400;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css?v=1786380800">
+<style>
+  .faq-tabs{ display:flex; gap:10px; margin:0 0 32px; }
+  .faq-tab{
+    font-family:'Fredoka',sans-serif; font-weight:600; font-size:15px; padding:12px 22px;
+    border-radius:100px; border:1.5px solid #EDE0CC; background:#fff; color:#17161A; cursor:pointer;
+  }
+  .faq-tab.active{ background:#17161A; color:#fff; border-color:#17161A; }
+  .faq-species{ display:none; }
+  .faq-species.active{ display:block; }
+  .faq-principios{
+    background:#FFF6EC; border:1px solid #EDE0CC; border-radius:16px; padding:26px 28px; margin-bottom:36px;
+  }
+  .faq-principios h3{ margin:0 0 12px; font-size:18px; }
+  .faq-principios ul{ margin:0; padding-left:20px; line-height:1.9; }
+</style>
+</head>
+<body class="has-bottom-ad">
+
+<header class="site">
+  <div class="wrap header-bar">
+    <a href="index.html" class="logo"><img src="img/logo_mestix_white.svg" alt="Mestix"></a>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li class="nav-item">
+          <a href="categoria.html">Catálogo</a><span class="caret">▾</span>
+          <ul class="dropdown">
+            <li><a href="categoria.html">🐶 Perros</a></li>
+            <li><a href="categoria-gatos.html">🐱 Gatos</a></li>
+          </ul>
+        </li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="sobre-mestix.html">Sobre Mestix</a></li>
+        <li><a href="preguntas-frecuentes.html" class="active">Preguntas frecuentes</a></li>
+      </ul>
+    </nav>
+    <div class="header-search"><span>⌕</span><input type="text" placeholder="Buscar alimento o marca…"></div>
+    <div class="country-select" id="countrySelect">
+      <button class="country-select-btn" id="countryBtn"><span class="flag">🇨🇱</span> CL <span class="caret">▾</span></button>
+      <ul class="country-dropdown">
+        <li><a href="#" class="active" data-flag="🇨🇱" data-code="CL"><span class="flag">🇨🇱</span> Chile <span class="check">✓</span></a></li>
+        <li><a href="#" data-flag="🇦🇷" data-code="AR"><span class="flag">🇦🇷</span> Argentina</a></li>
+      </ul>
+    </div>
+    <button class="nav-toggle" id="navToggle" aria-label="Abrir menú"><span></span></button>
+  </div>
+</header>
+
+<div class="mobile-panel" id="mobilePanel">
+  <div class="wrap">
+    <ul>
+      <li><a href="index.html">Inicio</a></li>
+      <li>
+        <a href="categoria.html">Catálogo</a>
+        <ul class="mobile-sub">
+          <li><a href="categoria.html">🐶 Perros</a></li>
+          <li><a href="categoria-gatos.html">🐱 Gatos</a></li>
+        </ul>
+      </li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="sobre-mestix.html">Sobre Mestix</a></li>
+      <li><a href="preguntas-frecuentes.html" class="active">Preguntas frecuentes</a></li>
+    </ul>
+    <div class="mobile-search"><span>⌕</span><input type="text" placeholder="Buscar alimento o marca…"></div>
+  </div>
+</div>
+
+<div class="wrap ad-top-wrap">
+  <div class="ad-slot ad-top"><span class="ad-label">Publicidad</span><span class="ad-size">728 × 90 · 320 × 50 en mobile</span></div>
+</div>
+
+<section class="section" style="padding-top:50px; padding-bottom:0;">
+  <div class="wrap" style="max-width:820px;">
+    <span class="eyebrow">Metodología</span>
+    <h1 style="margin:10px 0 16px;">Preguntas frecuentes</h1>
+    <p class="lead" style="margin-bottom:0;">Esta es la versión técnica y detallada de cómo funciona Mestix — con las fuentes exactas detrás de cada número. Si buscas algo más general, revisa <a href="sobre-mestix.html">Sobre Mestix</a>.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap" style="max-width:820px;">
+
+    <div class="faq-principios">
+      <h3>Principios que aplican a todo el modelo, en ambas especies</h3>
+      <ul>
+        <li>Cada variable se audita empezando por la pregunta: ¿qué mide realmente — calidad nutricional, equilibrio/seguridad, o categoría del producto?</li>
+        <li>Solo usamos fuentes de primer nivel (AAFCO, FEDIAF, NRC, Merck Veterinary Manual) cuando aplican directamente al dato que declaramos.</li>
+        <li>No convertimos unidades ni estimamos valores faltantes — comparamos la información tal como la declara el fabricante.</li>
+        <li>Cuando no existe una fuente que respalde un umbral, lo decimos explícitamente como decisión metodológica propia de Mestix — nunca como si fuera una norma oficial.</li>
+        <li>Un dato faltante nunca se inventa ni se asume: simplemente esa variable no suma puntos para ese producto.</li>
+      </ul>
+    </div>
+
+    <h2 style="margin-bottom:18px;">Sobre el sitio, en general</h2>
+    <div class="methodology-accordion" style="margin-bottom:40px;">
+      <div class="macc-item active">
+        <button class="macc-head">
+          <span class="macc-num">A</span>
+          <span class="macc-title">¿Qué es el Score y para qué sirve?</span>
+          <span class="macc-caret">▾</span>
+        </button>
+        <div class="macc-body">
+          <p>El Score es el número de 0 a 100 que ves en cada alimento. Nació de una necesidad simple: comparar dos bolsas de alimento a mano implica leer tablas nutricionales chicas, entender qué significa cada porcentaje, y repetirlo con el siguiente producto. El Score resume ese trabajo en un solo número, calculado siempre de la misma forma para todos los productos, para que puedas comparar rápido sin perder la posibilidad de meterte al detalle si quieres.</p>
+          <p>Es importante entender qué <b>no</b> es: no mide si tu mascota en particular debería comer ese alimento (para eso existe Etapas de vida), no mide qué tan barato o caro es (eso vive aparte, en Precio), y no es una opinión nuestra sobre la marca — es un resultado calculado a partir de lo que el fabricante declaró.</p>
+        </div>
+      </div>
+      <div class="macc-item">
+        <button class="macc-head">
+          <span class="macc-num">B</span>
+          <span class="macc-title">¿Qué es "Visión general" (el radar) y por qué lo creamos?</span>
+          <span class="macc-caret">▾</span>
+        </button>
+        <div class="macc-body">
+          <p>Cuando armamos el comparador completo, nos dimos cuenta de que había mucha información junta: tablas, minerales, etapas, ingredientes. Es información valiosa, pero puede ser abrumadora si lo primero que ves es una pared de números. "Visión general" — el gráfico en forma de tela de araña — nació para resolver eso: te muestra, de un vistazo, la "forma" de cada alimento, en qué áreas es fuerte y en cuáles es más débil frente a los demás que elegiste comparar. No reemplaza el detalle de más abajo — es la puerta de entrada visual antes de meterte a los números.</p>
+        </div>
+      </div>
+      <div class="macc-item">
+        <button class="macc-head">
+          <span class="macc-num">C</span>
+          <span class="macc-title">¿Qué tipos de fuentes usamos, y por qué las mostramos?</span>
+          <span class="macc-caret">▾</span>
+        </button>
+        <div class="macc-body">
+          <p>Cada dato que ves en Mestix viene de algún lugar, y creemos que deberías poder saber de dónde. Por eso etiquetamos cada producto según el origen de su información: si lo encontramos en el sitio web oficial de la marca, si la marca misma nos lo entregó directamente, si viene de un sitio de terceros, o si no encontramos una fuente oficial. No ocultamos esto — mostrarlo es parte de nuestro compromiso con la transparencia hacia ti, no solo hacia las marcas.</p>
+        </div>
+      </div>
+      <div class="macc-item">
+        <button class="macc-head">
+          <span class="macc-num">D</span>
+          <span class="macc-title">¿Qué significa la insignia de verificado?</span>
+          <span class="macc-caret">▾</span>
+        </button>
+        <div class="macc-body">
+          <p>La insignia (✓) aparece únicamente cuando una marca nos confirma sus propios datos directamente — no basta con que estén publicados en su sitio web, tiene que ser una confirmación activa hacia Mestix. Es un reconocimiento, no una exigencia: una marca sin la insignia no está siendo penalizada, simplemente no ha dado ese paso todavía. Creemos que las marcas que sí lo hacen se lo están ganando, y quisimos que quedara visible para quien está comparando.</p>
+        </div>
+      </div>
+      <div class="macc-item">
+        <button class="macc-head">
+          <span class="macc-num">E</span>
+          <span class="macc-title">Ventajas y Desventajas: ¿por qué no afectan el puntaje?</span>
+          <span class="macc-caret">▾</span>
+        </button>
+        <div class="macc-body">
+          <p>Además del Score, cada alimento muestra una lista de Ventajas y Desventajas basada en su lista de ingredientes — por ejemplo, si contiene colorantes artificiales o subproductos sin especificar, o si aporta antioxidantes naturales u omega 3. Es información real y la consideramos importante, pero deliberadamente la mantenemos separada del puntaje numérico.</p>
+          <p>¿Por qué? Convertir "contiene tal ingrediente" en un número exacto de puntos sería fingir una precisión que no tenemos — hay ingredientes claramente positivos o negativos, pero muchos casos son más matizados que un simple sí/no. Mezclar eso con el Score (que se basa en datos cuantificables) le restaría claridad a ambas cosas. Preferimos mostrarte la información completa y dejar que la leas con tu propio criterio, en vez de resumirla en un número que podría ocultar el detalle.</p>
+        </div>
+      </div>
+      <div class="macc-item">
+        <button class="macc-head">
+          <span class="macc-num">F</span>
+          <span class="macc-title">¿Cómo fue naciendo el modelo — Núcleo, Balance mineral, Etapas de vida?</span>
+          <span class="macc-caret">▾</span>
+        </button>
+        <div class="macc-body">
+          <p>Mestix no partió con toda esta estructura de una vez. Al principio pensamos que un solo puntaje podía responder todo: "¿es bueno este alimento?". Pero mientras revisábamos variable por variable, nos dimos cuenta de que esa pregunta en realidad escondía varias preguntas distintas adentro.</p>
+          <p>"¿Es nutricionalmente sólido?" es una pregunta. "¿Su balance de minerales es seguro?" es otra, relacionada pero distinta. "¿Es apto para la etapa de vida de mi mascota en particular?" es una tercera — y un alimento puede responder muy bien a la primera y no tan bien a la segunda, o al revés.</p>
+          <p>Por eso separamos el modelo en capas: <b>Núcleo</b> agrupa lo que tradicionalmente se entiende como calidad nutricional (proteína, grasa, carbohidratos). <b>Balance mineral</b> se ocupa de que los minerales no solo estén presentes, sino en proporciones correctas entre sí. <b>Etapas de vida</b> responde si el alimento es seguro para la edad de tu mascota — una pregunta de cumplimiento, no de calidad. Y existen capas adicionales para situaciones particulares (Raza grande en perros, Castrados/Esterilizados en gatos) que atienden riesgos específicos que no le corresponden a todo el mundo por igual.</p>
+          <p>Separarlas así, en vez de mezclarlas en un solo número, significa que nada queda escondido: siempre puedes ver exactamente qué pregunta estás respondiendo en cada sección.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-tabs">
+      <button class="faq-tab active" data-tab="perros">🐶 Perros</button>
+      <button class="faq-tab" data-tab="gatos">🐱 Gatos</button>
+    </div>
+
+    <!-- ===================== PERROS ===================== -->
+    <div class="faq-species active" id="faq-perros">
+      <div class="methodology-accordion">
+        <div class="macc-item active">
+          <button class="macc-head">
+            <span class="macc-num">1</span>
+            <span class="macc-title">¿Cómo se calcula el puntaje?</span>
+            <span class="macc-caret">▾</span>
+          </button>
+          <div class="macc-body">
+            <p>El puntaje nace de una evaluación comparativa de proteína, grasa, carbohidratos y minerales frente a otros productos de su categoría. No penalizamos: sumamos valor por cada atributo favorable y comunicamos las desventajas de forma explícita, sin restarlas del puntaje.</p>
+            <p>El color del puntaje funciona como un semáforo, igual en todo el sitio: <span style="color:#2F7A4D;font-weight:700;">🟢 verde</span> es óptimo, <span style="color:#B8860B;font-weight:700;">🟡 ámbar</span> es intermedio, y <span style="color:#C23B3B;font-weight:700;">🔴 rojo</span> es bajo. No publicamos los umbrales exactos ni el peso interno de cada variable — es la fórmula propia de Mestix, y mantenerla reservada nos permite seguir mejorándola sin que terceros la repliquen.</p>
+          </div>
+        </div>
+        <div class="macc-item">
+          <button class="macc-head">
+            <span class="macc-num">2</span>
+            <span class="macc-title">¿Qué significa "Etapas de vida"?</span>
+            <span class="macc-caret">▾</span>
+          </button>
+          <div class="macc-body">
+            <p>Es una capa separada del puntaje — responde una pregunta distinta: no "qué tan optimizado está" sino "es seguro para esta etapa de vida de mi perro". Un alimento puede tener un puntaje más bajo y aun así ser perfectamente apto para su etapa, o viceversa. <b>Apto</b> significa que cumple el mínimo objetivo publicado por AAFCO para esa etapa, <b>Podría consumir</b> que está fuera de lo óptimo pero dentro de un margen razonable, y <b>Información insuficiente</b> que el fabricante no declaró los datos necesarios.</p>
+            <p>Para la etapa Senior, que AAFCO no define de forma oficial, usamos la base de Adulto con un ajuste preventivo adicional relacionado a la función renal, documentado como decisión propia y no como cifra oficial.</p>
+          </div>
+        </div>
+        <div class="macc-item">
+          <button class="macc-head">
+            <span class="macc-num">3</span>
+            <span class="macc-title">Aptitud por tamaño de raza</span>
+            <span class="macc-caret">▾</span>
+          </button>
+          <div class="macc-body">
+            <p>Para cachorros que llegarán a ser de raza grande o gigante, el exceso de calcio durante el crecimiento acelerado se asocia a enfermedades óseas del desarrollo — un riesgo específico y documentado para ese tamaño de raza, distinto al resto. Por eso este módulo aplica un criterio adicional, más estricto solo en ese punto, respaldado por literatura veterinaria específica sobre razas grandes.</p>
+          </div>
+        </div>
+        <div class="macc-item">
+          <button class="macc-head">
+            <span class="macc-num">4</span>
+            <span class="macc-title">¿Por qué la relación Calcio:Fósforo tiene su propio puntaje?</span>
+            <span class="macc-caret">▾</span>
+          </button>
+          <div class="macc-body">
+            <p>No basta con que cada mineral esté dentro de su rango individual — el equilibrio entre ambos también afecta cómo el cuerpo los absorbe. Existe un óptimo clínico reconocido por el Merck Veterinary Manual, distinto del rango de seguridad más amplio que exige AAFCO — nuestro modelo distingue entre ambos en vez de tratarlos como si fueran lo mismo.</p>
+          </div>
+        </div>
+        <div class="macc-item">
+          <button class="macc-head">
+            <span class="macc-num">5</span>
+            <span class="macc-title">¿Por qué Ceniza y Fibra no tienen un "rango ideal" oficial?</span>
+            <span class="macc-caret">▾</span>
+          </button>
+          <div class="macc-body">
+            <p>Ni AAFCO ni FEDIAF ni el NRC fijan un máximo oficial para ceniza o fibra en alimento seco de perro. Mestix no inventa un umbral disfrazado de norma — construye su propio criterio y lo pesa menos que las variables que sí cuentan con respaldo regulatorio directo.</p>
+          </div>
+        </div>
+        <div class="macc-item">
+          <button class="macc-head">
+            <span class="macc-num">6</span>
+            <span class="macc-title">¿Por qué Humedad se trata distinto al resto?</span>
+            <span class="macc-caret">▾</span>
+          </button>
+          <div class="macc-body">
+            <p>La FDA describe un rango típico para alimento seco comercial, y FEDIAF marca el punto en que un producto deja de considerarse "seco" para pasar a semi-húmedo. Mestix usa esos dos puntos de referencia para verificar que el producto cumple con lo esperado para su categoría — no para medir calidad nutricional.</p>
+          </div>
+        </div>
+        <div class="macc-item">
+          <button class="macc-head">
+            <span class="macc-num">7</span>
+            <span class="macc-title">¿Por qué el precio no afecta el puntaje?</span>
+            <span class="macc-caret">▾</span>
+          </button>
+          <div class="macc-body">
+            <p>El puntaje mide exclusivamente calidad nutricional declarada — algo que no cambia según la tienda o la oferta del día. El precio se muestra aparte, con el costo real por kilo, pero nunca se mezcla con el cálculo del puntaje.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===================== GATOS ===================== -->
+    <div class="faq-species" id="faq-gatos">
+      <div class="methodology-accordion">
+        <div class="macc-item active">
+          <button class="macc-head">
+            <span class="macc-num">1</span>
+            <span class="macc-title">¿Cómo se calcula el puntaje?</span>
+            <span class="macc-caret">▾</span>
+          </button>
+          <div class="macc-body">
+            <p>El gato es un carnívoro estricto, fisiológicamente distinto al perro — el modelo de gatos se construyó y auditó por separado, sin heredar ningún criterio del modelo de perros, solo la misma filosofía de trabajo. El puntaje nace de una evaluación comparativa de proteína, grasa, carbohidratos, taurina y minerales frente a otros productos de su categoría.</p>
+            <p>Al igual que con perros, no publicamos los umbrales exactos ni el peso interno de cada variable — es nuestra fórmula propia, y la mantenemos reservada.</p>
+          </div>
+        </div>
+        <div class="macc-item">
+          <button class="macc-head">
+            <span class="macc-num">2</span>
+            <span class="macc-title">¿Qué significa "Etapas de vida"?</span>
+            <span class="macc-caret">▾</span>
+          </button>
+          <div class="macc-body">
+            <p>Se evalúan proteína, grasa, calcio y fósforo contra los mínimos publicados por AAFCO para cada etapa. A diferencia de perros, ninguno de los dos minerales tiene un techo máximo en gatos — AAFCO no fija un límite superior de calcio ni fósforo para la especie en ninguna etapa de vida.</p>
+            <p>AAFCO usa el mismo perfil nutricional para gatitos y para hembras gestantes o lactantes, por eso ambos casos comparten el mismo resultado en Mestix.</p>
+          </div>
+        </div>
+        <div class="macc-item">
+          <button class="macc-head">
+            <span class="macc-num">3</span>
+            <span class="macc-title">Castrados / Esterilizados</span>
+            <span class="macc-caret">▾</span>
+          </button>
+          <div class="macc-body">
+            <p>Los gatos castrados o esterilizados tienen mayor incidencia documentada de cristales urinarios (estruvita). El factor accionable con los datos que Mestix recolecta es el Magnesio, ligado directamente a la composición química de ese tipo de cristal. Usamos el criterio preventivo general reconocido en nutrición felina — deliberadamente distinto de las cifras usadas en protocolos clínicos para disolver cálculos ya existentes, que responden a un objetivo terapéutico distinto, no de prevención.</p>
+            <p>Este módulo no afecta el Score. Si el fabricante no declara magnesio, el resultado es "Información insuficiente".</p>
+          </div>
+        </div>
+        <div class="macc-item">
+          <button class="macc-head">
+            <span class="macc-num">4</span>
+            <span class="macc-title">¿Por qué la relación Calcio:Fósforo tiene su propio puntaje?</span>
+            <span class="macc-caret">▾</span>
+          </button>
+          <div class="macc-body">
+            <p>No basta con que cada mineral esté dentro de su rango individual — el equilibrio entre ambos también afecta cómo el cuerpo los absorbe. A diferencia de perros, AAFCO no fija una relación Ca:P específica para gatos, así que nos apoyamos en el organismo europeo de referencia (FEDIAF) para esta variable en particular.</p>
+          </div>
+        </div>
+        <div class="macc-item">
+          <button class="macc-head">
+            <span class="macc-num">5</span>
+            <span class="macc-title">¿Por qué la Taurina tiene un peso tan importante?</span>
+            <span class="macc-caret">▾</span>
+          </button>
+          <div class="macc-body">
+            <p>A diferencia del perro, el gato no puede sintetizar taurina en cantidad suficiente por sí mismo. Su deficiencia tiene consecuencias clínicas graves y documentadas: cardiomiopatía dilatada y degeneración retinal. Si el fabricante solo menciona "contiene taurina" sin dar una cifra exacta, igual reconocemos esa declaración — AAFCO no exige ese nivel de detalle en la etiqueta, y Mestix no exige más transparencia de la que la propia norma requiere.</p>
+          </div>
+        </div>
+        <div class="macc-item">
+          <button class="macc-head">
+            <span class="macc-num">6</span>
+            <span class="macc-title">¿Por qué Ceniza y Fibra no tienen un "rango ideal" oficial?</span>
+            <span class="macc-caret">▾</span>
+          </button>
+          <div class="macc-body">
+            <p>Ni AAFCO ni FEDIAF ni el NRC fijan un máximo oficial para ceniza o fibra en alimento seco de gato. Por esta razón, su peso dentro del Score es menor al de las variables que sí cuentan con respaldo regulatorio directo.</p>
+          </div>
+        </div>
+        <div class="macc-item">
+          <button class="macc-head">
+            <span class="macc-num">7</span>
+            <span class="macc-title">¿Por qué el precio no afecta el puntaje?</span>
+            <span class="macc-caret">▾</span>
+          </button>
+          <div class="macc-body">
+            <p>El puntaje mide exclusivamente calidad nutricional declarada — algo que no cambia según la tienda o la oferta del día. El precio se muestra aparte, con el costo real por kilo, pero nunca se mezcla con el cálculo del puntaje.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="img/logo_mestix_white.svg" alt="Mestix" style="height:26px;margin-bottom:14px;">
+        <p>Comparador nutricional de alimentos para mascotas, basado en el etiquetado declarado por cada fabricante.</p>
+      </div>
+      <div><h4>Explorar</h4><ul><li><a href="categoria.html">Catálogo</a></li><li><a href="blog.html">Blog</a></li></ul></div>
+      <div><h4>Metodología</h4><ul><li><a href="preguntas-frecuentes.html">Cómo evaluamos</a></li><li><a href="preguntas-frecuentes.html">Fuentes técnicas</a></li><li><a href="preguntas-frecuentes.html">Etapas de vida</a></li></ul></div>
+      <div><h4>Mestix</h4><ul><li><a href="sobre-mestix.html">Sobre nosotros</a></li><li><a href="contacto.html">Contacto</a></li><li><a href="terminos-privacidad.html">Términos y privacidad</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 Mestix. Prototipo de diseño — datos de demostración.</span><span>Hecho en Chile 🇨🇱</span></div>
+  </div>
+</footer>
+
+<div class="ad-slot ad-rail ad-rail-left"><span class="ad-label">Publicidad</span><span class="ad-size">160 × 600</span></div>
+<div class="ad-slot ad-rail ad-rail-right"><span class="ad-label">Publicidad</span><span class="ad-size">160 × 600</span></div>
+
+<div class="ad-bottom-fixed">
+  <button class="ad-close">✕</button>
+  <div class="ad-slot"><span class="ad-label">Publicidad</span><span class="ad-size">728 × 90 · 320 × 50 en mobile · fijo</span></div>
+</div>
+
+<script>
+  (function(){
+    const wrap = document.getElementById('countrySelect');
+    if (!wrap) return;
+    const btn = document.getElementById('countryBtn');
+    const links = wrap.querySelectorAll('.country-dropdown a');
+    btn.addEventListener('click', (e) => { e.stopPropagation(); wrap.classList.toggle('open'); });
+    links.forEach(a => a.addEventListener('click', (e) => {
+      e.preventDefault();
+      links.forEach(l => l.classList.remove('active'));
+      a.classList.add('active');
+      btn.innerHTML = '<span class="flag">' + a.dataset.flag + '</span> ' + a.dataset.code + ' <span class="caret">▾</span>';
+      wrap.classList.remove('open');
+    }));
+    document.addEventListener('click', () => wrap.classList.remove('open'));
+  })();
+
+  (function(){
+    const toggle = document.getElementById('navToggle');
+    const panel = document.getElementById('mobilePanel');
+    if (!toggle || !panel) return;
+    toggle.addEventListener('click', () => {
+      panel.classList.toggle('open');
+      toggle.classList.toggle('active');
+    });
+  })();
+
+  // Tabs Perros/Gatos
+  document.querySelectorAll('.faq-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      document.querySelectorAll('.faq-tab').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.faq-species').forEach(s => s.classList.remove('active'));
+      tab.classList.add('active');
+      document.getElementById('faq-' + tab.dataset.tab).classList.add('active');
+    });
+  });
+
+  // Accordion de metodología (aplica a ambas pestañas)
+  document.querySelectorAll('.macc-head').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.macc-item');
+      const wasOpen = item.classList.contains('active');
+      item.closest('.methodology-accordion').querySelectorAll('.macc-item').forEach(i => i.classList.remove('active'));
+      if (!wasOpen) item.classList.add('active');
+    });
+  });
+</script>
+
+<script>
+  // Cerrar la publicidad inferior fija
+  document.addEventListener('click', (e) => {
+    if (e.target.closest('.ad-close')){
+      e.target.closest('.ad-bottom-fixed').remove();
+      document.body.classList.remove('has-bottom-ad');
+    }
+  });
+</script>
+
+</body>
+</html>

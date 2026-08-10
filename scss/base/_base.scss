@@ -1,0 +1,145 @@
+@use '../utilities/variables' as *;
+@use '../utilities/mixins' as *;
+
+*,*::before,*::after{ box-sizing:border-box; }
+html{ scroll-behavior:smooth; overflow-x:hidden; }
+body{
+  margin:0;
+  background:$cream;
+  color:$ink;
+  font-family:$font-body;
+  font-size:16px;
+  line-height:1.55;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,h4,.display{
+  font-family:$font-display;
+  font-weight:600;
+  line-height:1.15;
+  margin:0;
+  color:$ink;
+}
+p{ margin:0 0 1em; color:$ink-soft; }
+a{ color:inherit; text-decoration:none; }
+img{ max-width:100%; display:block; }
+.mono{ font-family:$font-mono; }
+
+.wrap{
+  max-width:1100px;
+  margin:0 auto;
+  @include desktop {max-width: 980px; padding: 0 20px;}
+  @include mobile{ padding:0 20px; }
+}
+
+.section{ padding:72px 0; @include tablet{ padding:52px 0; } }
+.section-sm{ padding:40px 0; }
+
+.eyebrow{
+  font-family:$font-mono;
+  font-size:12.5px;
+  font-weight:700;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:$orange-dark;
+  display:inline-block;
+  margin-bottom:12px;
+}
+
+.btn{
+  @include btn-base;
+  background:$orange;
+  color:$ink;
+  box-shadow:0 6px 18px -6px rgba(248,147,29,0.55);
+  &:hover{ transform:translateY(-1px); box-shadow:0 10px 24px -8px rgba(248,147,29,0.6); }
+}
+.btn-dark{
+  @include btn-base;
+  background:$ink;
+  color:$off-white;
+  &:hover{ transform:translateY(-1px); }
+}
+.btn-outline{
+  @include btn-base;
+  background:transparent;
+  color:$ink;
+  border:2px solid $ink;
+  padding:11px 24px;
+  &:hover{ background:$ink; color:$off-white; }
+}
+.btn-sm{ padding:9px 18px; font-size:13.5px; }
+
+.tag{
+  font-family:$font-mono;
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:.03em;
+  text-transform:uppercase;
+  padding:5px 11px;
+  border-radius:100px;
+}
+.tag-clean{ background:$ok-bg; color:$ok; }
+.tag-warn{ background:$warn-bg; color:$warn; }
+
+.chip{
+  font-family:$font-body;
+  font-size:12.5px;
+  font-weight:700;
+  background:$off-white;
+  color:$ink;
+  padding:5px 12px;
+  border-radius:100px;
+  border:1px solid $line;
+}
+
+// ---------- Tooltip explicativo (hover) ----------
+.tt{
+  position:relative;
+  cursor:help;
+  &::after{
+    content:attr(data-tip);
+    position:absolute;
+    bottom:calc(100% + 10px);
+    left:50%;
+    transform:translateX(-50%) translateY(4px);
+    width:240px;
+    white-space:normal;
+    background:$ink;
+    color:$off-white;
+    font-family:$font-body;
+    font-size:12.5px;
+    font-weight:500;
+    line-height:1.5;
+    text-transform:none;
+    letter-spacing:normal;
+    padding:11px 14px;
+    border-radius:10px;
+    box-shadow:0 12px 28px -8px rgba(0,0,0,0.35);
+    opacity:0;
+    visibility:hidden;
+    transition:opacity .15s ease, transform .15s ease;
+    z-index:40;
+    pointer-events:none;
+  }
+  &::before{
+    content:'';
+    position:absolute;
+    bottom:calc(100% + 4px);
+    left:50%;
+    transform:translateX(-50%);
+    border:6px solid transparent;
+    border-top-color:$ink;
+    opacity:0;
+    visibility:hidden;
+    transition:opacity .15s ease;
+    z-index:40;
+  }
+  &:hover::after, &:hover::before{ opacity:1; visibility:visible; transform:translateX(-50%) translateY(0); }
+  &:hover::before{ transform:translateX(-50%); }
+}
+.tt-icon{
+  display:inline-flex; align-items:center; justify-content:center;
+  width:14px; height:14px; border-radius:50%;
+  background:rgba(23,22,26,0.12); color:$ink-soft;
+  font-size:9.5px; font-weight:700; margin-left:5px;
+  vertical-align:middle;
+}

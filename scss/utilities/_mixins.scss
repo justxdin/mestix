@@ -1,0 +1,65 @@
+// ============================================================
+// MESTIX — Mixins y funciones reutilizables
+// ============================================================
+@use 'variables' as *;
+
+@mixin tablet { @media (max-width: $bp-tablet) { @content; } }
+@mixin mobile { @media (max-width: $bp-mobile) { @content; } }
+
+@mixin panel {
+  background: $surface;
+  border: 1px solid $line;
+  border-radius: $radius;
+  box-shadow: $shadow;
+}
+
+// Reemplazo de grid-template-columns:repeat($n,1fr) usando flexbox
+@mixin flex-cols($n, $gap: 20px) {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $gap;
+  > *{
+    flex: 1 1 calc(#{100% / $n} - #{$gap * ($n - 1) / $n});
+    min-width: 0;
+  }
+}
+
+@mixin btn-base {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: $font-display;
+  font-weight: 600;
+  font-size: 15px;
+  padding: 13px 26px;
+  border-radius: 100px;
+  border: none;
+  cursor: pointer;
+  transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
+  text-decoration: none;
+}
+
+@mixin desktop {
+  @media (max-width: 1500px) {
+    @content;
+  }
+}
+
+@mixin laptop {
+  @media (max-width: 1365px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+    @media (max-width: 1023px) {
+        @content;
+    }
+}
+
+@mixin movil {
+    @media (max-width:767px) {
+        @content;
+    }
+}

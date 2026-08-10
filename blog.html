@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog — Mestix</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito+Sans:wght@400;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css?v=1786380800">
+</head>
+<body class="has-bottom-ad">
+
+<header class="site">
+  <div class="wrap header-bar">
+    <a href="index.html" class="logo"><img src="img/logo_mestix_white.svg" alt="Mestix"></a>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li class="nav-item">
+          <a href="categoria.html">Catálogo</a><span class="caret">▾</span>
+          <ul class="dropdown">
+            <li><a href="categoria.html">🐶 Perros</a></li>
+            <li><a href="categoria-gatos.html">🐱 Gatos</a></li>
+          </ul>
+        </li>
+        <li><a href="blog.html" class="active">Blog</a></li>
+        <li><a href="sobre-mestix.html">Sobre Mestix</a></li>
+        <li><a href="preguntas-frecuentes.html">Preguntas frecuentes</a></li>
+      </ul>
+    </nav>
+    <div class="header-search"><span>⌕</span><input type="text" placeholder="Buscar en el blog…"></div>
+    <div class="country-select" id="countrySelect">
+      <button class="country-select-btn" id="countryBtn"><span class="flag">🇨🇱</span> CL <span class="caret">▾</span></button>
+      <ul class="country-dropdown">
+        <li><a href="#" class="active" data-flag="🇨🇱" data-code="CL"><span class="flag">🇨🇱</span> Chile <span class="check">✓</span></a></li>
+        <li><a href="#" data-flag="🇦🇷" data-code="AR"><span class="flag">🇦🇷</span> Argentina</a></li>
+      </ul>
+    </div>
+    <button class="nav-toggle" id="navToggle" aria-label="Abrir menú"><span></span></button>
+  </div>
+</header>
+
+<div class="mobile-panel" id="mobilePanel">
+  <div class="wrap">
+    <ul>
+      <li><a href="index.html">Inicio</a></li>
+      <li>
+        <a href="categoria.html">Catálogo</a>
+        <ul class="mobile-sub">
+          <li><a href="categoria.html">🐶 Perros</a></li>
+          <li><a href="categoria-gatos.html">🐱 Gatos</a></li>
+        </ul>
+      </li>
+      <li><a href="blog.html" class="active">Blog</a></li>
+      <li><a href="sobre-mestix.html">Sobre Mestix</a></li>
+      <li><a href="preguntas-frecuentes.html">Preguntas frecuentes</a></li>
+    </ul>
+    <div class="mobile-search"><span>⌕</span><input type="text" placeholder="Buscar alimento o marca…"></div>
+  </div>
+</div>
+
+<div class="wrap ad-top-wrap">
+  <div class="ad-slot ad-top"><span class="ad-label">Publicidad</span><span class="ad-size">728 × 90 · 320 × 50 en mobile</span></div>
+</div>
+
+<div class="wrap blog-hero">
+  <span class="eyebrow">Blog Mestix</span>
+  <h1>Para entender lo que comen tus mascotas</h1>
+  <p>Artículos basados en la misma metodología del comparador — sin marketing, con fuentes citables.</p>
+</div>
+
+<div class="wrap">
+  <div class="blog-filter-row">
+    <button class="active">Todos</button>
+    <button>Perros</button>
+    <button>Gatos</button>
+    <button>Mitos y ciencia</button>
+    <button>Cómo leer etiquetas</button>
+    <button>Etapas de vida</button>
+  </div>
+
+  <a href="articulo.html" class="blog-featured">
+    <div class="thumb"></div>
+    <div class="body">
+      <span class="tag-blog">Cachorros · Raza grande</span>
+      <h2>Por qué el calcio importa más en cachorros de raza grande</h2>
+      <p>AAFCO fija un tope distinto de calcio específicamente para cachorros que llegarán a ser perros grandes — la razón tiene que ver con enfermedades óseas del desarrollo, no con una preferencia de formulación. Te explicamos el número exacto y por qué no aplica igual a todas las razas.</p>
+      <span class="meta">12 min de lectura · Fuentes AAFCO 2016</span>
+    </div>
+  </a>
+
+<div class="wrap ad-infeed-wrap">
+  <div class="ad-slot ad-infeed"><span class="ad-label">Publicidad</span><span class="ad-size">Banner de contenido · 728 × 90</span></div>
+</div>
+
+  <div class="blog-grid">
+
+    <a href="#" class="blog-card">
+      <div class="thumb c1"></div>
+      <div class="body">
+        <span class="tag-blog">Mitos</span>
+        <h3>Grain-free no siempre es mejor: lo que dice la evidencia</h3>
+        <p>Avena y arroz integral no son lo mismo que maíz de relleno — la diferencia está en la fuente, no en la palabra "grano".</p>
+        <span class="meta">8 min · Gatos y perros</span>
+      </div>
+    </a>
+
+    <a href="#" class="blog-card">
+      <div class="thumb c2"></div>
+      <div class="body">
+        <span class="tag-blog">Alergias</span>
+        <h3>Los 5 alérgenos más comunes en la dieta de tu perro</h3>
+        <p>Vacuno, lácteos, pollo, trigo y cordero — según una revisión de 297 casos clínicos confirmados.</p>
+        <span class="meta">6 min · Perros</span>
+      </div>
+    </a>
+
+    <a href="#" class="blog-card">
+      <div class="thumb c3"></div>
+      <div class="body">
+        <span class="tag-blog">Etiquetado</span>
+        <h3>Cómo leer una etiqueta de alimento en 2 minutos</h3>
+        <p>El orden de los ingredientes no es casualidad — te mostramos qué mirar primero y qué ignorar.</p>
+        <span class="meta">5 min · Gatos y perros</span>
+      </div>
+    </a>
+
+    <a href="#" class="blog-card">
+      <div class="thumb c4"></div>
+      <div class="body">
+        <span class="tag-blog">Gatos senior</span>
+        <h3>¿Existe realmente el "alimento para gato senior"?</h3>
+        <p>AAFCO no reconoce esta etapa oficialmente — revisamos qué cambia (y qué no) en las fórmulas senior.</p>
+        <span class="meta">7 min · Gatos</span>
+      </div>
+    </a>
+
+    <a href="#" class="blog-card">
+      <div class="thumb c5"></div>
+      <div class="body">
+        <span class="tag-blog">Proteína hidrolizada</span>
+        <h3>Proteína hidrolizada: no es una alerta, es una ventaja</h3>
+        <p>Por qué este ingrediente se usa a propósito en dietas para mascotas con alergias — y qué significa para tu mascota.</p>
+        <span class="meta">6 min · Gatos y perros</span>
+      </div>
+    </a>
+
+    <a href="#" class="blog-card">
+      <div class="thumb c6"></div>
+      <div class="body">
+        <span class="tag-blog">Metodología</span>
+        <h3>Cómo calculamos el puntaje Mestix, explicado simple</h3>
+        <p>Sin fórmulas complicadas: qué premiamos, qué no penalizamos, y por qué.</p>
+        <span class="meta">10 min · Sobre Mestix</span>
+      </div>
+    </a>
+
+  </div>
+
+  <div class="newsletter-band">
+    <div>
+      <h3>Recibe nuevos artículos cada semana</h3>
+      <p>Sin spam — solo nutrición de mascotas, con fuentes.</p>
+    </div>
+    <form onsubmit="return false;">
+      <input type="email" placeholder="tu@email.com">
+      <button class="btn-dark" type="submit">Suscribirme</button>
+    </form>
+  </div>
+</div>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="img/logo_mestix_white.svg" alt="Mestix" style="height:26px;margin-bottom:14px;">
+        <p>Comparador nutricional de alimentos para mascotas, basado en el etiquetado declarado por cada fabricante.</p>
+      </div>
+      <div><h4>Explorar</h4>
+        <ul><li><a href="categoria.html">Catálogo</a></li><li><a href="blog.html">Blog</a></li></ul></div>
+      <div><h4>Metodología</h4><ul><li><a href="#">Cómo evaluamos</a></li><li><a href="#">Fuentes técnicas</a></li><li><a href="#">Etapas de vida</a></li></ul></div>
+      <div><h4>Mestix</h4><ul><li><a href="sobre-mestix.html">Sobre nosotros</a></li><li><a href="contacto.html">Contacto</a></li><li><a href="terminos-privacidad.html">Términos y privacidad</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 Mestix. Prototipo de diseño — datos de demostración.</span><span>Hecho en Chile 🇨🇱</span></div>
+  </div>
+</footer>
+
+<div class="ad-slot ad-rail ad-rail-left"><span class="ad-label">Publicidad</span><span class="ad-size">160 × 600</span></div>
+<div class="ad-slot ad-rail ad-rail-right"><span class="ad-label">Publicidad</span><span class="ad-size">160 × 600</span></div>
+
+<div class="ad-bottom-fixed">
+  <button class="ad-close">✕</button>
+  <div class="ad-slot"><span class="ad-label">Publicidad</span><span class="ad-size">728 × 90 · 320 × 50 en mobile · fijo</span></div>
+</div>
+
+<script>
+  (function(){
+    const wrap = document.getElementById('countrySelect');
+    if (!wrap) return;
+    const btn = document.getElementById('countryBtn');
+    const links = wrap.querySelectorAll('.country-dropdown a');
+    btn.addEventListener('click', (e) => { e.stopPropagation(); wrap.classList.toggle('open'); });
+    links.forEach(a => a.addEventListener('click', (e) => {
+      e.preventDefault();
+      links.forEach(l => l.classList.remove('active'));
+      a.classList.add('active');
+      btn.innerHTML = '<span class="flag">' + a.dataset.flag + '</span> ' + a.dataset.code + ' <span class="caret">▾</span>';
+      wrap.classList.remove('open');
+    }));
+    document.addEventListener('click', () => wrap.classList.remove('open'));
+  })();
+</script>
+
+<script>
+  document.getElementById('navToggle').addEventListener('click', function(){
+    this.classList.toggle('open');
+    document.getElementById('mobilePanel').classList.toggle('open');
+  });
+</script>
+
+<script>
+  // Cerrar la publicidad inferior fija
+  document.addEventListener('click', (e) => {
+    if (e.target.closest('.ad-close')){
+      e.target.closest('.ad-bottom-fixed').remove();
+      document.body.classList.remove('has-bottom-ad');
+    }
+  });
+</script>
+
+</body>
+</html>

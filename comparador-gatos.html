@@ -1,0 +1,1139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Comparador — Mestix</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito+Sans:wght@400;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css?v=1786380800">
+</head>
+<body class="has-bottom-ad">
+
+<header class="site">
+  <div class="wrap header-bar">
+    <a href="index.html" class="logo"><img src="img/logo_mestix_white.svg" alt="Mestix"></a>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li class="nav-item">
+          <a href="categoria.html">Catálogo</a><span class="caret">▾</span>
+          <ul class="dropdown">
+            <li><a href="categoria.html">🐶 Perros</a></li>
+            <li><a href="categoria-gatos.html">🐱 Gatos</a></li>
+          </ul>
+        </li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="sobre-mestix.html">Sobre Mestix</a></li>
+        <li><a href="preguntas-frecuentes.html">Preguntas frecuentes</a></li>
+      </ul>
+    </nav>
+    <div class="header-search"><span>⌕</span><input type="text" placeholder="Buscar alimento o marca…"></div>
+    <div class="country-select" id="countrySelect">
+      <button class="country-select-btn" id="countryBtn"><span class="flag">🇨🇱</span> CL <span class="caret">▾</span></button>
+      <ul class="country-dropdown">
+        <li><a href="#" class="active" data-flag="🇨🇱" data-code="CL"><span class="flag">🇨🇱</span> Chile <span class="check">✓</span></a></li>
+        <li><a href="#" data-flag="🇦🇷" data-code="AR"><span class="flag">🇦🇷</span> Argentina</a></li>
+      </ul>
+    </div>
+    <button class="nav-toggle" id="navToggle" aria-label="Abrir menú"><span></span></button>
+  </div>
+</header>
+
+<div class="mobile-panel" id="mobilePanel">
+  <div class="wrap">
+    <ul>
+      <li><a href="index.html">Inicio</a></li>
+      <li>
+        <a href="categoria.html">Catálogo</a>
+        <ul class="mobile-sub">
+          <li><a href="categoria.html">🐶 Perros</a></li>
+          <li><a href="categoria-gatos.html">🐱 Gatos</a></li>
+        </ul>
+      </li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="sobre-mestix.html">Sobre Mestix</a></li>
+      <li><a href="preguntas-frecuentes.html">Preguntas frecuentes</a></li>
+    </ul>
+    <div class="mobile-search"><span>⌕</span><input type="text" placeholder="Buscar alimento o marca…"></div>
+  </div>
+</div>
+
+<div class="wrap ad-top-wrap">
+  <div class="ad-slot ad-top"><span class="ad-label">Publicidad</span><span class="ad-size">728 × 90 · 320 × 50 en mobile</span></div>
+</div>
+
+<section class="hero-Compare">
+<div class="wrap">
+  <div class="page-head">
+  <div class="breadcrumb"><a href="index.html">Inicio</a> / Comparación</div>
+  <div class="page-head-row">
+    <h1 id="pageTitle">Cargando…</h1>
+    <div style="display:flex; gap:10px;">
+      <button class="btn-add-product" id="shareBtn" title="Compartir esta comparación">🔗 Compartir</button>
+      <button class="btn-add-product" id="addProductBtn">+ Agregar producto</button>
+    </div>
+  </div>
+  <p style="color:#565A6B;font-size:15px;margin-top:8px;">Elige hasta 3 alimentos para comparar lado a lado.</p>
+</div>
+  <div class="compare-header cols-3" id="compareHeader"></div>
+  <div id="verdictContainer"></div>
+
+</div>
+</section>
+
+<section class="top-products"><div class="wrap"></div></section>
+  <div id="whichForYouContainer"></div>
+  <div class="feature-sections" id="featureSections"></div>
+
+  <section id="recapContainer"></section>
+
+<section id="exploreContainer"></section>
+
+<section class="info-evalu">
+<div class="wrap" style="max-width:780px;">
+  <div class="methodology-header">
+    <h2>¿Cómo evaluamos?</h2>
+    <p>Mestix calcula un puntaje de 0 a 100 según la información nutricional que cada fabricante declara — comparando proteína, grasa, carbohidratos, taurina y minerales frente a otros productos de su categoría. El gato es un carnívoro estricto, fisiológicamente distinto al perro, así que el modelo de gatos se construyó y audita por separado. Nunca penalizamos: sumamos valor por cada atributo favorable, sin restar por lo que falta.</p>
+    <p>Además del puntaje, evaluamos si el alimento cumple los requerimientos mínimos para la etapa de vida de tu gato (gatito, adulto, senior), y si es adecuado para gatos castrados o esterilizados, un criterio adicional relacionado a la salud urinaria. Todo esto lo respaldamos en organismos internacionales de referencia en nutrición animal como AAFCO y FEDIAF.</p>
+    <p style="margin-top:18px;"><a href="preguntas-frecuentes.html" class="btn-outline" style="display:inline-block;">Quiero saber más →</a></p>
+  </div>
+</div>
+</section>
+
+
+
+<!-- ===================== Modal selector de productos ===================== -->
+<div class="picker-overlay" id="pickerOverlay">
+  <div class="picker-modal">
+    <div class="picker-modal-head">
+      <input type="text" id="pickerSearch" placeholder="Escribe aquí para comparar">
+      <button id="pickerClose">✕</button>
+    </div>
+    <div class="picker-modal-label">Normalmente comparado con...</div>
+    <div class="picker-list" id="pickerList"></div>
+  </div>
+</div>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="img/logo_mestix_white.svg" alt="Mestix" style="height:26px;margin-bottom:14px;">
+        <p>Comparador nutricional de alimentos para mascotas, basado en el etiquetado declarado por cada fabricante.</p>
+      </div>
+      <div><h4>Explorar</h4>
+        <ul><li><a href="categoria.html">Catálogo</a></li><li><a href="blog.html">Blog</a></li></ul></div>
+      <div><h4>Metodología</h4><ul><li><a href="#">Cómo evaluamos</a></li><li><a href="#">Fuentes técnicas</a></li><li><a href="#">Etapas de vida</a></li></ul></div>
+      <div><h4>Mestix</h4><ul><li><a href="sobre-mestix.html">Sobre nosotros</a></li><li><a href="contacto.html">Contacto</a></li><li><a href="terminos-privacidad.html">Términos y privacidad</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 Mestix. Prototipo de diseño — datos de demostración.</span><span>Hecho en Chile 🇨🇱</span></div>
+  </div>
+</footer>
+
+<script>
+// ===================== Base de datos (gatos) =====================
+const CATS_DB = {
+  leonardo_salmon: {
+    marca:"Leonardo", marcaSlug:"leonardo", nombre:"Fresh Salmón", score:100,
+    prot:40, grasa:22, carbs:18, ceniza:7.5, fibra:2.5, humedad:10, calcio:1.3, fosforo:1.1, taurina:1.4,
+    ingredientes:"Salmón fresco (43%); carne de ave fresca (42%); harina de guisantes; amaranto; zooplancton marino molido (krill, 1,7%); huevo secado; harina de pescado de agua salada, secado, hidrolizado; hígado de ave hidrolizada; semillas de chía; levadura de cerveza secada; vainas de algarroba; orujo de manzana; verduras secadas; algas secas; fosfato dicálcico; cloruro de potasio; bayas silvestres; arándanos; hierbas secadas; extracto de aceituna.",
+    destacados:["salmón","hígado","huevo"],
+    alergenos:"huevo, pescado", ventajas:["Alta proteína","Bajo en carbohidratos","Bajo en cenizas","Alta taurina declarada","Mayor contenido de humedad","Sin subproductos","Sin maíz","Sin colorantes artificiales"], desventajas:[],
+    estado:"clean", hidrolizada:true, etapaComercial:"Adulto",
+    etapas:[["Gatito / Gestación-Lactancia","g","Apto"],["Adulto","g","Apto"],["Senior","g","Apto"]], castrado:"y",
+    precio:"$28.990", formatoKilos:1.5, fuenteVerificada:false, link:"#",
+  },
+  nutrience_salmon: {
+    marca:"Nutrience", marcaSlug:"nutrience", nombre:"Grain Free Salmon, Nuez", score:96,
+    prot:40, grasa:18, carbs:21, ceniza:7.5, fibra:3.5, humedad:10, calcio:1.1, fosforo:0.9, taurina:"MENTION",
+    ingredientes:"Pavo deshuesado, harina de pollo, harina de pavo, arvejas verdes, batatas, lentejas, tapioca, grasa de pollo, pollo deshuesado, arenque deshuesado, huevos enteros, alfalfa curada al sol, hígado de pollo, aceite de salmón, aceite de coco, calabaza, zanahorias, espinaca, brócoli, manzanas, peras, arándanos, granada, vitaminas, minerales, taurina, glucosamina, condroitina, L-carnitina, probióticos.",
+    destacados:["salmón","pollo","pavo","hígado","huevo","arenque","boniato (carbohidrato de calidad)","glucosamina (soporte articular)","condroitina (soporte articular)","L-carnitina (metabolismo de grasas)","antioxidantes naturales"],
+    alergenos:"pollo, huevo, pescado", ventajas:["Alta proteína","Bajo en cenizas","Mayor contenido de humedad","Sin subproductos","Sin maíz","Sin colorantes artificiales"], desventajas:[],
+    estado:"clean", hidrolizada:false, etapaComercial:"Adulto",
+    etapas:[["Gatito / Gestación-Lactancia","g","Apto"],["Adulto","g","Apto"],["Senior","g","Apto"]], castrado:"g",
+    precio:"$55.000", formatoKilos:5, fuenteVerificada:false, imagen:"img/nutrience-grain-free-salmon.webp", link:"#",
+  },
+  bravery_kitten: {
+    marca:"Bravery", marcaSlug:"bravery", nombre:"Chicken Kitten", score:92,
+    prot:38, grasa:18, carbs:26.3, ceniza:7.8, fibra:1.9, humedad:8, calcio:1.3, fosforo:1.1, taurina:0.2,
+    ingredientes:"Carne de pollo deshidratada, tapioca, grasa de ave, proteína hidrolizada de pollo, guisantes, levadura, extracto de levadura Saccharomyces cerevisiae, hígado de pollo hidrolizado, aceite de pescado, vaina de algarroba, huevo entero deshidratado, proteína de patata, boniato, pulpa de remolacha, inulina, celulosa natural, minerales, fibra de Plantago ovata, aceites esenciales, hidrolizado de crustáceos, hidrolizado de cartílago, yuca, concentrado de zumo de melón liofilizado.",
+    destacados:["pollo","hígado","huevo","boniato (carbohidrato de calidad)","omega 3 (ácidos grasos esenciales)","antioxidantes naturales"],
+    alergenos:"pollo, huevo", ventajas:["Bajo en cenizas","Alta taurina declarada","Sin subproductos","Sin maíz","Sin colorantes artificiales","Contiene ácidos grasos omega 3"], desventajas:[],
+    estado:"clean", hidrolizada:true, etapaComercial:"Gatito",
+    etapas:[["Gatito / Gestación-Lactancia","g","Apto"],["Adulto","g","Apto"],["Senior","g","Apto"]], castrado:"g",
+    precio:"$54.990", formatoKilos:7, fuenteVerificada:false, imagen:"img/bravery-kitten-chicken.webp", link:"#",
+  },
+  purina_gatitos: {
+    marca:"Purina", marcaSlug:"purina", nombre:"Cat Chow Gatitos", score:81,
+    prot:36, grasa:12, carbs:27.5, ceniza:9.5, fibra:3, humedad:12, calcio:1.6, fosforo:1.5, taurina:"MENTION",
+    ingredientes:"Maíz, harina de soya, harina de carne y hueso de cerdo, harina de subproductos de pollo, gluten de maíz, aceite de pollo, harina de plumas de pollo, hidrolizado de hígado de pollo y/o cerdo, harina de pescado, ácido fosfórico, colorante natural caramelo, inulina, suplementos vitamínicos, taurina, trigo, harina de algas, colorante natural rojo carmín, leche en polvo bovina, levadura de cerveza, L-lisina, carbonato de calcio.",
+    destacados:["salmón","pollo","pavo","hígado","cerdo"],
+    alergenos:"pollo, trigo, lácteos, soya, maíz, cerdo, pescado", ventajas:[], desventajas:["Contiene maíz","Contiene subproductos","Contiene colorantes","Contiene grasa animal no especificada","Contiene harina de carne y hueso sin especificar","Contiene colorante caramelo"],
+    estado:"warn", hidrolizada:true, etapaComercial:"Gatito",
+    etapas:[["Gatito / Gestación-Lactancia","g","Apto"],["Adulto","g","Apto"],["Senior","g","Apto"]], castrado:"n",
+    precio:"$31.490", formatoKilos:8, fuenteVerificada:false, link:"#",
+  },
+  acana_senior: {
+    marca:"Acana", marcaSlug:"acana", nombre:"Indoor Entrée para Gatos Senior", score:79,
+    prot:33, grasa:14, carbs:29, ceniza:10, fibra:4, humedad:10, calcio:1.8, fosforo:1.2, taurina:0.1,
+    ingredientes:"Pollo, harina de pollo, harina de pavo, grano de avena, chícharos enteros, lentejas verdes enteras, garbanzos enteros, grasa de pollo, huevos, pavo, fibra de lenteja, aceite de pescado, pato, hígado de pollo, corazón de pollo, arándanos enteros, alga marina deshidratada, taurina, L-carnitina, extracto de romero, probióticos.",
+    destacados:["pollo","pavo","hígado","corazón","huevo","pato","avena (carbohidrato de calidad)","omega 3 (ácidos grasos esenciales)","L-carnitina (metabolismo de grasas)","antioxidantes naturales"],
+    alergenos:"pollo, huevo", ventajas:["Mayor contenido de humedad","Sin subproductos","Sin maíz","Sin colorantes artificiales","Contiene ácidos grasos omega 3"], desventajas:[],
+    estado:"clean", hidrolizada:false, etapaComercial:"Senior",
+    etapas:[["Gatito / Gestación-Lactancia","g","Apto"],["Adulto","g","Apto"],["Senior","g","Apto"]], castrado:"g",
+    precio:"$23.990", formatoKilos:1.8, fuenteVerificada:false, imagen:"img/acana-indoor-entree-senior.webp", link:"#",
+  },
+  whiskas_adulto: {
+    marca:"Whiskas", marcaSlug:"whiskas", nombre:"Gato Adulto Sabor Carne", score:61,
+    prot:30, grasa:10, carbs:35.7, ceniza:8.3, fibra:4, humedad:12, calcio:1.4, fosforo:1.4, taurina:0.1,
+    ingredientes:"Maíz y/o trigo y/o arroz, harina de subproductos de pollo, gluten de maíz y/o harina de soja, grasa de pollo y/o sebo bovino, harina de carne y hueso bovino, hidrolizado de menudencias, cloruro de sodio, harina de trigo, colorantes (caramelo, rojo ponceau, amarillo ocaso, tartrazina, índigo carmín), taurina, arginina, vitaminas, minerales, prebióticos, antioxidante (BHT/BHA).",
+    destacados:["pollo","cerdo","prebióticos"],
+    alergenos:"pollo, trigo, soya, maíz, cerdo", ventajas:["Contiene prebióticos y/o probióticos"], desventajas:["Alto en carbohidratos","Contiene maíz","Contiene subproductos","Contiene colorantes","Contiene BHA","Contiene BHT","Contiene harina de carne y hueso sin especificar","Contiene colorante caramelo"],
+    estado:"warn", hidrolizada:true, etapaComercial:"Adulto",
+    etapas:[["Gatito / Gestación-Lactancia","g","Apto"],["Adulto","g","Apto"],["Senior","g","Apto"]], castrado:"n",
+    precio:"$25.790", formatoKilos:8, fuenteVerificada:false, link:"#",
+  },
+  whiskas_castrado: {
+    marca:"Whiskas", marcaSlug:"whiskas", nombre:"Gato Adulto Castrado Mix Carne", score:47,
+    prot:32, grasa:null, carbs:null, ceniza:null, fibra:5, humedad:12, calcio:1.5, fosforo:1.4, taurina:"MENTION",
+    ingredientes:"Maíz y/o trigo y/o arroz, harina de subproductos de pollo, gluten de maíz y/o harina de soja, grasa de pollo y/o sebo bovino, harina de carne y hueso bovino, hidrolizado de menudencias, pulpa de remolacha, harina de trigo, taurina, metionina, arginina, vitaminas, minerales, prebióticos, antioxidante (BHT/BHA).",
+    destacados:["pollo","cerdo"],
+    alergenos:"pollo, soya, maíz, cerdo, pescado", ventajas:[], desventajas:["Ceniza no declarada — esto también impide calcular Carbohidratos, ya que depende de ese dato (pierde puntos en ambas variables por esta única omisión)","Contiene maíz","Contiene subproductos","Contiene BHA","Contiene BHT","Contiene harina de carne y hueso sin especificar"],
+    estado:"warn", hidrolizada:true, etapaComercial:"Adulto",
+    etapas:[["Gatito / Gestación-Lactancia","r","No recomendado"],["Adulto","r","No recomendado"],["Senior","r","No recomendado"]], castrado:"n",
+    precio:"$10.890", formatoKilos:3, fuenteVerificada:false, link:"#",
+  },
+  champion_cat: {
+    marca:"Champion Cat", marcaSlug:"champion-cat", nombre:"Adulto Sabor Carne", score:35,
+    prot:32, grasa:8, carbs:null, ceniza:null, fibra:2, humedad:12, calcio:null, fosforo:null, taurina:"MENTION",
+    ingredientes:"Maíz, harina de subproductos de pollo, gluten de maíz, harina de soya, grasa animal (bovino y/o cerdo y/o pollo), harina de pescado, hidrolizado líquido de subproductos animales, cloruro de potasio, acidificantes, colorantes, levadura hidrolizada, antioxidantes, extracto de yucca schidigera.",
+    destacados:[],
+    alergenos:"", ventajas:[], desventajas:["Ceniza no declarada — esto también impide calcular Carbohidratos, ya que depende de ese dato (pierde puntos en ambas variables por esta única omisión)","Contiene maíz","Contiene subproductos","Contiene colorantes","Contiene grasa animal no especificada"],
+    estado:"warn", hidrolizada:false, etapaComercial:"Adulto",
+    etapas:[["Gatito / Gestación-Lactancia","r","No recomendado"],["Adulto","r","No recomendado"],["Senior","r","No recomendado"]], castrado:"n",
+    precio:"$23.990", formatoKilos:8, fuenteVerificada:false, link:"#",
+  },
+};
+const ETAPA_TIPS = {
+  n: "El producto no entrega toda la información necesaria para evaluar esta etapa.",
+  g: "El producto es apto para el consumo en esta etapa de vida, dentro del rango nutricional recomendado.",
+  y: "Está fuera del rango óptimo, pero dentro de un margen de tolerancia razonable para esta etapa.",
+  r: "Está fuera del rango seguro recomendado para esta etapa de vida.",
+};
+const TIP_HIDRO = "La proteína está fraccionada en partículas más pequeñas, lo que reduce la probabilidad de que desencadene una reacción alérgica. Es una característica buscada en dietas para mascotas con alergias. Si la tuya tiene una alergia diagnosticada, consulta con tu veterinario si este nivel de hidrólisis es el adecuado.";
+const TIP_ALERGENOS = "Estos ingredientes son alérgenos comunes reportados en estudios veterinarios. No es una alerta: es información para quienes ya conocen una sensibilidad diagnosticada en su mascota.";
+const TIP_CLEAN = "No se detectaron ingredientes cuestionables (maíz, subproductos no especificados, colorantes o conservantes controvertidos) en la lista declarada.";
+const TIP_WARN = "Se detectó al menos un ingrediente ambiguo o de menor calidad (maíz, subproductos, colorantes o conservantes controvertidos) en la lista declarada.";
+const TIP_CASTRADO_OK = "Magnesio dentro del rango preventivo (≤0,10% en materia seca) asociado a menor riesgo de cristales de estruvita — relevante porque los gatos castrados tienen mayor incidencia de problemas urinarios.";
+const TIP_CASTRADO_ALTO = "Magnesio por sobre el umbral preventivo (0,10% MS). Este es un criterio específico y puntual — no evalúa la calidad general del resto del producto.";
+
+// ===================== Estado =====================
+let selected = ['bravery_kitten', 'nutrience_salmon', 'acana_senior'];
+let radarActiveIdx = 0; // qué producto está destacado en el radar + tarjeta carrusel
+let pickerTargetIndex = null;
+
+// ===================== Helpers de render =====================
+function bar(val, maxv, warn, color){
+  if (val === null || val === undefined) return '<div class="bar-track"><div class="bar-fill" style="width:0%;background:#EDE0CC"></div></div>';
+  const pct = Math.min(100, Math.round((val / maxv) * 100));
+  const style = color ? `width:${pct}%;background:${color}` : `width:${pct}%`;
+  return `<div class="bar-track"><div class="bar-fill${(warn && !color) ? ' warn' : ''}" style="${style}"></div></div>`;
+}
+function fmt(val, suffix){ return (val === null || val === undefined) ? '—' : val + (suffix || ''); }
+
+function scoreTier(score){
+  if (score >= 80) return {
+    cls: 'score-good',
+    tip: '🟢 Puntaje óptimo (80-100 pts): el alimento está bien optimizado según el modelo Mestix, comparado con otros de su categoría.'
+  };
+  if (score >= 50) return {
+    cls: 'score-mid',
+    tip: '🟡 Puntaje intermedio (50-79 pts): el alimento cumple lo básico, pero hay margen de mejora en su perfil nutricional comparado con otros de su categoría.'
+  };
+  return {
+    cls: 'score-bad',
+    tip: '🔴 Puntaje bajo (0-49 pts): varias variables del alimento están fuera del rango óptimo comparado con otros de su categoría.'
+  };
+}
+
+// Color fijo por producto — se asigna por PUESTO (1er, 2do, 3er lugar), no por orden de selección
+const SERIES_COLORS = ['#F8931D', '#2B6E63', '#782A04']; // naranja · verde azulado · café
+
+// Devuelve las claves ordenadas de mejor a peor puntaje — el orden se usa en TODA la vista
+function rankedKeys(keys){
+  return [...keys].sort((a, b) => CATS_DB[b].score - CATS_DB[a].score);
+}
+
+// ============ 1. Header: SOLO título + puntaje + imagen + precio + marca ============
+function verifiedIconSVG(){
+  return `<svg width="25" height="25" viewBox="0 0 22 22" fill="none">
+    <path d="M11 0l2.39 1.7 2.9-.3 1.13 2.7 2.7 1.13-.3 2.9L21.52 11l-1.7 2.39.3 2.9-2.7 1.13-1.13 2.7-2.9-.3L11 22l-2.39-1.7-2.9.3-1.13-2.7-2.7-1.13.3-2.9L.48 11l1.7-2.39-.3-2.9 2.7-1.13L5.71 1.4l2.9.3L11 0z" fill="#2F7A4D"/>
+    <path d="M7.2 11.3l2.3 2.3 5-5" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>`;
+}
+
+function renderHeaderRow(keysRanked){
+  const medals = keysRanked.length > 1 ? computeMedals(keysRanked) : [];
+  return keysRanked.map((key, idx) => {
+    const p = CATS_DB[key];
+    const medal = medals[idx];
+    const isWin = medal && medal.cls === 'g1';
+    const tier = scoreTier(p.score);
+    const seriesColor = SERIES_COLORS[idx % SERIES_COLORS.length];
+    const removeHtml = keysRanked.length > 1 ? `<button class="remove-btn" data-key="${key}" title="Quitar de la comparación">✕</button>` : '';
+    const medalHtml = medal ? `<span class="medal ${medal.cls}">${medal.label}</span>` : '';
+    const costoKg = costoPorKilo(p);
+    const verificadoIcon = p.fuenteVerificada
+      ? `<span class="verified-icon tt" data-tip="Dato entregado directamente por el fabricante o su sitio oficial — no de una fuente de terceros.">${verifiedIconSVG()}</span>`
+      : '';
+
+    return `<div class="chead-col ${isWin ? 'win' : ''}" style="--series-color:${seriesColor}">
+      ${removeHtml}
+      ${medalHtml}
+      <div class="chead-media">
+        <img src="${p.imagen || 'img/producto_placeholder.svg'}" alt="${p.nombre}">
+        ${p.precio ? `<a href="${p.link}" class="price-badge" target="_blank" rel="noopener sponsored"><span class="price-badge-amount">${p.precio}</span><span class="price-badge-store">Ver tienda →</span></a>` : ''}
+      </div>
+      <div class="chead-body">
+        <a href="categoria.html?marca=${p.marcaSlug}" class="brand-tag">${p.marca}</a>
+        <h3>${isWin ? '<span class="crown" title="Ganador">👑</span> ' : ''}${p.nombre}${verificadoIcon}</h3>
+        <div class="score-big"><span class="num ${tier.cls} tt" data-tip="${tier.tip}">${p.score}</span><span class="of">/ 100 pts</span></div>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function fmtCLP(n){ return '$' + Math.round(n).toLocaleString('es-CL'); }
+
+function costoPorKilo(p){
+  if (!p.precio || !p.formatoKilos) return null;
+  const n = parseFloat(p.precio.replace(/[^\d]/g, ''));
+  if (isNaN(n) || p.formatoKilos <= 0) return null;
+  return n / p.formatoKilos;
+}
+
+// ============ 2. Cajas por característica (grilla de N por fila), con las 3 filas de producto adentro ============
+// direction: 'higher' (más es mejor), 'lower' (menos es mejor), o {target:N} (más cerca de N es mejor)
+function bestKeyByMetric(keysRanked, metricFn, direction){
+  let bestKeys = [], bestVal = null;
+  keysRanked.forEach(k => {
+    const v = metricFn(CATS_DB[k]);
+    if (v === null || v === undefined) return;
+    let better, equal = false;
+    if (bestVal === null) better = true;
+    else if (direction === 'lower'){ better = v < bestVal; equal = v === bestVal; }
+    else if (direction && typeof direction === 'object'){
+      const d1 = Math.abs(v - direction.target), d2 = Math.abs(bestVal - direction.target);
+      better = d1 < d2; equal = d1 === d2;
+    }
+    else { better = v > bestVal; equal = v === bestVal; } // 'higher'
+    if (better){ bestVal = v; bestKeys = [k]; }
+    else if (equal){ bestKeys.push(k); }
+  });
+  const tie = bestKeys.length > 1;
+  return tie ? {key:null, tie:true, tiedKeys:bestKeys} : {key:bestKeys[0] || null, tie:false, tiedKeys:bestKeys};
+}
+
+function fsection(title, tip, keysRanked, rowFn, explanation, metricFn, direction){
+  const result = (metricFn && keysRanked.length > 1) ? bestKeyByMetric(keysRanked, metricFn, direction) : null;
+  const bestKey = result ? result.key : null;
+  const rows = keysRanked.map((k, i) => {
+    const color = SERIES_COLORS[i % SERIES_COLORS.length];
+    return `<div class="frow">
+      <span class="frow-label">${CATS_DB[k].nombre}</span>
+      ${rowFn(CATS_DB[k], k, color)}
+    </div>`;
+  }).join('');
+  let winnerBadge = '';
+  if (result){
+    if (result.tie){
+      const nombresEmpatados = result.tiedKeys.map(k => CATS_DB[k].nombre).join(' y ');
+      winnerBadge = `<span class="fwinner-badge tie tt" data-tip="Empatan: ${nombresEmpatados}" style="cursor:help;">Empate</span>`;
+    }
+    else if (bestKey) winnerBadge = `<span class="fwinner-badge">${CATS_DB[bestKey].nombre}</span>`;
+  }
+  return `<div class="fsection">
+    <div class="fsection-head">
+      <h3 class="fsection-title">${title}${tip ? ` <span class="tt" data-tip="${tip}" style="cursor:help;">ⓘ</span>` : ''}</h3>
+      ${winnerBadge}
+    </div>
+    ${explanation ? `<p class="fsection-explain">${explanation}</p>` : ''}
+    <div class="fsection-rows">${rows}</div>
+  </div>`;
+}
+
+function fgrid(sectionsHtml, colCount){
+  return `<div class="fgrid fgrid-${colCount}">${sectionsHtml}</div>`;
+}
+
+// ============ 3. Cajas por producto (para contenido narrativo: ingredientes, ventajas, raza) ============
+function productBox(title, keysRanked, bodyFn){
+  const medals = keysRanked.length > 1 ? computeMedals(keysRanked) : [];
+  const cols = keysRanked.map((k, i) => {
+    const p = CATS_DB[k];
+    const isWin = medals[i] && medals[i].cls === 'g1';
+    const color = SERIES_COLORS[i % SERIES_COLORS.length];
+    return `<div class="pbox-col">
+      <span class="frow-label">${isWin ? '👑 ' : ''}${p.nombre}</span>
+      ${bodyFn(p, k)}
+    </div>`;
+  }).join('');
+  return `${title ? `<div class="fgroup-label">${title}</div>` : ''}<div class="pbox-grid cols-${keysRanked.length}">${cols}</div>`;
+}
+
+// ============ ¿Cuál es para ti? — mejores características reales de cada producto ============
+// ============ Sistema de 21 mensajes de marketing, con reparto sin repetir ============
+const MESSAGE_TEXTS = {
+  1: "Suave para gatos con alergias",
+  2: "Compatible con alimentación para gatos castrados/esterilizados",
+  3: "Ideal para gatitos en crecimiento",
+  4: "También adecuado para gestación y lactancia",
+  5: "Pensado especialmente para la etapa senior",
+  6: "Con omega 3 para un pelaje brillante y sano",
+  7: "Con antioxidantes que ayudan a cuidar sus defensas",
+  8: "Con taurina, buena para su corazón y su vista",
+  9: "Con fibra que ayuda a una buena digestión",
+  10: "Más energía para gatos activos",
+  11: "Se mantiene fresco y crocante por más tiempo",
+  12: "Cumple con lo que pide AAFCO para su etapa de vida",
+  13: "Categoría premium según su perfil nutricional",
+  14: "Categoría super premium según su perfil nutricional",
+  15: "Pensado para todas las edades de tu gato",
+  16: "La mejor relación entre calidad y precio",
+};
+// Orden de prioridad: los primeros de la lista se reparten antes que los últimos
+const MESSAGE_PRIORITY = [1,2,3,4,5,6,7,8,9,10,16,11,12,13,14,15];
+
+function parsePrecio(str){
+  if (!str) return null;
+  const n = parseFloat(str.replace(/[^\d]/g, ''));
+  return isNaN(n) ? null : n;
+}
+
+// Mensajes que dependen solo del producto — mismas condiciones que la fórmula del Excel
+function getAbsoluteMessages(p){
+  const ids = [];
+  const dest = (p.destacados || []).join(' ').toLowerCase();
+
+  if (p.hidrolizada) ids.push(1);
+  if (p.castrado === 'g') ids.push(2);
+  if (p.etapaComercial === 'Gatito') { ids.push(3); ids.push(4); }
+  if (p.etapaComercial === 'Senior') ids.push(5);
+  if (/omega/.test(dest)) ids.push(6);
+  if (/antioxidante/.test(dest)) ids.push(7);
+  if (p.taurina !== null && (p.taurina === 'MENTION' || p.taurina >= 0.1)) ids.push(8);
+  if (p.fibra !== null && p.fibra >= 2) ids.push(9);
+  if (p.grasa !== null && p.grasa >= 18) ids.push(10);
+  if (p.humedad !== null && p.humedad <= 12) ids.push(11);
+  const etapaAdulto = p.etapas.find(e => e[0] === 'Adulto');
+  if (etapaAdulto && etapaAdulto[1] === 'g') ids.push(12);
+  if (p.score >= 80 && p.score < 90) ids.push(13);
+  if (p.score >= 90) ids.push(14);
+  if (p.etapaComercial === 'Todas las etapas') ids.push(15);
+
+  return ids;
+}
+
+// Mensajes que dependen de con quiénes se está comparando (Ca:P y precio/calidad)
+function getRelativeMessages(keysRanked){
+  const winners = {};
+  // No hay mensaje de "mejor Ca:P" en gatos: a diferencia de perros, no existe una banda "ideal"
+  // más angosta que el rango completo de FEDIAF (1:1-2:1) — inventar un punto medio "ideal" para
+  // poder elegir un ganador rompería la decisión ya tomada de no inventar precisión sin respaldo.
+
+  const precioResult = bestKeyByMetric(keysRanked, p => {
+    const precio = parsePrecio(p.precio);
+    return precio ? p.score / precio : null;
+  }, 'higher');
+  if (!precioResult.tie && precioResult.key) winners[16] = precioResult.key;
+
+  return winners;
+}
+
+// Reparto: 1er lugar elige primero, sin repetir con lo que ya tomó otro
+function repartirMensajes(keysRanked){
+  const relWinners = getRelativeMessages(keysRanked);
+  const pool = {};
+  keysRanked.forEach(k => {
+    const p = CATS_DB[k];
+    const ids = getAbsoluteMessages(p);
+    Object.keys(relWinners).forEach(msgId => { if (relWinners[msgId] === k) ids.push(parseInt(msgId)); });
+    pool[k] = ids;
+  });
+
+  const used = new Set();
+  const asignados = {};
+  keysRanked.forEach(k => {
+    const disponibles = pool[k].filter(id => !used.has(id));
+    disponibles.sort((a, b) => MESSAGE_PRIORITY.indexOf(a) - MESSAGE_PRIORITY.indexOf(b));
+    const elegidos = disponibles.slice(0, 3);
+    elegidos.forEach(id => used.add(id));
+    asignados[k] = elegidos;
+  });
+  return asignados;
+}
+
+function renderWhichForYou(keysRanked){
+  if (keysRanked.length < 2) return '';
+  const medals = computeMedals(keysRanked);
+  const asignados = repartirMensajes(keysRanked);
+
+  const cards = keysRanked.map((k, i) => {
+    const p = CATS_DB[k];
+    const color = SERIES_COLORS[i % SERIES_COLORS.length];
+    const isWin = medals[i] && medals[i].cls === 'g1';
+    const mensajes = asignados[k];
+
+    const items = mensajes.length
+      ? mensajes.map(id => `<li>${MESSAGE_TEXTS[id]}</li>`).join('')
+      : '<li style="opacity:.5;font-style:italic;">Sin ventajas destacadas frente a los otros</li>';
+
+    return `<div class="wfy-card" style="--series-color:${color}">
+      <div class="wfy-head" style="color:${color}">${isWin ? '👑 ' : ''}${p.nombre} — si te importa…</div>
+      <ul class="wfy-list">${items}</ul>
+      <a href="#nucleo-section" class="wfy-link">balance completo ↓</a>
+    </div>`;
+  }).join('');
+
+  return `<section class="fgroup which-for-you"><div class="wrap">
+    <div class="fgroup-label">¿Cuál es para ti?</div>
+    <div class="wfy-grid cols-${keysRanked.length}">${cards}</div>
+  </div></section>`;
+}
+
+function renderRecap(keysRanked){
+  if (keysRanked.length < 2) return '';
+  const winner = CATS_DB[keysRanked[0]];
+  return `<div class="recap-bar">
+    <div class="wrap recap-inner">
+      <span>¿Sigues aquí? El veredicto se mantiene: <strong>${winner.nombre}</strong>.</span>
+      ${winner.link ? `<a href="${winner.link}" target="_blank" rel="noopener sponsored" class="recap-cta">Ver tienda →</a>` : ''}
+    </div>
+  </div>`;
+}
+
+function renderExplore(){
+  const todosOrdenados = Object.keys(CATS_DB).sort((a,b) => CATS_DB[b].score - CATS_DB[a].score);
+
+  // Sugerencia: el mejor puntuado + otro que no esté en la comparación actual
+  const sugeridoA = todosOrdenados[0];
+  const sugeridoB = todosOrdenados.find(k => k !== sugeridoA && !selected.includes(k)) || todosOrdenados[1];
+
+  const rankedChips = todosOrdenados.slice(0, 5).map((k, i) => {
+    const p = CATS_DB[k];
+    const yaSeleccionado = selected.includes(k);
+    return `<button class="explore-chip ${yaSeleccionado ? 'active' : ''}" data-key="${k}">
+      <span class="explore-chip-rank">${i+1}</span>
+      <img src="${p.imagen || 'img/producto_placeholder.svg'}" alt="${p.nombre}">
+      <span class="explore-chip-name">${p.marca}<br>${p.nombre}</span>
+      <span class="explore-chip-add">${yaSeleccionado ? '✓' : '+'}</span>
+    </button>`;
+  }).join('');
+
+  const pares = [];
+  for (let i = 0; i < todosOrdenados.length - 1 && pares.length < 3; i++){
+    pares.push([todosOrdenados[i], todosOrdenados[i+1]]);
+  }
+  const comparadosLinks = pares.map(([a,b]) =>
+    `<a href="#" class="explore-popular-link" data-keys="${a},${b}">${CATS_DB[a].nombre} vs ${CATS_DB[b].nombre}</a>`
+  ).join(' · ');
+
+  return `<section class="explore-section"><div class="wrap">
+    <h2>Sigue explorando</h2>
+    <div class="explore-suggest" data-keys="${sugeridoA},${sugeridoB}">
+      <div class="explore-suggest-thumbs">
+        <img src="${CATS_DB[sugeridoA].imagen || 'img/producto_placeholder.svg'}" alt="">
+        <span class="explore-vs">vs</span>
+        <img src="${CATS_DB[sugeridoB].imagen || 'img/producto_placeholder.svg'}" alt="">
+      </div>
+      <div class="explore-suggest-text">
+        <h3>${CATS_DB[sugeridoA].nombre} vs ${CATS_DB[sugeridoB].nombre}</h3>
+        <p>La mayoría compara esto después</p>
+      </div>
+      <button class="explore-suggest-btn">Comparar →</button>
+    </div>
+
+    <div class="fgroup-label" style="margin-top:36px;">Lo mejor de la categoría</div>
+    <div class="explore-ranked">${rankedChips}</div>
+
+    <p class="explore-popular-label">Lo más comparado ahora: ${comparadosLinks}</p>
+  </div></section>`;
+}
+
+function renderFeatureSections(keysRanked){
+  if (keysRanked.length === 0) return '';
+  let html = '';
+
+  
+
+  html += `<section class="fgroup nucleo" id="nucleo-section"><div class="wrap">
+    <div class="fgroup-label">Detalle del puntaje — Núcleo</div>
+    ${fgrid(
+      fsection('Proteína', null, keysRanked, (p,k,c) => `<div class="frow-value">${fmt(p.prot,'%')}</div>${bar(p.prot,50,false,c)}`,
+        'Es importante porque mantiene la masa muscular y sostiene funciones metabólicas clave — la variable de mayor peso en el puntaje.',
+        p => p.prot, 'higher') +
+      fsection('Grasa', null, keysRanked, (p,k,c) => `<div class="frow-value">${fmt(p.grasa,'%')}</div>${bar(p.grasa,30,false,c)}`,
+        'Es importante porque es la principal fuente de energía y aporta ácidos grasos esenciales para la piel y el pelaje.',
+        p => p.grasa, 'higher') +
+      fsection('Carbohidratos', null, keysRanked, (p,k,c) => `<div class="frow-value">${fmt(p.carbs,'%')}</div>${bar(p.carbs,50,false,c)}`,
+        'No es un nutriente esencial para el gato — carnívoro estricto por naturaleza. Se prioriza un nivel más bajo, coherente con su patrón alimentario natural.',
+        p => p.carbs, 'lower')
+    , 3)}
+    ${fgrid(
+      fsection('Ceniza', null, keysRanked, (p,k,c) => `<div class="frow-value">${fmt(p.ceniza,'%')}</div>${bar(p.ceniza,12,false,c)}`,
+        'Es un indicador indirecto del contenido mineral total del alimento — valores muy altos pueden señalar una formulación menos equilibrada.',
+        p => p.ceniza, 'lower') +
+      fsection('Fibra', null, keysRanked, (p,k,c) => `<div class="frow-value">${fmt(p.fibra,'%')}</div>${bar(p.fibra,10,false,c)}`,
+        'Es importante porque aporta a la salud digestiva y ayuda a regular el tránsito intestinal.',
+        p => p.fibra, 'lower') +
+      fsection('Humedad', null, keysRanked, (p,k,c) => `<div class="frow-value">${fmt(p.humedad,'%')}</div>${bar(p.humedad,16,false,c)}`,
+        'Permite interpretar correctamente el resto del análisis garantizado, ya que se trata de un alimento seco.',
+        p => p.humedad, 'lower')
+    , 3)}
+  </div> <div class="wrap ad-infeed-wrap">
+  <div class="ad-slot ad-infeed"><span class="ad-label">Publicidad</span><span class="ad-size">Banner de contenido · 728 × 90</span></div>
+</div></section>`;
+
+  html += `<section class="fgroup balance"><div class="wrap">
+    <div class="fgroup-label">Balance mineral</div>
+    ${fgrid(
+      fsection('Calcio', null, keysRanked, (p,k,c) => `<div class="frow-value">${fmt(p.calcio,'%')}</div>${bar(p.calcio,2,false,c)}`,
+        'Es esencial para el desarrollo óseo. Recibe el puntaje completo en todo el rango de seguridad de AAFCO (0,5%–2,5%) — no existe evidencia de que un valor sea "mejor" que otro dentro de ese rango.',
+        p => scoreCalcio(p.calcio), 'higher') +
+      fsection('Fósforo', null, keysRanked, (p,k,c) => `<div class="frow-value">${fmt(p.fosforo,'%')}</div>${bar(p.fosforo,2,false,c)}`,
+        'Trabaja en conjunto con el calcio. Mismo criterio: puntaje completo en todo el rango de seguridad de AAFCO (0,4%–1,6%).',
+        p => scoreFosforo(p.fosforo), 'higher') +
+      fsection('Relación Ca:P', null, keysRanked, (p,k,c) => {
+        const ratio = (p.calcio && p.fosforo) ? (p.calcio / p.fosforo) : null;
+        return `<div class="frow-value">${ratio ? ratio.toFixed(2) + ':1' : 'Sin dato'}</div>${ratio ? bar(ratio, 2.5, false, c) : ''}`;
+      },
+        'No basta con que cada mineral esté en rango — su equilibrio entre sí también importa. El puntaje máximo corresponde al óptimo clínico del Merck Veterinary Manual (1,2–1,4:1); el resto del rango de seguridad AAFCO (1:1–2:1) recibe puntaje parcial.',
+        p => scoreCaP(p.calcio, p.fosforo), 'higher')
+    , 3)}
+  </div></section>`;
+
+  html += '<div id="radarContainer"></div>';
+
+  if (keysRanked.length === 1) {
+    const p = CATS_DB[keysRanked[0]];
+    const destacadosLi = p.destacados.length ? p.destacados.map(d => `<li>${d}</li>`).join('') : '<li style="opacity:.5;font-style:italic;">Ninguno detectado</li>';
+    const hidroHtml = p.hidrolizada ? `<div class="hidro-badge tt" data-tip="${TIP_HIDRO}">🧬 Proteína hidrolizada</div>` : '';
+    const ingTag = p.estado === 'clean'
+      ? `<span class="ing-tag clean tt" data-tip="${TIP_CLEAN}"><span class="ic">✓</span>Ingredientes limpios</span>`
+      : `<span class="ing-tag warn tt" data-tip="${TIP_WARN}"><span class="ic">!</span>Ingredientes cuestionables</span>`;
+    html += `<section class="fgroup ingredientes"><div class="wrap">
+      <div class="fgroup-label">Ingredientes</div>
+      <div class="ing-solo-box">
+        <div class="ing-solo-col">
+          <div class="section-label">Ingredientes declarados</div>
+          <p class="frow-text">${p.ingredientes}</p>
+        </div>
+        <div class="ing-solo-col">
+          <div class="section-label">Destacados</div>
+          <ul class="destacados-list">${destacadosLi}</ul>
+          <div class="allergen-note" style="margin:14px 0;"><strong class="tt" data-tip="${TIP_ALERGENOS}">Alérgenos potenciales:</strong> ${p.alergenos}</div>
+          ${hidroHtml}
+          <div style="margin-top:14px;">${ingTag}</div>
+        </div>
+      </div>
+    </div></section>`;
+  } else {
+  html += `<section class="fgroup ingredientes"><div class="wrap">${productBox('Ingredientes', keysRanked, (p) => {
+    const destacadosLi = p.destacados.length ? p.destacados.map(d => `<li>${d}</li>`).join('') : '<li style="opacity:.5;font-style:italic;">Ninguno detectado</li>';
+    const hidroHtml = p.hidrolizada ? `<div class="hidro-badge tt" data-tip="${TIP_HIDRO}">🧬 Proteína hidrolizada</div>` : '';
+    const ingTag = p.estado === 'clean'
+      ? `<span class="ing-tag clean tt" data-tip="${TIP_CLEAN}"><span class="ic">✓</span>Ingredientes limpios</span>`
+      : `<span class="ing-tag warn tt" data-tip="${TIP_WARN}"><span class="ic">!</span>Ingredientes cuestionables</span>`;
+    return `<p class="frow-text">${p.ingredientes}</p>
+      <div class="section-label" style="margin-top:14px;">Destacados</div>
+      <ul class="destacados-list">${destacadosLi}</ul>
+      <div class="allergen-note" style="margin:14px 0;"><strong class="tt" data-tip="${TIP_ALERGENOS}">Alérgenos potenciales:</strong> ${p.alergenos}</div>
+      ${hidroHtml}
+      <div style="margin-top:14px;">${ingTag}</div>`;
+  })}</div></section>`;
+  }
+
+  html += `<section class="fgroup ventajasDesventajas"><div class="wrap">${productBox('Ventajas y desventajas', keysRanked, (p) => {
+    const ventajasBlock = p.ventajas.length
+      ? `<div class="adv-block pos"><div class="label">Ventajas</div><ul class="adv-list">${p.ventajas.map(v => `<li>${v}</li>`).join('')}</ul></div>`
+      : '';
+    const desventajasBlock = p.desventajas.length
+      ? `<div class="adv-block neg"><div class="label">Desventajas</div><ul class="adv-list">${p.desventajas.map(v => `<li>${v}</li>`).join('')}</ul></div>`
+      : '';
+    return ventajasBlock + desventajasBlock || '<p class="frow-text" style="opacity:.5;font-style:italic;">Sin ventajas ni desventajas detectadas.</p>';
+  })}</div></section>`;
+
+  const ETAPA_RANK = {g:3, y:2, r:1, n:0};
+  html += `<section class="fgroup etapasRazas"><div class="wrap">
+    ${productBox('Etapas de vida', keysRanked, (p) => {
+      const filas = ['Gatito / Gestación-Lactancia','Adulto','Senior'].map((etapaNombre, i) => {
+        const [, cls, texto] = p.etapas[i];
+        return `<div class="etapa-row"><span>${etapaNombre}</span><span class="etapa-pill ${cls} tt" data-tip="${ETAPA_TIPS[cls]}">${texto}</span></div>`;
+      }).join('');
+      return filas;
+    })}
+ ${productBox('Castrados / Esterilizados', keysRanked, (p) => {
+    if (p.castrado === 'g') return `<span class="etapa-pill g tt" data-tip="${TIP_CASTRADO_OK}">🟢 Compatible</span>`;
+    if (p.castrado === 'y') return `<span class="etapa-pill y tt" data-tip="${TIP_CASTRADO_ALTO}">🟡 Sobre el nivel preventivo</span>`;
+    return `<span class="etapa-pill n tt" data-tip="El fabricante no declara magnesio — no es posible evaluar este criterio de prevención urinaria.">⚪ Información insuficiente</span>`;
+  })}</div><div class="wrap ad-infeed-wrap">
+  <div class="ad-slot ad-infeed"><span class="ad-label">Publicidad</span><span class="ad-size">Banner de contenido · 728 × 90</span></div>
+</div></section>`;
+
+  const conPrecioKilo = keysRanked.filter(k => costoPorKilo(CATS_DB[k]) !== null);
+  if (conPrecioKilo.length >= 2) {
+    const mejorPrecioKilo = bestKeyByMetric(keysRanked, p => costoPorKilo(p), 'lower');
+    html += `<section class="fgroup precio"><div class="wrap">
+      <div class="fgroup-label">Precio</div>
+      <div class="fsection-explain" style="margin-bottom:16px;">El precio total no siempre refleja el costo real — un formato más grande puede salir más barato por kilo aunque cueste más en total.</div>
+      ${productBox('', keysRanked, (p) => {
+        const costo = costoPorKilo(p);
+        const esMejor = !mejorPrecioKilo.tie && p.formatoKilos && costoPorKilo(p) === costoPorKilo(CATS_DB[mejorPrecioKilo.key]);
+        return `
+          ${esMejor ? `<span class="fwinner-badge" style="margin-bottom:10px;display:inline-block;">💰 Mejor precio por kilo</span>` : ''}
+          <div class="precio-row"><span class="precio-label">Precio</span><span class="precio-value">${p.precio || 'Sin dato'}</span></div>
+          <div class="precio-row"><span class="precio-label">Formato</span><span class="precio-value">${p.formatoKilos ? p.formatoKilos + ' kg' : 'Sin dato'}</span></div>
+          <div class="precio-row destacado"><span class="precio-label">Por kilo</span><span class="precio-value">${costo ? fmtCLP(costo) : 'Sin dato'}</span></div>
+        `;
+      })}
+    </div></section>`;
+  }
+
+  return html;
+}
+
+function renderAddSlot(idx){
+  return `<div class="add-slot" data-idx="${idx}">
+    <div class="plus-circle">+</div>
+    <span>Agregar producto</span>
+    <small>Hasta 3 en total</small>
+  </div>`;
+}
+
+function computeMedals(keys){
+  const scores = keys.map(k => CATS_DB[k].score);
+  return keys.map((k, i) => {
+    const score = scores[i];
+    const better = scores.filter(s => s > score).length;
+    const rank = better + 1;
+    const map = {1:{cls:'g1',label:'1er lugar'},2:{cls:'g2',label:'2do lugar'},3:{cls:'g3',label:'3er lugar'}};
+    return keys.length > 1 ? map[rank] : null;
+  });
+}
+
+// ============ Fórmulas reales de puntaje por variable — mismas que el Excel de gatos, ya auditadas ============
+function scoreProteina(c){ if(c==null) return 0; return c>=38?28:c>=36?24.6:c>=33?21.3:c>=31?17.9:c>=26?15.7:0; }
+function scoreGrasa(d){ if(d==null) return 0; return d>=18?18:d>=16?16:d>=14?14:d>=12?11:d>=9?8:0; }
+function scoreCarbohidratos(h){ if(h==null) return 0; return h<=20?20:h<=24?16.7:h<=29?13.3:h<=33?8.9:h<=37?4.4:0; }
+function scoreCeniza(f){ if(f==null) return 0; return f<=7?4:f<=7.5?3.5:f<=8.3?3:f<=9.5?2:f<=11?1:0; }
+function scoreFibra(e){ if(e==null) return 0; return e<=3?3:e<=4?2.5:e<=5?2:e<=6?1:0; }
+function scoreHumedad(g){ if(g==null) return 0; return g<=12?6:g<14?4:0; }
+function scoreCalcio(i){ if(i==null) return 0; return i>=0.6?4:0; }
+function scoreFosforo(j){ if(j==null) return 0; return j>=0.5?4:0; }
+function scoreCaP(i,j){ if(!i||!j) return 0; const r=i/j; return (r>=1&&r<=2)?5:0; }
+function scoreTaurina(k){ if(k==null) return 0; if(typeof k === 'number') return k>=0.1?8:0; if(String(k).toUpperCase().trim()==='MENTION') return 8; return 0; }
+
+function subScores(p){
+  return {
+    'proteína': scoreProteina(p.prot),
+    'grasa': scoreGrasa(p.grasa),
+    'nivel de carbohidratos': scoreCarbohidratos(p.carbs),
+    'nivel de ceniza': scoreCeniza(p.ceniza),
+    'nivel de fibra': scoreFibra(p.fibra),
+    'humedad': scoreHumedad(p.humedad),
+    'calcio': scoreCalcio(p.calcio),
+    'fósforo': scoreFosforo(p.fosforo),
+    'equilibrio entre calcio y fósforo': scoreCaP(p.calcio, p.fosforo),
+    'taurina': scoreTaurina(p.taurina),
+  };
+}
+
+// ============ Radar de 7 ejes (incluye Taurina, exclusiva de gatos) — normalizado a 0-100% ============
+const RADAR_EJES = ['Proteína', 'Grasa', 'Carbohidratos', 'Minerales', 'Fibra', 'Humedad', 'Taurina'];
+function radarValores(p){
+  const minerales = ((scoreCalcio(p.calcio)/4) + (scoreFosforo(p.fosforo)/4) + (scoreCaP(p.calcio,p.fosforo)/5)) / 3 * 100;
+  return [
+    scoreProteina(p.prot) / 28 * 100,
+    scoreGrasa(p.grasa) / 18 * 100,
+    scoreCarbohidratos(p.carbs) / 20 * 100,
+    minerales,
+    scoreFibra(p.fibra) / 3 * 100,
+    scoreHumedad(p.humedad) / 6 * 100,
+    scoreTaurina(p.taurina) / 8 * 100,
+  ];
+}
+
+const MEDAL_LABELS = ['🥇 1er lugar', '🥈 2do lugar', '🥉 3er lugar'];
+
+function updateRadar(keysRanked){
+  const container = document.getElementById('radarContainer');
+  container.innerHTML = renderRadar(keysRanked);
+
+  const irA = (idx) => {
+    radarActiveIdx = ((idx % keysRanked.length) + keysRanked.length) % keysRanked.length;
+    updateRadar(keysRanked);
+  };
+
+  container.querySelectorAll('.radar-carousel-arrow').forEach(btn => {
+    btn.addEventListener('click', () => irA(radarActiveIdx + parseInt(btn.dataset.dir)));
+  });
+  container.querySelectorAll('.radar-carousel-dot').forEach(btn => {
+    btn.addEventListener('click', () => irA(parseInt(btn.dataset.idx)));
+  });
+  container.querySelectorAll('.radar-legend-item').forEach(el => {
+    el.addEventListener('click', () => irA(parseInt(el.dataset.idx)));
+  });
+}
+
+function renderRadar(keysRanked){
+  if (keysRanked.length === 0) return '';
+  if (radarActiveIdx >= keysRanked.length) radarActiveIdx = 0; // por si la selección cambió y el índice quedó fuera de rango
+
+  const RADAR_COLORS = ['#FFA733', '#2ED9A3', '#FF6F91']; // más vibrantes que SERIES_COLORS — solo para esta sección, sobre fondo negro
+  const cx = 260, cy = 250, R = 170;
+  const angleFor = i => -Math.PI/2 + i * (Math.PI*2/RADAR_EJES.length);
+  const pointAt = (i, pct) => {
+    const a = angleFor(i);
+    const r = R * (pct/100);
+    return [cx + r*Math.cos(a), cy + r*Math.sin(a)];
+  };
+
+  // Anillos de la grilla (25/50/75/100%)
+  let grid = '';
+  [25,50,75,100].forEach(pct => {
+    const pts = RADAR_EJES.map((_, i) => pointAt(i, pct).join(',')).join(' ');
+    grid += `<polygon points="${pts}" fill="none" stroke="rgba(232,242,251,0.12)" stroke-width="1"/>`;
+  });
+  // Líneas de eje + etiquetas
+  let axes = '';
+  RADAR_EJES.forEach((label, i) => {
+    const [x,y] = pointAt(i, 100);
+    axes += `<line x1="${cx}" y1="${cy}" x2="${x}" y2="${y}" stroke="rgba(232,242,251,0.12)" stroke-width="1"/>`;
+    const [lx,ly] = pointAt(i, 122);
+    axes += `<text x="${lx}" y="${ly}" text-anchor="middle" dominant-baseline="middle" fill="#E8F2FB" font-family="Nunito Sans" font-size="13.5" font-weight="700">${label}</text>`;
+  });
+
+  // Una forma por producto — la activa se dibuja al final (queda arriba) y resaltada; el resto se atenúa
+  let shapesDim = '', shapeActive = '';
+  const legend = keysRanked.map((k, idx) => {
+    const p = CATS_DB[k];
+    const color = RADAR_COLORS[idx % RADAR_COLORS.length];
+    const isActive = idx === radarActiveIdx;
+    const valores = radarValores(p);
+    const pts = valores.map((v, i) => pointAt(i, Math.max(v,2)).join(',')).join(' ');
+    const dots = valores.map((v, i) => { const [x,y] = pointAt(i, Math.max(v,2)); return `<circle cx="${x}" cy="${y}" r="${isActive ? 5 : 3}" fill="${color}" fill-opacity="${isActive ? 1 : 0.5}"/>`; }).join('');
+    const shapeMarkup = `<polygon points="${pts}" fill="${color}" fill-opacity="${isActive ? 0.22 : 0.05}" stroke="${color}" stroke-opacity="${isActive ? 1 : 0.35}" stroke-width="${isActive ? 3.5 : 1.5}"/>${dots}`;
+    if (isActive) shapeActive += shapeMarkup; else shapesDim += shapeMarkup;
+    return `<div class="radar-legend-item ${isActive ? 'active' : ''}" data-idx="${idx}">
+      <span class="radar-dot" style="background:${color}"></span>
+      <div><span class="radar-legend-name">${p.marca}<br>${p.nombre}</span><span class="radar-legend-score" style="color:${color}">${p.score}</span></div>
+    </div>`;
+  }).join('');
+
+  const activeKey = keysRanked[radarActiveIdx];
+  const activeP = CATS_DB[activeKey];
+  const activeColor = RADAR_COLORS[radarActiveIdx % RADAR_COLORS.length];
+  const dots = keysRanked.map((_, idx) => `<button class="radar-carousel-dot ${idx === radarActiveIdx ? 'active' : ''}" data-idx="${idx}"></button>`).join('');
+
+  const winnerCard = `<div class="radar-winner-card">
+    <div class="radar-carousel-nav">
+      <button class="radar-carousel-arrow" data-dir="-1" ${keysRanked.length < 2 ? 'disabled' : ''}>‹</button>
+      ${keysRanked.length > 1 ? `<span class="radar-winner-tag" style="background:${activeColor};">${MEDAL_LABELS[radarActiveIdx]}</span>` : '<span></span>'}
+      <button class="radar-carousel-arrow" data-dir="1" ${keysRanked.length < 2 ? 'disabled' : ''}>›</button>
+    </div>
+    <img src="${activeP.imagen || 'img/producto_placeholder.svg'}" alt="${activeP.nombre}">
+    <div class="radar-winner-brand">${activeP.marca}</div>
+    <h3 class="radar-winner-name">${activeP.nombre}${activeP.fuenteVerificada ? `<span class="verified-icon tt" data-tip="Dato entregado directamente por el fabricante o su sitio oficial">${verifiedIconSVG()}</span>` : ''}</h3>
+    <div class="radar-winner-score" style="color:${activeColor};">${activeP.score}<span>/ 100 pts</span></div>
+    ${activeP.precio ? `<a href="${activeP.link}" class="radar-winner-cta" style="background:${activeColor};" target="_blank" rel="noopener sponsored">${activeP.precio} · Ver tienda →</a>` : ''}
+    ${keysRanked.length > 1 ? `<div class="radar-carousel-dots">${dots}</div>` : ''}
+  </div>`;
+
+  return `<section class="fgroup radar"><div class="wrap">
+    <div class="fgroup-label" style="color:#F8931D;">Visión general</div>
+    <div class="radar-box">
+      <div class="radar-legend">${legend}</div>
+      <svg class="radar-svg" viewBox="0 0 520 500" xmlns="http://www.w3.org/2000/svg">
+        ${grid}${axes}${shapesDim}${shapeActive}
+      </svg>
+      ${winnerCard}
+    </div>
+  </div></section>`;
+}
+
+function renderVerdict(keys){
+  if (keys.length < 2) return '';
+  const medals = computeMedals(keys);
+  const winIdx = medals.findIndex(m => m && m.cls === 'g1');
+  const winKey = keys[winIdx];
+  const win = CATS_DB[winKey];
+  const others = keys.filter(k => k !== winKey).map(k => CATS_DB[k]);
+
+  const winSubs = subScores(win);
+  const otherSubs = others.map(o => subScores(o));
+
+  // Para cada variable, comparamos contra el rival que MÁS se le acerca (el margen más conservador,
+  // no el más favorable) — así la explicación es honesta incluso si hay más de un producto compitiendo.
+  const margenes = Object.keys(winSubs).map(variable => {
+    const valoresOtros = otherSubs.map(s => s[variable]);
+    const masCercano = Math.max(...valoresOtros);
+    return { variable, margen: winSubs[variable] - masCercano };
+  });
+
+  margenes.sort((a, b) => b.margen - a.margen);
+  const UMBRAL = 1; // diferencia mínima de puntos para contar como una ventaja real, no ruido
+  const ventajasReales = margenes.filter(m => m.margen >= UMBRAL);
+
+  const enCero = Object.keys(winSubs).filter(v => winSubs[v] === 0 && !ventajasReales.some(x => x.variable === v));
+
+  let explicacion;
+  if (ventajasReales.length === 0) {
+    explicacion = `No es porque destaque muchísimo en una sola cosa — de hecho, en varias variables va prácticamente empatado con los demás. Gana porque no tiene ninguna debilidad grande: suma puntos de forma pareja en casi todo, mientras que los otros pierden puntos en alguna parte puntual.`;
+  } else if (ventajasReales.length === 1) {
+    const resto = enCero.length
+      ? `Eso sí, hay que decirlo: no consigue puntos en <b>${enCero.join(' ni en ')}</b>, así que no es perfecto en todo.`
+      : `En el resto de las variables está dentro de lo normal, sin destacar especialmente ni quedarse atrás.`;
+    explicacion = `${resto} Su ventaja real está en <b>${ventajasReales[0].variable}</b>, donde saca más puntos que los demás — y esa diferencia alcanza para que su puntaje total termine más arriba.`;
+  } else {
+    const top = ventajasReales.slice(0, 2).map(m => m.variable);
+    const resto = enCero.length
+      ? `Eso sí, no consigue puntos en <b>${enCero.join(' ni en ')}</b>.`
+      : `En la mayoría de las variables se mantiene dentro de lo normal, sin ser el mejor ni el peor.`;
+    explicacion = `${resto} No gana por una sola razón grande, sino por sumar varias ventajas más chicas al mismo tiempo — sobre todo en <b>${top[0]}</b> y <b>${top[1]}</b> — que juntas alcanzan para superar a los demás en el puntaje total.`;
+  }
+
+  const otherNames = others.map(o => o.nombre).join(' y ');
+  const diffClave = keys.map(k => `${CATS_DB[k].marca} — ${CATS_DB[k].destacados.length ? CATS_DB[k].destacados.slice(0,2).join(', ') : 'sin destacados'}`).join('; ');
+
+  return `<div class="verdict">
+    <span class="trophy">🏆</span>
+    <div>
+      <h2>Gana ${win.nombre}</h2>
+      <p>${explicacion}</p>
+      <p class="diff-clave"><strong>Diferencias clave:</strong> ${diffClave}</p>
+    </div>
+  </div>`;
+}
+
+function render(){
+  const ranked = rankedKeys(selected);
+  const url = new URL(window.location);
+  url.searchParams.set('p', selected.join(','));
+  window.history.replaceState({}, '', url);
+  const gridClass = selected.length === 1 ? 'cols-1' : selected.length === 2 ? 'cols-2' : 'cols-3';
+  document.getElementById('compareHeader').innerHTML = renderHeaderRow(ranked);
+  document.getElementById('compareHeader').className = 'compare-header ' + gridClass;
+  document.getElementById('whichForYouContainer').innerHTML = renderWhichForYou(ranked);
+  radarActiveIdx = 0; // cada vez que cambia la selección real, el carrusel vuelve al 1er lugar
+  document.getElementById('featureSections').innerHTML = renderFeatureSections(ranked);
+  updateRadar(ranked);
+  document.getElementById('recapContainer').innerHTML = renderRecap(ranked);
+  document.getElementById('exploreContainer').innerHTML = renderExplore();
+
+  document.getElementById('verdictContainer').innerHTML = renderVerdict(ranked);
+
+  const winnerKey = selected.length > 1 ? ranked[0] : null;
+  const titleEl = document.getElementById('pageTitle');
+  if (ranked.length === 0) {
+    titleEl.textContent = 'Comparador';
+  } else if (ranked.length === 1 || !winnerKey) {
+    const p = CATS_DB[ranked[0]];
+    titleEl.innerHTML = `<span class="title-winner">${p.nombre}${p.fuenteVerificada ? `<span class="verified-icon tt" data-tip="Dato entregado directamente por el fabricante o su sitio oficial">${verifiedIconSVG()}</span>` : ''}</span>`;
+  } else {
+    const winner = CATS_DB[winnerKey];
+    const resto = ranked.slice(1).map(k => {
+      const p = CATS_DB[k];
+      return `${p.nombre}${p.fuenteVerificada ? `<span class="verified-icon tt" data-tip="Dato entregado directamente por el fabricante o su sitio oficial">${verifiedIconSVG()}</span>` : ''}`;
+    }).join(' y ');
+    titleEl.innerHTML = `<span class="title-winner">🏆 Gana ${winner.nombre}${winner.fuenteVerificada ? `<span class="verified-icon tt" data-tip="Dato entregado directamente por el fabricante o su sitio oficial">${verifiedIconSVG()}</span>` : ''}</span><span class="title-rest">frente a ${resto}</span>`;
+  }
+
+  const addBtn = document.getElementById('addProductBtn');
+  addBtn.style.display = selected.length < 3 ? 'inline-flex' : 'none';
+  addBtn.onclick = () => openPicker(selected.length);
+
+  function removeByKey(key){
+    const idx = selected.indexOf(key);
+    if (idx > -1) selected.splice(idx, 1);
+    render();
+  }
+
+  document.querySelectorAll('.remove-btn').forEach(el => {
+    el.addEventListener('click', (e) => {
+      e.stopPropagation();
+      removeByKey(el.dataset.key);
+    });
+  });
+
+  function setSelection(keys){
+    selected = keys.slice(0, 3);
+    render();
+    document.getElementById('compareHeader').scrollIntoView({ behavior:'smooth', block:'start' });
+  }
+
+  document.querySelectorAll('.explore-chip').forEach(el => {
+    el.addEventListener('click', () => {
+      const key = el.dataset.key;
+      if (selected.includes(key)) return;
+      const next = selected.length < 3 ? [...selected, key] : [...selected.slice(1), key];
+      setSelection(next);
+    });
+  });
+
+  const suggestEl = document.querySelector('.explore-suggest');
+  if (suggestEl){
+    suggestEl.addEventListener('click', () => setSelection(suggestEl.dataset.keys.split(',')));
+  }
+
+  document.querySelectorAll('.explore-popular-link').forEach(el => {
+    el.addEventListener('click', (e) => {
+      e.preventDefault();
+      setSelection(el.dataset.keys.split(','));
+    });
+  });
+}
+
+// ===================== Modal / Picker =====================
+function openPicker(idx){
+  pickerTargetIndex = idx;
+  document.getElementById('pickerOverlay').classList.add('open');
+  document.getElementById('pickerSearch').value = '';
+  renderPickerList('');
+  document.getElementById('pickerSearch').focus();
+}
+function closePicker(){
+  document.getElementById('pickerOverlay').classList.remove('open');
+  pickerTargetIndex = null;
+}
+function renderPickerList(query){
+  const list = document.getElementById('pickerList');
+  const q = query.trim().toLowerCase();
+  const items = Object.keys(CATS_DB).filter(k => {
+    const p = CATS_DB[k];
+    const already = selected.includes(k);
+    if (already) return false;
+    if (!q) return true;
+    return (p.marca + ' ' + p.nombre).toLowerCase().includes(q);
+  });
+  if (items.length === 0){
+    list.innerHTML = '<p style="padding:20px;color:#96919B;font-size:14px;">No se encontraron alimentos de gato con ese nombre.</p>';
+    return;
+  }
+  list.innerHTML = items.map(k => {
+    const p = CATS_DB[k];
+    return `<div class="picker-item" data-key="${k}">
+      <img src="img/producto_placeholder.svg" alt="">
+      <div class="info">
+        <div class="brand">${p.marca}</div>
+        <div class="name">${p.nombre}</div>
+        <div class="macros">Prot ${fmt(p.prot,'%')} · Carbs ${fmt(p.carbs,'%')} · ${p.score} pts</div>
+      </div>
+      <button class="add-vs-btn">+ VS</button>
+    </div>`;
+  }).join('');
+  document.querySelectorAll('.picker-item').forEach(el => {
+    el.addEventListener('click', () => {
+      const key = el.dataset.key;
+      if (pickerTargetIndex !== null && pickerTargetIndex < selected.length) {
+        selected[pickerTargetIndex] = key;
+      } else {
+        selected.push(key);
+      }
+      closePicker();
+      render();
+    });
+  });
+}
+
+document.getElementById('pickerSearch').addEventListener('input', (e) => renderPickerList(e.target.value));
+
+// Cerrar la publicidad inferior fija — delegado en document porque el botón se define más abajo en el HTML
+document.addEventListener('click', (e) => {
+  if (e.target.closest('.ad-close')){
+    e.target.closest('.ad-bottom-fixed').remove();
+    document.body.classList.remove('has-bottom-ad');
+  }
+});
+document.getElementById('pickerClose').addEventListener('click', closePicker);
+document.getElementById('pickerOverlay').addEventListener('click', (e) => {
+  if (e.target.id === 'pickerOverlay') closePicker();
+});
+
+// Accordion de metodología
+document.querySelectorAll('.macc-head').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.closest('.macc-item');
+    const wasOpen = item.classList.contains('active');
+    document.querySelectorAll('.macc-item').forEach(i => i.classList.remove('active'));
+    if (!wasOpen) item.classList.add('active');
+  });
+});
+
+// Si el link trae una comparación específica (?p=key1,key2,key3), la usamos en vez de la selección por defecto
+(function cargarSeleccionDesdeURL(){
+  const params = new URLSearchParams(window.location.search);
+  const p = params.get('p');
+  if (!p) return;
+  const keys = p.split(',').filter(k => CATS_DB[k]);
+  if (keys.length > 0) selected = keys.slice(0, 3);
+})();
+
+render();
+
+// Botón de compartir: usa el share nativo del dispositivo si existe, si no copia el link
+document.getElementById('shareBtn').addEventListener('click', async () => {
+  const url = window.location.href;
+  const titulo = document.getElementById('pageTitle').innerText.split('\n')[0] || 'Comparación en Mestix';
+  if (navigator.share) {
+    try { await navigator.share({ title: titulo, url }); } catch (e) { /* usuario canceló, no hacer nada */ }
+  } else {
+    try {
+      await navigator.clipboard.writeText(url);
+      const btn = document.getElementById('shareBtn');
+      const textoOriginal = btn.innerHTML;
+      btn.innerHTML = '✓ Enlace copiado';
+      setTimeout(() => { btn.innerHTML = textoOriginal; }, 2000);
+    } catch (e) {
+      prompt('Copia este link para compartir:', url);
+    }
+  }
+});
+
+</script>
+
+<div class="ad-slot ad-rail ad-rail-left"><span class="ad-label">Publicidad</span><span class="ad-size">160 × 600</span></div>
+<div class="ad-slot ad-rail ad-rail-right"><span class="ad-label">Publicidad</span><span class="ad-size">160 × 600</span></div>
+
+<div class="ad-bottom-fixed">
+  <button class="ad-close">✕</button>
+  <div class="ad-slot"><span class="ad-label">Publicidad</span><span class="ad-size">728 × 90 · 320 × 50 en mobile · fijo</span></div>
+</div>
+
+<script>
+  (function(){
+    const wrap = document.getElementById('countrySelect');
+    if (!wrap) return;
+    const btn = document.getElementById('countryBtn');
+    const links = wrap.querySelectorAll('.country-dropdown a');
+    btn.addEventListener('click', (e) => { e.stopPropagation(); wrap.classList.toggle('open'); });
+    links.forEach(a => a.addEventListener('click', (e) => {
+      e.preventDefault();
+      links.forEach(l => l.classList.remove('active'));
+      a.classList.add('active');
+      btn.innerHTML = '<span class="flag">' + a.dataset.flag + '</span> ' + a.dataset.code + ' <span class="caret">▾</span>';
+      wrap.classList.remove('open');
+    }));
+    document.addEventListener('click', () => wrap.classList.remove('open'));
+  })();
+</script>
+
+<script>
+  document.getElementById('navToggle').addEventListener('click', function(){
+    this.classList.toggle('open');
+    document.getElementById('mobilePanel').classList.toggle('open');
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+// ============================================================
+// MESTIX — Punto de entrada único del SASS
+// Orden de carga: utilities (tokens/mixins, no generan CSS propio)
+// → base (reset/tipografía) → layout (header/footer) →
+// → components (piezas reutilizables) → pages (estilos por página)
+// ============================================================
+
+// Utilities — variables y mixins, no @use'd por separado acá porque
+// cada partial ya los importa donde los necesita; se listan igual
+// para que main.scss documente la arquitectura completa de un vistazo.
+@use 'utilities/variables';
+@use 'utilities/mixins';
+
+// Base
+@use 'base/base';
+
+// Layout
+@use 'layout/header-footer';
+
+// Components
+@use 'components/components';
+@use 'components/ads';
+
+// Pages
+@use 'pages/inicio';
+@use 'pages/categoria';
+@use 'pages/comparador';
+@use 'pages/blog';
+@use 'pages/articulo';

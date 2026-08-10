@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contacto — Mestix</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito+Sans:wght@400;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css?v=1786380800">
+</head>
+<body class="has-bottom-ad">
+
+<header class="site">
+  <div class="wrap header-bar">
+    <a href="index.html" class="logo"><img src="img/logo_mestix_white.svg" alt="Mestix"></a>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li class="nav-item">
+          <a href="categoria.html">Catálogo</a><span class="caret">▾</span>
+          <ul class="dropdown">
+            <li><a href="categoria.html">🐶 Perros</a></li>
+            <li><a href="categoria-gatos.html">🐱 Gatos</a></li>
+          </ul>
+        </li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="sobre-mestix.html">Sobre Mestix</a></li>
+        <li><a href="preguntas-frecuentes.html">Preguntas frecuentes</a></li>
+      </ul>
+    </nav>
+    <div class="header-search"><span>⌕</span><input type="text" placeholder="Buscar alimento o marca…"></div>
+    <div class="country-select" id="countrySelect">
+      <button class="country-select-btn" id="countryBtn"><span class="flag">🇨🇱</span> CL <span class="caret">▾</span></button>
+      <ul class="country-dropdown">
+        <li><a href="#" class="active" data-flag="🇨🇱" data-code="CL"><span class="flag">🇨🇱</span> Chile <span class="check">✓</span></a></li>
+        <li><a href="#" data-flag="🇦🇷" data-code="AR"><span class="flag">🇦🇷</span> Argentina</a></li>
+      </ul>
+    </div>
+    <button class="nav-toggle" id="navToggle" aria-label="Abrir menú"><span></span></button>
+  </div>
+</header>
+
+<div class="mobile-panel" id="mobilePanel">
+  <div class="wrap">
+    <ul>
+      <li><a href="index.html">Inicio</a></li>
+      <li>
+        <a href="categoria.html">Catálogo</a>
+        <ul class="mobile-sub">
+          <li><a href="categoria.html">🐶 Perros</a></li>
+          <li><a href="categoria-gatos.html">🐱 Gatos</a></li>
+        </ul>
+      </li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="sobre-mestix.html">Sobre Mestix</a></li>
+      <li><a href="preguntas-frecuentes.html">Preguntas frecuentes</a></li>
+    </ul>
+    <div class="mobile-search"><span>⌕</span><input type="text" placeholder="Buscar alimento o marca…"></div>
+  </div>
+</div>
+
+<div class="wrap ad-top-wrap">
+  <div class="ad-slot ad-top"><span class="ad-label">Publicidad</span><span class="ad-size">728 × 90 · 320 × 50 en mobile</span></div>
+</div>
+
+<section class="section" style="padding-top:60px;">
+  <div class="wrap" style="max-width:1000px;">
+    <span class="eyebrow">Contacto</span>
+    <h1 style="margin:10px 0 16px;">Hablemos</h1>
+    <p class="lead" style="margin-bottom:36px; max-width:600px;">¿Eres una marca y quieres confirmarnos tus datos para obtener la insignia de verificado? ¿Encontraste un error en algún producto? ¿Tienes una sugerencia? Escríbenos.</p>
+
+    <div style="display:grid; grid-template-columns:1.3fr 1fr; gap:56px; align-items:start;">
+
+      <form onsubmit="return false;" style="display:flex; flex-direction:column; gap:18px;">
+        <div>
+          <label style="display:block; font-weight:600; margin-bottom:6px; font-size:14px;">Nombre</label>
+          <input type="text" placeholder="Tu nombre" style="width:100%; padding:12px 16px; border-radius:10px; border:1.5px solid #EDE0CC; font-family:'Nunito Sans',sans-serif; font-size:15px;">
+        </div>
+        <div>
+          <label style="display:block; font-weight:600; margin-bottom:6px; font-size:14px;">Correo electrónico</label>
+          <input type="email" placeholder="tucorreo@ejemplo.com" style="width:100%; padding:12px 16px; border-radius:10px; border:1.5px solid #EDE0CC; font-family:'Nunito Sans',sans-serif; font-size:15px;">
+        </div>
+        <div>
+          <label style="display:block; font-weight:600; margin-bottom:6px; font-size:14px;">Motivo</label>
+          <select style="width:100%; padding:12px 16px; border-radius:10px; border:1.5px solid #EDE0CC; font-family:'Nunito Sans',sans-serif; font-size:15px; background:#fff;">
+            <option>Soy una marca / quiero confirmar mis datos</option>
+            <option>Encontré un error en un producto</option>
+            <option>Sugerencia</option>
+            <option>Publicidad / colaboraciones</option>
+            <option>Prensa / medios de comunicación</option>
+            <option>Otro</option>
+          </select>
+        </div>
+        <div>
+          <label style="display:block; font-weight:600; margin-bottom:6px; font-size:14px;">Mensaje</label>
+          <textarea rows="5" placeholder="Cuéntanos en qué te podemos ayudar" style="width:100%; padding:12px 16px; border-radius:10px; border:1.5px solid #EDE0CC; font-family:'Nunito Sans',sans-serif; font-size:15px; resize:vertical;"></textarea>
+        </div>
+        <button type="submit" class="btn" style="align-self:flex-start;">Enviar mensaje →</button>
+      </form>
+
+      <div class="methodology-accordion">
+        <div class="macc-item active">
+          <button class="macc-head">
+            <span class="macc-title">¿Eres una marca?</span>
+            <span class="macc-caret">▾</span>
+          </button>
+          <div class="macc-body">
+            <p>Si quieres que confirmemos tus datos directamente contigo (y así tu producto muestre la insignia de verificado ✓), escríbenos indicando qué productos quieres validar. Es gratuito y no influye en el puntaje — solo en la confianza que transmite frente al usuario.</p>
+          </div>
+        </div>
+        <div class="macc-item">
+          <button class="macc-head">
+            <span class="macc-title">Compartir y reutilizar</span>
+            <span class="macc-caret">▾</span>
+          </button>
+          <div class="macc-body">
+            <p>Te animamos a compartir nuestras comparaciones en canales propios o públicos. Si lo haces en un canal público (otro sitio web, un foro, un grupo), te pedimos amablemente que lo atribuyas a Mestix con un enlace de vuelta.</p>
+            <p>También estamos preparando un widget de comparación embebible (vía iFrame) para que otros sitios puedan mostrar el resultado de una comparación — con el puntaje, las diferencias clave y el gráfico de Visión general — directamente en su propia página. Si te interesa integrarlo, escríbenos.</p>
+          </div>
+        </div>
+        <div class="macc-item">
+          <button class="macc-head">
+            <span class="macc-title">Prensa y medios de comunicación</span>
+            <span class="macc-caret">▾</span>
+          </button>
+          <div class="macc-body">
+            <p>Si representas un medio y quieres citar datos de Mestix, solicitar una entrevista o coordinar cobertura, escríbenos seleccionando "Prensa / medios de comunicación" en el formulario — respondemos directamente al equipo editorial, sin pasar por el flujo de soporte general.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<style>
+  @media (max-width: 860px) {
+    .section .wrap > div[style*="grid-template-columns"] {
+      grid-template-columns: 1fr !important;
+    }
+  }
+</style>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="img/logo_mestix_white.svg" alt="Mestix" style="height:26px;margin-bottom:14px;">
+        <p>Comparador nutricional de alimentos para mascotas, basado en el etiquetado declarado por cada fabricante.</p>
+      </div>
+      <div><h4>Explorar</h4><ul><li><a href="categoria.html">Catálogo</a></li><li><a href="blog.html">Blog</a></li></ul></div>
+      <div><h4>Metodología</h4><ul><li><a href="preguntas-frecuentes.html">Cómo evaluamos</a></li><li><a href="preguntas-frecuentes.html">Fuentes técnicas</a></li><li><a href="preguntas-frecuentes.html">Etapas de vida</a></li></ul></div>
+      <div><h4>Mestix</h4><ul><li><a href="sobre-mestix.html">Sobre nosotros</a></li><li><a href="contacto.html" class="active">Contacto</a></li><li><a href="terminos-privacidad.html">Términos y privacidad</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 Mestix. Prototipo de diseño — datos de demostración.</span><span>Hecho en Chile 🇨🇱</span></div>
+  </div>
+</footer>
+
+<div class="ad-slot ad-rail ad-rail-left"><span class="ad-label">Publicidad</span><span class="ad-size">160 × 600</span></div>
+<div class="ad-slot ad-rail ad-rail-right"><span class="ad-label">Publicidad</span><span class="ad-size">160 × 600</span></div>
+
+<div class="ad-bottom-fixed">
+  <button class="ad-close">✕</button>
+  <div class="ad-slot"><span class="ad-label">Publicidad</span><span class="ad-size">728 × 90 · 320 × 50 en mobile · fijo</span></div>
+</div>
+
+<script>
+  (function(){
+    const wrap = document.getElementById('countrySelect');
+    if (!wrap) return;
+    const btn = document.getElementById('countryBtn');
+    const links = wrap.querySelectorAll('.country-dropdown a');
+    btn.addEventListener('click', (e) => { e.stopPropagation(); wrap.classList.toggle('open'); });
+    links.forEach(a => a.addEventListener('click', (e) => {
+      e.preventDefault();
+      links.forEach(l => l.classList.remove('active'));
+      a.classList.add('active');
+      btn.innerHTML = '<span class="flag">' + a.dataset.flag + '</span> ' + a.dataset.code + ' <span class="caret">▾</span>';
+      wrap.classList.remove('open');
+    }));
+    document.addEventListener('click', () => wrap.classList.remove('open'));
+  })();
+  document.getElementById('navToggle').addEventListener('click', function(){
+    this.classList.toggle('open');
+    document.getElementById('mobilePanel').classList.toggle('open');
+  });
+
+  document.querySelectorAll('.macc-head').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.macc-item');
+      const wasOpen = item.classList.contains('active');
+      item.closest('.methodology-accordion').querySelectorAll('.macc-item').forEach(i => i.classList.remove('active'));
+      if (!wasOpen) item.classList.add('active');
+    });
+  });
+</script>
+
+<script>
+  // Cerrar la publicidad inferior fija
+  document.addEventListener('click', (e) => {
+    if (e.target.closest('.ad-close')){
+      e.target.closest('.ad-bottom-fixed').remove();
+      document.body.classList.remove('has-bottom-ad');
+    }
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alimentos para perros — Mestix</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito+Sans:wght@400;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css?v=1786380800">
+</head>
+<body class="has-bottom-ad">
+
+<header class="site">
+  <div class="wrap header-bar">
+    <a href="index.html" class="logo"><img src="img/logo_mestix_white.svg" alt="Mestix"></a>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li class="nav-item active">
+          <a href="categoria.html" class="active">Catálogo</a><span class="caret">▾</span>
+          <ul class="dropdown">
+            <li><a href="categoria.html">🐶 Perros</a></li>
+            <li><a href="categoria-gatos.html">🐱 Gatos</a></li>
+          </ul>
+        </li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="sobre-mestix.html">Sobre Mestix</a></li>
+        <li><a href="preguntas-frecuentes.html">Preguntas frecuentes</a></li>
+      </ul>
+    </nav>
+    <div class="header-search"><span>⌕</span><input type="text" placeholder="Buscar alimento o marca…"></div>
+    <div class="country-select" id="countrySelect">
+      <button class="country-select-btn" id="countryBtn"><span class="flag">🇨🇱</span> CL <span class="caret">▾</span></button>
+      <ul class="country-dropdown">
+        <li><a href="#" class="active" data-flag="🇨🇱" data-code="CL"><span class="flag">🇨🇱</span> Chile <span class="check">✓</span></a></li>
+        <li><a href="#" data-flag="🇦🇷" data-code="AR"><span class="flag">🇦🇷</span> Argentina</a></li>
+      </ul>
+    </div>
+    <button class="nav-toggle" id="navToggle" aria-label="Abrir menú"><span></span></button>
+  </div>
+</header>
+
+<div class="mobile-panel" id="mobilePanel">
+  <div class="wrap">
+    <ul>
+      <li><a href="index.html">Inicio</a></li>
+      <li>
+        <a href="categoria.html" class="active">Catálogo</a>
+        <ul class="mobile-sub">
+          <li><a href="categoria.html">🐶 Perros</a></li>
+          <li><a href="categoria-gatos.html">🐱 Gatos</a></li>
+        </ul>
+      </li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="sobre-mestix.html">Sobre Mestix</a></li>
+      <li><a href="preguntas-frecuentes.html">Preguntas frecuentes</a></li>
+    </ul>
+    <div class="mobile-search"><span>⌕</span><input type="text" placeholder="Buscar alimento o marca…"></div>
+  </div>
+</div>
+
+<div class="wrap ad-top-wrap">
+  <div class="ad-slot ad-top"><span class="ad-label">Publicidad</span><span class="ad-size">728 × 90 · 320 × 50 en mobile</span></div>
+</div>
+
+<div class="wrap page-head">
+  <div class="breadcrumb"><a href="index.html">Inicio</a> / Catálogo</div>
+  <h1>Alimentos para perros</h1>
+  <p>6 alimentos evaluados con el modelo Mestix. Elige hasta 3 para compararlos lado a lado.</p>
+</div>
+
+<section class="wrap catalogo">
+  <div class="toolbar">
+    <span><strong style="color:#17161A">6</strong> alimentos evaluados</span>
+    <select>
+      <option>Ordenar por: Puntuación Mestix</option>
+      <option>Ordenar por: Mayor proteína</option>
+      <option>Ordenar por: Menor carbohidratos</option>
+      <option>Ordenar por: Nombre A–Z</option>
+    </select>
+  </div>
+
+  <div class="layout-wrap">
+  <div class="layout">
+    <aside class="filters" id="filters">
+      <div class="filter-block">
+        <h4>Puntuación mínima</h4>
+        <input type="range" class="range" id="filtroScore" min="0" max="100" value="0">
+        <div class="range-labels"><span>0</span><span id="filtroScoreVal">100</span></div>
+      </div>
+      <div class="filter-block">
+        <h4>Precio máximo</h4>
+        <input type="range" class="range" id="filtroPrecio" min="15000" max="65000" step="1000" value="65000">
+        <div class="range-labels"><span>$15.000</span><span id="filtroPrecioVal">$65.000</span></div>
+      </div>
+      <div class="filter-block">
+        <h4>Etapa de vida</h4>
+        <div class="check-row"><input type="checkbox" data-filter="etapa" value="cachorro"> Cachorro <span class="count">0</span></div>
+        <div class="check-row"><input type="checkbox" data-filter="etapa" value="adulto" checked> Adulto <span class="count">6</span></div>
+        <div class="check-row"><input type="checkbox" data-filter="etapa" value="senior"> Senior <span class="count">0</span></div>
+      </div>
+      <div class="filter-block">
+        <h4>Tamaño de raza</h4>
+        <div class="check-row"><input type="checkbox" id="filtroRazaGrande"> Cachorro raza grande <span class="count">0</span></div>
+      </div>
+      <div class="filter-block">
+        <h4>Estado de ingredientes</h4>
+        <div class="pill-toggle" id="filtroEstado">
+          <button class="active" data-val="todos">Todos</button>
+          <button data-val="clean">Limpio</button>
+          <button data-val="warn">Cuestionable</button>
+        </div>
+      </div>
+      <div class="filter-block">
+        <h4>Otros filtros</h4>
+        <div class="check-row"><input type="checkbox" id="filtroHidrolizada"> Proteína hidrolizada <span class="count">4</span></div>
+        <div class="check-row"><input type="checkbox" id="filtroVerificado"> Solo datos verificados <span class="count">3</span></div>
+      </div>
+      <div class="filter-block">
+        <h4>Marca</h4>
+        <div class="check-row"><input type="checkbox" data-filter="marca" value="bravery" checked> Bravery <span class="count">2</span></div>
+        <div class="check-row"><input type="checkbox" data-filter="marca" value="amity" checked> Amity <span class="count">1</span></div>
+        <div class="check-row"><input type="checkbox" data-filter="marca" value="fit-formula" checked> Fit Formula <span class="count">1</span></div>
+        <div class="check-row"><input type="checkbox" data-filter="marca" value="masterdog" checked> Masterdog <span class="count">1</span></div>
+        <div class="check-row"><input type="checkbox" data-filter="marca" value="purina" checked> Purina <span class="count">1</span></div>
+      </div>
+
+      <div class="filter-block" style="padding:0;border:none;box-shadow:none;">
+        <div class="ad-slot ad-in-sidebar"><span class="ad-label">Publicidad</span><span class="ad-size">300 × 250</span></div>
+      </div>
+    </aside>
+
+    <main>
+      <div class="grid-2" id="grid">
+        <article class="product-card" data-slug="bravery-chicken-adult" data-score="93" data-marca="bravery" data-etapa="adulto" data-raza-grande="0" data-estado="clean" data-hidrolizada="1" data-verificado="1" data-precio="63000">
+          <div class="card-media">
+            <img src="img/producto_placeholder.svg" alt="Chicken Adult Large/Medium">
+            <div class="score-badge-float score-badge score-good"><span class="n">93</span><span class="u">pts</span></div>
+            <button class="add-btn add-btn-float">+</button>
+          </div>
+          <div class="card-body">
+            <div class="card-top" style="margin-bottom:0;">
+              <div class="card-head-text"><a class="brand-tag" href="categoria.html?marca=bravery">Bravery</a><h3>Chicken Adult Large/Medium<span class="verified-icon tt" data-tip="Dato entregado directamente por el fabricante o su sitio oficial"><svg width="15" height="15" viewBox="0 0 22 22" fill="none"><path d="M11 0l2.39 1.7 2.9-.3 1.13 2.7 2.7 1.13-.3 2.9L21.52 11l-1.7 2.39.3 2.9-2.7 1.13-1.13 2.7-2.9-.3L11 22l-2.39-1.7-2.9.3-1.13-2.7-2.7-1.13.3-2.9L.48 11l1.7-2.39-.3-2.9 2.7-1.13L5.71 1.4l2.9.3L11 0z" fill="#2F7A4D"/><path d="M7.2 11.3l2.3 2.3 5-5" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span></h3></div>
+            </div>
+            <div class="stat-row"><span class="stat">Prot <b>26%</b></span><span class="stat">Grasa <b>15%</b></span><span class="stat">Carbs <b>39.6%</b></span></div>
+            <div class="card-foot">
+              <a href="comparador.html" class="view-link">Ver ficha →</a>
+            </div>
+          </div>
+        </article>
+        <article class="product-card" data-slug="bravery-light-iberian-pork" data-score="88" data-marca="bravery" data-etapa="adulto" data-raza-grande="0" data-estado="clean" data-hidrolizada="1" data-verificado="1" data-precio="46000">
+          <div class="card-media">
+            <img src="img/bravery-light-pork.webp" alt="Light Iberian Pork Mini Adult">
+            <div class="score-badge-float score-badge score-good"><span class="n">88</span><span class="u">pts</span></div>
+            <button class="add-btn add-btn-float">+</button>
+          </div>
+          <div class="card-body">
+            <div class="card-top" style="margin-bottom:0;">
+              <div class="card-head-text"><a class="brand-tag" href="categoria.html?marca=bravery">Bravery</a><h3>Light Iberian Pork Mini Adult<span class="verified-icon tt" data-tip="Dato entregado directamente por el fabricante o su sitio oficial"><svg width="15" height="15" viewBox="0 0 22 22" fill="none"><path d="M11 0l2.39 1.7 2.9-.3 1.13 2.7 2.7 1.13-.3 2.9L21.52 11l-1.7 2.39.3 2.9-2.7 1.13-1.13 2.7-2.9-.3L11 22l-2.39-1.7-2.9.3-1.13-2.7-2.7-1.13.3-2.9L.48 11l1.7-2.39-.3-2.9 2.7-1.13L5.71 1.4l2.9.3L11 0z" fill="#2F7A4D"/><path d="M7.2 11.3l2.3 2.3 5-5" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span></h3></div>
+            </div>
+            <div class="stat-row"><span class="stat">Prot <b>30%</b></span><span class="stat">Grasa <b>12%</b></span><span class="stat">Carbs <b>33.1%</b></span></div>
+            <div class="card-foot">
+              <a href="comparador.html" class="view-link">Ver ficha →</a>
+            </div>
+          </div>
+        </article>
+        <article class="product-card" data-slug="fit-formula-perro-adulto" data-score="43" data-marca="fit-formula" data-etapa="adulto" data-raza-grande="0" data-estado="warn" data-hidrolizada="0" data-verificado="0" data-precio="24990">
+          <div class="card-media">
+            <img src="img/producto_placeholder.svg" alt="Perro Adulto">
+            <div class="score-badge-float score-badge score-bad"><span class="n">43</span><span class="u">pts</span></div>
+            <button class="add-btn add-btn-float">+</button>
+          </div>
+          <div class="card-body">
+            <div class="card-top" style="margin-bottom:0;">
+              <div class="card-head-text"><a class="brand-tag" href="categoria.html?marca=fit-formula">Fit Formula</a><h3>Perro Adulto</h3></div>
+            </div>
+            <div class="stat-row"><span class="stat">Prot <b>27%</b></span><span class="stat">Grasa <b>8%</b></span><span class="stat">Carbs <b>—</b></span></div>
+            <div class="card-foot">
+              <a href="comparador.html" class="view-link">Ver ficha →</a>
+            </div>
+          </div>
+        </article>
+        <article class="product-card" data-slug="amity-sp-low-grain" data-score="93" data-marca="amity" data-etapa="adulto" data-raza-grande="0" data-estado="clean" data-hidrolizada="1" data-verificado="0" data-precio="36500">
+          <div class="card-media">
+            <img src="img/amity-iberian-pork.webp" alt="SP Low Grain Iberian Pork Adult">
+            <div class="score-badge-float score-badge score-good"><span class="n">93</span><span class="u">pts</span></div>
+            <button class="add-btn add-btn-float">+</button>
+          </div>
+          <div class="card-body">
+            <div class="card-top" style="margin-bottom:0;">
+              <div class="card-head-text"><a class="brand-tag" href="categoria.html?marca=amity">Amity</a><h3>SP Low Grain Iberian Pork Adult</h3></div>
+            </div>
+            <div class="stat-row"><span class="stat">Prot <b>28%</b></span><span class="stat">Grasa <b>16%</b></span><span class="stat">Carbs <b>38.6%</b></span></div>
+            <div class="card-foot">
+              <a href="comparador.html" class="view-link">Ver ficha →</a>
+            </div>
+          </div>
+        </article>
+
+        <div class="ad-slot ad-infeed" style="grid-column:1/-1;width:100%;max-width:none;height:110px;">
+          <span class="ad-label">Publicidad</span><span class="ad-size">Banner de catálogo · 728 × 90</span>
+        </div>
+
+        <article class="product-card" data-slug="masterdog-adulto-carne" data-score="57" data-marca="masterdog" data-etapa="adulto" data-raza-grande="0" data-estado="warn" data-hidrolizada="0" data-verificado="0" data-precio="18990">
+          <div class="card-media">
+            <img src="img/producto_placeholder.svg" alt="Adulto Carne">
+            <div class="score-badge-float score-badge score-mid"><span class="n">57</span><span class="u">pts</span></div>
+            <button class="add-btn add-btn-float">+</button>
+          </div>
+          <div class="card-body">
+            <div class="card-top" style="margin-bottom:0;">
+              <div class="card-head-text"><a class="brand-tag" href="categoria.html?marca=masterdog">Masterdog</a><h3>Adulto Carne</h3></div>
+            </div>
+            <div class="stat-row"><span class="stat">Prot <b>21%</b></span><span class="stat">Grasa <b>9%</b></span><span class="stat">Carbs <b>—</b></span></div>
+            <div class="card-foot">
+              <a href="comparador.html" class="view-link">Ver ficha →</a>
+            </div>
+          </div>
+        </article>
+        <article class="product-card" data-slug="purina-pro-plan-adulto" data-score="95" data-marca="purina" data-etapa="adulto" data-raza-grande="0" data-estado="warn" data-hidrolizada="1" data-verificado="1" data-precio="45990">
+          <div class="card-media">
+            <img src="img/pro-plan-adulto.webp" alt="Pro Plan Adulto Raza Mediana">
+            <div class="score-badge-float score-badge score-good"><span class="n">95</span><span class="u">pts</span></div>
+            <button class="add-btn add-btn-float">+</button>
+          </div>
+          <div class="card-body">
+            <div class="card-top" style="margin-bottom:0;">
+              <div class="card-head-text"><a class="brand-tag" href="categoria.html?marca=purina">Purina</a><h3>Pro Plan Adulto Raza Mediana<span class="verified-icon tt" data-tip="Dato entregado directamente por el fabricante o su sitio oficial"><svg width="15" height="15" viewBox="0 0 22 22" fill="none"><path d="M11 0l2.39 1.7 2.9-.3 1.13 2.7 2.7 1.13-.3 2.9L21.52 11l-1.7 2.39.3 2.9-2.7 1.13-1.13 2.7-2.9-.3L11 22l-2.39-1.7-2.9.3-1.13-2.7-2.7-1.13.3-2.9L.48 11l1.7-2.39-.3-2.9 2.7-1.13L5.71 1.4l2.9.3L11 0z" fill="#2F7A4D"/><path d="M7.2 11.3l2.3 2.3 5-5" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span></h3></div>
+            </div>
+            <div class="stat-row"><span class="stat">Prot <b>26%</b></span><span class="stat">Grasa <b>15%</b></span><span class="stat">Carbs <b>35.5%</b></span></div>
+            <div class="card-foot">
+              <a href="comparador.html" class="view-link">Ver ficha →</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </main>
+  </div>
+  <div class="compare-bar-anchor">
+    <div class="compare-bar" id="compareBar">
+      <span class="label">Comparar</span>
+      <div class="slots" id="slots"><div class="slot">1</div><div class="slot">2</div><div class="slot">3</div></div>
+      <button class="go">Ver comparación →</button>
+    </div>
+  </div>
+  </div>
+</section>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="img/logo_mestix_white.svg" alt="Mestix" style="height:26px;margin-bottom:14px;">
+        <p>Comparador nutricional de alimentos para mascotas, basado en el etiquetado declarado por cada fabricante.</p>
+      </div>
+      <div><h4>Explorar</h4>
+        <ul><li><a href="categoria.html">Catálogo</a></li><li><a href="blog.html">Blog</a></li></ul></div>
+      <div><h4>Metodología</h4><ul><li><a href="#">Cómo evaluamos</a></li><li><a href="#">Fuentes técnicas</a></li><li><a href="#">Etapas de vida</a></li></ul></div>
+      <div><h4>Mestix</h4><ul><li><a href="sobre-mestix.html">Sobre nosotros</a></li><li><a href="contacto.html">Contacto</a></li><li><a href="terminos-privacidad.html">Términos y privacidad</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 Mestix. Prototipo de diseño — datos de demostración.</span><span>Hecho en Chile 🇨🇱</span></div>
+  </div>
+</footer>
+
+<script>
+  // Comparador: máximo 3 productos. Se puede deseleccionar tanto desde la
+  // tarjeta (botón vuelve a "+") como desde la propia barra (botón "×" en
+  // cada cupo lleno) — ambos caminos pasan por la misma función toggle(),
+  // así el estado de tarjetas + barra nunca queda desincronizado.
+  const MAX_COMPARE = 3;
+  const cards = document.querySelectorAll('.product-card[data-slug]');
+  const bar = document.getElementById('compareBar');
+  const slotsWrap = document.getElementById('slots');
+  let selected = [];
+
+  function renderSlots(){
+    slotsWrap.innerHTML = '';
+    for (let i = 0; i < MAX_COMPARE; i++){
+      const slug = selected[i];
+      const slot = document.createElement('div');
+      if (slug){
+        slot.className = 'slot filled';
+        slot.innerHTML =
+          '<span class="slot-code">' + slug.slice(0,2).toUpperCase() + '</span>' +
+          '<button type="button" class="slot-remove" data-slug="' + slug + '" aria-label="Quitar de la comparación">×</button>';
+      } else {
+        slot.className = 'slot';
+        slot.textContent = i + 1;
+      }
+      slotsWrap.appendChild(slot);
+    }
+  }
+
+  function syncCards(){
+    cards.forEach(card => {
+      const slug = card.dataset.slug;
+      const isSelected = selected.includes(slug);
+      const atLimit = !isSelected && selected.length >= MAX_COMPARE;
+      const btn = card.querySelector('.add-btn');
+      card.classList.toggle('selected', isSelected);
+      btn.classList.toggle('is-disabled', atLimit);
+      btn.textContent = isSelected ? '✓' : '+';
+      btn.setAttribute('aria-label', isSelected ? 'Quitar de la comparación' : 'Agregar a comparación');
+    });
+  }
+
+  function refreshUI(){
+    renderSlots();
+    syncCards();
+    bar.classList.toggle('show', selected.length > 0);
+  }
+
+  function toggle(slug){
+    const idx = selected.indexOf(slug);
+    if (idx > -1) { selected.splice(idx, 1); }
+    else { if (selected.length >= MAX_COMPARE) return; selected.push(slug); }
+    refreshUI();
+  }
+
+  cards.forEach(card => {
+    card.querySelector('.add-btn').addEventListener('click', () => toggle(card.dataset.slug));
+  });
+
+  slotsWrap.addEventListener('click', (e) => {
+    const removeBtn = e.target.closest('.slot-remove');
+    if (!removeBtn) return;
+    toggle(removeBtn.dataset.slug);
+  });
+
+  refreshUI();
+</script>
+
+<script>
+  // ============ Motor de filtrado real ============
+  const filtersAside = document.getElementById('filters');
+  const resultsCount = document.querySelector('.toolbar span');
+
+  function pesoCLP(n){ return '$' + n.toLocaleString('es-CL'); }
+
+  const scoreSlider = document.getElementById('filtroScore');
+  const scoreVal = document.getElementById('filtroScoreVal');
+  scoreSlider.addEventListener('input', () => { scoreVal.textContent = scoreSlider.value; aplicarFiltros(); });
+
+  const precioSlider = document.getElementById('filtroPrecio');
+  const precioVal = document.getElementById('filtroPrecioVal');
+  precioSlider.addEventListener('input', () => { precioVal.textContent = pesoCLP(parseInt(precioSlider.value)); aplicarFiltros(); });
+
+  document.getElementById('filtroEstado').addEventListener('click', (e) => {
+    if (e.target.tagName !== 'BUTTON') return;
+    filtersAside.querySelectorAll('#filtroEstado button').forEach(b => b.classList.remove('active'));
+    e.target.classList.add('active');
+    aplicarFiltros();
+  });
+
+  filtersAside.addEventListener('change', (e) => {
+    if (e.target.matches('input[type="checkbox"], input[type="radio"]')) aplicarFiltros();
+  });
+
+  function aplicarFiltros(){
+    const scoreMin = parseInt(scoreSlider.value);
+    const precioMax = parseInt(precioSlider.value);
+    const etapasActivas = Array.from(filtersAside.querySelectorAll('[data-filter="etapa"]:checked')).map(el => el.value);
+    const marcasActivas = Array.from(filtersAside.querySelectorAll('[data-filter="marca"]:checked')).map(el => el.value);
+    const soloRazaGrande = document.getElementById('filtroRazaGrande').checked;
+    const soloHidrolizada = document.getElementById('filtroHidrolizada').checked;
+    const soloVerificado = document.getElementById('filtroVerificado').checked;
+    const estadoActivo = filtersAside.querySelector('#filtroEstado button.active').dataset.val;
+
+    let visibles = 0;
+    cards.forEach(card => {
+      const score = parseInt(card.dataset.score || 0);
+      const precio = parseInt(card.dataset.precio || 0);
+      const marca = card.dataset.marca;
+      const etapa = card.dataset.etapa;
+      const estado = card.dataset.estado;
+      const razaGrande = card.dataset.razaGrande === '1';
+      const hidrolizada = card.dataset.hidrolizada === '1';
+      const verificado = card.dataset.verificado === '1';
+
+      let ok = true;
+      if (score < scoreMin) ok = false;
+      if (precio && precio > precioMax) ok = false;
+      if (etapasActivas.length && !etapasActivas.includes(etapa)) ok = false;
+      if (marcasActivas.length && !marcasActivas.includes(marca)) ok = false;
+      if (soloRazaGrande && !razaGrande) ok = false;
+      if (soloHidrolizada && !hidrolizada) ok = false;
+      if (soloVerificado && !verificado) ok = false;
+      if (estadoActivo !== 'todos' && estado !== estadoActivo) ok = false;
+
+      card.style.display = ok ? '' : 'none';
+      if (ok) visibles++;
+    });
+
+    if (resultsCount) resultsCount.innerHTML = `<strong style="color:#17161A">${visibles}</strong> alimentos evaluados`;
+  }
+
+  aplicarFiltros();
+</script>
+
+<div class="ad-slot ad-rail ad-rail-left"><span class="ad-label">Publicidad</span><span class="ad-size">160 × 600</span></div>
+<div class="ad-slot ad-rail ad-rail-right"><span class="ad-label">Publicidad</span><span class="ad-size">160 × 600</span></div>
+
+<div class="ad-bottom-fixed">
+  <button class="ad-close">✕</button>
+  <div class="ad-slot"><span class="ad-label">Publicidad</span><span class="ad-size">728 × 90 · 320 × 50 en mobile · fijo</span></div>
+</div>
+
+<script>
+  (function(){
+    const wrap = document.getElementById('countrySelect');
+    if (!wrap) return;
+    const btn = document.getElementById('countryBtn');
+    const links = wrap.querySelectorAll('.country-dropdown a');
+    btn.addEventListener('click', (e) => { e.stopPropagation(); wrap.classList.toggle('open'); });
+    links.forEach(a => a.addEventListener('click', (e) => {
+      e.preventDefault();
+      links.forEach(l => l.classList.remove('active'));
+      a.classList.add('active');
+      btn.innerHTML = '<span class="flag">' + a.dataset.flag + '</span> ' + a.dataset.code + ' <span class="caret">▾</span>';
+      wrap.classList.remove('open');
+    }));
+    document.addEventListener('click', () => wrap.classList.remove('open'));
+  })();
+</script>
+
+<script>
+  document.getElementById('navToggle').addEventListener('click', function(){
+    this.classList.toggle('open');
+    document.getElementById('mobilePanel').classList.toggle('open');
+  });
+</script>
+
+<script>
+  // Cerrar la publicidad inferior fija
+  document.addEventListener('click', (e) => {
+    if (e.target.closest('.ad-close')){
+      e.target.closest('.ad-bottom-fixed').remove();
+      document.body.classList.remove('has-bottom-ad');
+    }
+  });
+</script>
+
+</body>
+</html>

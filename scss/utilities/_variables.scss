@@ -1,0 +1,43 @@
+// ============================================================
+// MESTIX — Variables de marca
+// ============================================================
+
+// Colores extraídos directamente del logo/paleta de referencia
+$ink:        #17161A; // texto principal, fondos oscuros (negro neutro, no azulado)
+$ink-soft:   #57545C; // texto secundario
+$ink-faint:  #96919B; // texto terciario / placeholders
+$orange:     #F8931D; // color primario de marca
+$orange-dark:#D97A0C;
+$amber:      #FDA925; // secundario — bloques/destacados
+$brown:      #782A04; // profundo — contraste alterno
+$cream:      #FFF8EF; // fondo cálido general del sitio
+$surface:    #FFFFFF; // tarjetas
+$line:       #EDE0CC; // bordes sutiles sobre fondo cálido
+$off-white:  #f4f5f3; // texto claro sobre fondo oscuro
+
+$ok:         #2F7A4D;
+$ok-bg:      #E6F2EA;
+$warn:       #B5651D;
+$warn-bg:    #FBEEDF;
+$danger:     #C23B3B;
+
+// Semáforo de puntaje — mismo criterio en todo el sitio
+$score-good: #2F7A4D; // 80-100 · óptimo
+$score-mid:  #E3A72E; // 50-79 · intermedio
+$score-bad:  #C23B3B; // 0-49 · bajo
+
+// Tipografía — redondeada/juguetona para títulos (coincide con el logo), limpia para cuerpo
+$font-display: 'Fredoka', sans-serif;
+$font-body:    'Nunito Sans', sans-serif;
+$font-mono:    'JetBrains Mono', monospace;
+
+// Radios y sombras
+$radius-sm: 10px;
+$radius:    18px;
+$radius-lg: 28px;
+$shadow: 0 2px 4px rgba(30,32,44,0.04), 0 10px 28px -10px rgba(30,32,44,0.14);
+$shadow-lift: 0 16px 40px -12px rgba(30,32,44,0.24);
+
+// Breakpoints
+$bp-tablet: 860px;
+$bp-mobile: 560px;
