@@ -1,0 +1,9 @@
+@use '../utilities/variables' as *;
+@use '../utilities/mixins' as *;
+
+// Tipografía del cuerpo legal (términos y privacidad)
+.legal-body h2{ margin-top:44px; margin-bottom:12px; font-size:22px; }
+.legal-body h3{ margin-top:26px; margin-bottom:8px; font-size:17px; }
+.legal-body p, .legal-body li{ color:$ink-soft; line-height:1.8; }
+.legal-body ul{ padding-left:20px; margin:10px 0; }
+.legal-updated{ color:$ink-faint; font-size:14px; margin-top:6px; }

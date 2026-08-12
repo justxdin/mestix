@@ -38,6 +38,9 @@ $radius-lg: 28px;
 $shadow: 0 2px 4px rgba(30,32,44,0.04), 0 10px 28px -10px rgba(30,32,44,0.14);
 $shadow-lift: 0 16px 40px -12px rgba(30,32,44,0.24);
 
-// Breakpoints
-$bp-tablet: 860px;
-$bp-mobile: 560px;
+// Breakpoints (deben coincidir con utilities/_mixins.scss)
+$bp-desktop: 1500px;
+$bp-laptop:  1365px;
+$bp-tablet:  1023px;
+$bp-movil:   767px;
+$bp-mobile:  560px;

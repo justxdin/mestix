@@ -1,0 +1,12 @@
+@use '../utilities/variables' as *;
+@use '../utilities/mixins' as *;
+
+.error-404{
+  padding:110px 0;
+  @include movil{ padding:70px 0; }
+}
+.error-404-mark{
+  font-family:$font-display; font-weight:700; font-size:96px; line-height:1;
+  color:$orange; letter-spacing:-.02em;
+  @include movil{ font-size:64px; }
+}

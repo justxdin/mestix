@@ -2,16 +2,29 @@
 @use '../utilities/mixins' as *;
 
 *,*::before,*::after{ box-sizing:border-box; }
-html{ scroll-behavior:smooth; overflow-x:hidden; }
+// OJO con "overflow-x:hidden" acá: cualquier ancestro con overflow distinto
+// de "visible" invalida position:sticky en sus descendientes — por eso el
+// header dejó de quedar fijo al hacer scroll la vez que esto se agregó para
+// contener el desborde horizontal de los carruseles. "clip" logra el mismo
+// contenido visual (nada se sale de la pantalla de costado) SIN establecer
+// un contenedor de scroll ni forzar overflow-y a "auto" — no rompe sticky.
+html{ scroll-behavior:smooth; overflow-x:clip; }
 body{
   margin:0;
-  background:$cream;
+  overflow-x:clip;
+  //background:$cream;
   color:$ink;
   font-family:$font-body;
   font-size:16px;
   line-height:1.55;
   -webkit-font-smoothing:antialiased;
 }
+// Se activa por JS mientras el panel del menú mobile está abierto, para
+// que header (sticky) + panel (fixed) se muevan siempre como una sola
+// pieza en vez de que el fondo se desplace por su cuenta detrás. Se pone
+// en html Y body porque según el navegador, el que realmente scrollea es
+// uno u otro.
+html.menu-open, body.menu-open{ overflow:hidden; height:100%; }
 h1,h2,h3,h4,.display{
   font-family:$font-display;
   font-weight:600;
@@ -143,3 +156,6 @@ img{ max-width:100%; display:block; }
   font-size:9.5px; font-weight:700; margin-left:5px;
   vertical-align:middle;
 }
+
+.bgWhite{background: $surface;}
+.bgGrey{background: $off-white;}

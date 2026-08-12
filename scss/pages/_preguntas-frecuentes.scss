@@ -1,0 +1,19 @@
+@use '../utilities/variables' as *;
+@use '../utilities/mixins' as *;
+
+// Tabs Perros / Gatos
+.faq-tabs{ display:flex; gap:10px; margin:0 0 32px; }
+.faq-tab{
+  font-family:$font-display; font-weight:600; font-size:15px; padding:12px 22px;
+  border-radius:100px; border:1.5px solid $line; background:$surface; color:$ink; cursor:pointer;
+}
+.faq-tab.active{ background:$ink; color:$surface; border-color:$ink; }
+.faq-species{ display:none; }
+.faq-species.active{ display:block; }
+
+// Recuadro "Principios que aplican a todo el modelo"
+.faq-principios{
+  background:$off-white; border:1px solid $line; border-radius:16px; padding:26px 28px; margin-bottom:36px;
+}
+.faq-principios h3{ margin:0 0 12px; font-size:18px; }
+.faq-principios ul{ margin:0; padding-left:20px; line-height:1.9; }

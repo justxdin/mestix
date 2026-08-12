@@ -1,0 +1,9 @@
+@use '../utilities/variables' as *;
+@use '../utilities/mixins' as *;
+
+// Grid de 2 columnas (formulario + acordeón) definido inline con
+// style="grid-template-columns:..." en el HTML — se fuerza a 1 columna
+// en tablet para que no quede apretado.
+.section .wrap > div[style*="grid-template-columns"]{
+  @include tablet{ grid-template-columns: 1fr !important; }
+}

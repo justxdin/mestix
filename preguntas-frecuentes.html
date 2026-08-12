@@ -3,25 +3,32 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Preguntas frecuentes — Metodología Mestix</title>
+<title>Preguntas frecuentes — Metodología — Mestix</title>
+<meta name="description" content="La versión técnica y detallada de cómo funciona Mestix, con las fuentes exactas detrás de cada número.">
+<link rel="canonical" href="https://mestix.cl/preguntas-frecuentes.html">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Mestix">
+<meta property="og:title" content="Preguntas frecuentes — Metodología — Mestix">
+<meta property="og:description" content="La versión técnica y detallada de cómo funciona Mestix, con las fuentes exactas detrás de cada número.">
+<meta property="og:image" content="https://mestix.cl/img/og-image.png">
+<meta property="og:url" content="https://mestix.cl/preguntas-frecuentes.html">
+<meta property="og:locale" content="es_CL">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Preguntas frecuentes — Metodología — Mestix">
+<meta name="twitter:description" content="La versión técnica y detallada de cómo funciona Mestix, con las fuentes exactas detrás de cada número.">
+<meta name="twitter:image" content="https://mestix.cl/img/og-image.png">
+
+<link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+<link rel="shortcut icon" href="img/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<meta name="theme-color" content="#F8931D">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito+Sans:wght@400;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=1786380800">
-<style>
-  .faq-tabs{ display:flex; gap:10px; margin:0 0 32px; }
-  .faq-tab{
-    font-family:'Fredoka',sans-serif; font-weight:600; font-size:15px; padding:12px 22px;
-    border-radius:100px; border:1.5px solid #EDE0CC; background:#fff; color:#17161A; cursor:pointer;
-  }
-  .faq-tab.active{ background:#17161A; color:#fff; border-color:#17161A; }
-  .faq-species{ display:none; }
-  .faq-species.active{ display:block; }
-  .faq-principios{
-    background:#FFF6EC; border:1px solid #EDE0CC; border-radius:16px; padding:26px 28px; margin-bottom:36px;
-  }
-  .faq-principios h3{ margin:0 0 12px; font-size:18px; }
-  .faq-principios ul{ margin:0; padding-left:20px; line-height:1.9; }
-</style>
+<link rel="stylesheet" href="css/style.css?v=1786552287">
 </head>
 <body class="has-bottom-ad">
 
@@ -34,8 +41,8 @@
         <li class="nav-item">
           <a href="categoria.html">Catálogo</a><span class="caret">▾</span>
           <ul class="dropdown">
-            <li><a href="categoria.html">🐶 Perros</a></li>
-            <li><a href="categoria-gatos.html">🐱 Gatos</a></li>
+            <li><a href="categoria.html"><span class="icon-inline"><svg class="icon-paw" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="16" height="16"><path d="M12 21c-3.5 0-6.5-1.8-6.5-4.5 0-1.8 1.3-2.7 1.3-4.3 0-1.2-.8-1.7-.8-2.9 0-1.4 1.1-2.3 2.3-2.3 1.1 0 1.7.7 2.2 1.6.4.7.9 1.1 1.5 1.1s1.1-.4 1.5-1.1c.5-.9 1.1-1.6 2.2-1.6 1.2 0 2.3.9 2.3 2.3 0 1.2-.8 1.7-.8 2.9 0 1.6 1.3 2.5 1.3 4.3C18.5 19.2 15.5 21 12 21z" fill="currentColor"/><ellipse cx="7" cy="6.2" rx="1.6" ry="2.4" fill="currentColor"/><ellipse cx="17" cy="6.2" rx="1.6" ry="2.4" fill="currentColor"/></svg></span> Perros</a></li>
+            <li><a href="categoria-gatos.html"><span class="icon-inline"><svg class="icon-paw" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="16" height="16"><path d="M12 21c-3.5 0-6.5-1.8-6.5-4.5 0-1.8 1.3-2.7 1.3-4.3 0-1.2-.8-1.7-.8-2.9 0-1.4 1.1-2.3 2.3-2.3 1.1 0 1.7.7 2.2 1.6.4.7.9 1.1 1.5 1.1s1.1-.4 1.5-1.1c.5-.9 1.1-1.6 2.2-1.6 1.2 0 2.3.9 2.3 2.3 0 1.2-.8 1.7-.8 2.9 0 1.6 1.3 2.5 1.3 4.3C18.5 19.2 15.5 21 12 21z" fill="currentColor"/><path d="M5.5 7.5L7.8 4l1 4.3z" fill="currentColor"/><path d="M18.5 7.5L16.2 4l-1 4.3z" fill="currentColor"/></svg></span> Gatos</a></li>
           </ul>
         </li>
         <li><a href="blog.html">Blog</a></li>
@@ -45,10 +52,14 @@
     </nav>
     <div class="header-search"><span>⌕</span><input type="text" placeholder="Buscar alimento o marca…"></div>
     <div class="country-select" id="countrySelect">
-      <button class="country-select-btn" id="countryBtn"><span class="flag">🇨🇱</span> CL <span class="caret">▾</span></button>
+      <button class="country-select-btn" id="countryBtn"><span class="flag"><svg class="flag-svg" viewBox="0 0 24 16" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="16" rx="2" fill="#fff"/><path d="M0 8h24v6a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2z" fill="#D52B1E"/><path d="M0 2a2 2 0 0 1 2-2h6v8H0z" fill="#0039A6"/><path d="M5 2.6l.5 1.5h1.6l-1.3 1 .5 1.5L5 5.6l-1.3.9.5-1.5-1.3-1h1.6z" fill="#fff"/></svg></span> CL <span class="caret">▾</span></button>
       <ul class="country-dropdown">
-        <li><a href="#" class="active" data-flag="🇨🇱" data-code="CL"><span class="flag">🇨🇱</span> Chile <span class="check">✓</span></a></li>
-        <li><a href="#" data-flag="🇦🇷" data-code="AR"><span class="flag">🇦🇷</span> Argentina</a></li>
+        <li><a href="#" class="active" data-code="CL" data-name="Chile"><span class="flag"><svg class="flag-svg" viewBox="0 0 24 16" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="16" rx="2" fill="#fff"/><path d="M0 8h24v6a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2z" fill="#D52B1E"/><path d="M0 2a2 2 0 0 1 2-2h6v8H0z" fill="#0039A6"/><path d="M5 2.6l.5 1.5h1.6l-1.3 1 .5 1.5L5 5.6l-1.3.9.5-1.5-1.3-1h1.6z" fill="#fff"/></svg></span> Chile <span class="check">✓</span></a></li>
+        <li><a href="#" data-code="AR" data-name="Argentina"><span class="flag"><svg class="flag-svg" viewBox="0 0 24 16" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="16" rx="2" fill="#fff"/><path d="M0 2a2 2 0 0 1 2-2h20a2 2 0 0 1 2 2v3.33H0z" fill="#75AADB"/><path d="M0 10.67h24V14a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2z" fill="#75AADB"/><circle cx="12" cy="8" r="1.7" fill="#F6B40E" stroke="#85340A" stroke-width=".3"/></svg></span> Argentina</a></li>
+        <li><a href="#" data-code="PE" data-name="Perú"><span class="flag"><svg class="flag-svg" viewBox="0 0 24 16" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="16" rx="2" fill="#fff"/><path d="M0 2a2 2 0 0 1 2-2h6v16H2a2 2 0 0 1-2-2z" fill="#D91023"/><path d="M16 0h6a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-6z" fill="#D91023"/></svg></span> Perú</a></li>
+        <li><a href="#" data-code="CO" data-name="Colombia"><span class="flag"><svg class="flag-svg" viewBox="0 0 24 16" xmlns="http://www.w3.org/2000/svg"><path d="M0 2a2 2 0 0 1 2-2h20a2 2 0 0 1 2 2v6H0z" fill="#FCD116"/><path d="M0 8h24v4H0z" fill="#003893"/><path d="M0 12h24v2a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2z" fill="#CE1126"/></svg></span> Colombia</a></li>
+        <li><a href="#" data-code="MX" data-name="México"><span class="flag"><svg class="flag-svg" viewBox="0 0 24 16" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="16" rx="2" fill="#fff"/><path d="M0 2a2 2 0 0 1 2-2h6v16H2a2 2 0 0 1-2-2z" fill="#006847"/><path d="M16 0h6a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-6z" fill="#CE1126"/></svg></span> México</a></li>
+        <li><a href="#" data-code="ES" data-name="España"><span class="flag"><svg class="flag-svg" viewBox="0 0 24 16" xmlns="http://www.w3.org/2000/svg"><path d="M0 2a2 2 0 0 1 2-2h20a2 2 0 0 1 2 2v2H0z" fill="#AA151B"/><path d="M0 4h24v8H0z" fill="#F1BF00"/><path d="M0 12h24v2a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2z" fill="#AA151B"/></svg></span> España</a></li>
       </ul>
     </div>
     <button class="nav-toggle" id="navToggle" aria-label="Abrir menú"><span></span></button>
@@ -62,14 +73,27 @@
       <li>
         <a href="categoria.html">Catálogo</a>
         <ul class="mobile-sub">
-          <li><a href="categoria.html">🐶 Perros</a></li>
-          <li><a href="categoria-gatos.html">🐱 Gatos</a></li>
+          <li><a href="categoria.html"><span class="icon-inline"><svg class="icon-paw" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="16" height="16"><path d="M12 21c-3.5 0-6.5-1.8-6.5-4.5 0-1.8 1.3-2.7 1.3-4.3 0-1.2-.8-1.7-.8-2.9 0-1.4 1.1-2.3 2.3-2.3 1.1 0 1.7.7 2.2 1.6.4.7.9 1.1 1.5 1.1s1.1-.4 1.5-1.1c.5-.9 1.1-1.6 2.2-1.6 1.2 0 2.3.9 2.3 2.3 0 1.2-.8 1.7-.8 2.9 0 1.6 1.3 2.5 1.3 4.3C18.5 19.2 15.5 21 12 21z" fill="currentColor"/><ellipse cx="7" cy="6.2" rx="1.6" ry="2.4" fill="currentColor"/><ellipse cx="17" cy="6.2" rx="1.6" ry="2.4" fill="currentColor"/></svg></span> Perros</a></li>
+          <li><a href="categoria-gatos.html"><span class="icon-inline"><svg class="icon-paw" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="16" height="16"><path d="M12 21c-3.5 0-6.5-1.8-6.5-4.5 0-1.8 1.3-2.7 1.3-4.3 0-1.2-.8-1.7-.8-2.9 0-1.4 1.1-2.3 2.3-2.3 1.1 0 1.7.7 2.2 1.6.4.7.9 1.1 1.5 1.1s1.1-.4 1.5-1.1c.5-.9 1.1-1.6 2.2-1.6 1.2 0 2.3.9 2.3 2.3 0 1.2-.8 1.7-.8 2.9 0 1.6 1.3 2.5 1.3 4.3C18.5 19.2 15.5 21 12 21z" fill="currentColor"/><path d="M5.5 7.5L7.8 4l1 4.3z" fill="currentColor"/><path d="M18.5 7.5L16.2 4l-1 4.3z" fill="currentColor"/></svg></span> Gatos</a></li>
         </ul>
       </li>
       <li><a href="blog.html">Blog</a></li>
       <li><a href="sobre-mestix.html">Sobre Mestix</a></li>
       <li><a href="preguntas-frecuentes.html" class="active">Preguntas frecuentes</a></li>
     </ul>
+    <div class="mobile-country" id="mobileCountrySelect">
+      <button class="mobile-country-btn" id="mobileCountryBtn" type="button">
+        <span><span class="flag"><svg class="flag-svg" viewBox="0 0 24 16" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="16" rx="2" fill="#fff"/><path d="M0 8h24v6a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2z" fill="#D52B1E"/><path d="M0 2a2 2 0 0 1 2-2h6v8H0z" fill="#0039A6"/><path d="M5 2.6l.5 1.5h1.6l-1.3 1 .5 1.5L5 5.6l-1.3.9.5-1.5-1.3-1h1.6z" fill="#fff"/></svg></span> Chile</span> <span class="caret">▾</span>
+      </button>
+      <ul class="mobile-country-dropdown">
+        <li><a href="#" class="active" data-code="CL" data-name="Chile"><span class="flag"><svg class="flag-svg" viewBox="0 0 24 16" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="16" rx="2" fill="#fff"/><path d="M0 8h24v6a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2z" fill="#D52B1E"/><path d="M0 2a2 2 0 0 1 2-2h6v8H0z" fill="#0039A6"/><path d="M5 2.6l.5 1.5h1.6l-1.3 1 .5 1.5L5 5.6l-1.3.9.5-1.5-1.3-1h1.6z" fill="#fff"/></svg></span> Chile <span class="check">✓</span></a></li>
+        <li><a href="#" data-code="AR" data-name="Argentina"><span class="flag"><svg class="flag-svg" viewBox="0 0 24 16" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="16" rx="2" fill="#fff"/><path d="M0 2a2 2 0 0 1 2-2h20a2 2 0 0 1 2 2v3.33H0z" fill="#75AADB"/><path d="M0 10.67h24V14a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2z" fill="#75AADB"/><circle cx="12" cy="8" r="1.7" fill="#F6B40E" stroke="#85340A" stroke-width=".3"/></svg></span> Argentina</a></li>
+        <li><a href="#" data-code="PE" data-name="Perú"><span class="flag"><svg class="flag-svg" viewBox="0 0 24 16" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="16" rx="2" fill="#fff"/><path d="M0 2a2 2 0 0 1 2-2h6v16H2a2 2 0 0 1-2-2z" fill="#D91023"/><path d="M16 0h6a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-6z" fill="#D91023"/></svg></span> Perú</a></li>
+        <li><a href="#" data-code="CO" data-name="Colombia"><span class="flag"><svg class="flag-svg" viewBox="0 0 24 16" xmlns="http://www.w3.org/2000/svg"><path d="M0 2a2 2 0 0 1 2-2h20a2 2 0 0 1 2 2v6H0z" fill="#FCD116"/><path d="M0 8h24v4H0z" fill="#003893"/><path d="M0 12h24v2a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2z" fill="#CE1126"/></svg></span> Colombia</a></li>
+        <li><a href="#" data-code="MX" data-name="México"><span class="flag"><svg class="flag-svg" viewBox="0 0 24 16" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="16" rx="2" fill="#fff"/><path d="M0 2a2 2 0 0 1 2-2h6v16H2a2 2 0 0 1-2-2z" fill="#006847"/><path d="M16 0h6a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-6z" fill="#CE1126"/></svg></span> México</a></li>
+        <li><a href="#" data-code="ES" data-name="España"><span class="flag"><svg class="flag-svg" viewBox="0 0 24 16" xmlns="http://www.w3.org/2000/svg"><path d="M0 2a2 2 0 0 1 2-2h20a2 2 0 0 1 2 2v2H0z" fill="#AA151B"/><path d="M0 4h24v8H0z" fill="#F1BF00"/><path d="M0 12h24v2a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2z" fill="#AA151B"/></svg></span> España</a></li>
+      </ul>
+    </div>
     <div class="mobile-search"><span>⌕</span><input type="text" placeholder="Buscar alimento o marca…"></div>
   </div>
 </div>
@@ -93,7 +117,7 @@
       <h3>Principios que aplican a todo el modelo, en ambas especies</h3>
       <ul>
         <li>Cada variable se audita empezando por la pregunta: ¿qué mide realmente — calidad nutricional, equilibrio/seguridad, o categoría del producto?</li>
-        <li>Solo usamos fuentes de primer nivel (AAFCO, FEDIAF, NRC, Merck Veterinary Manual) cuando aplican directamente al dato que declaramos.</li>
+        <li>Solo usamos fuentes de primer nivel (<a href="https://www.aafco.org/" target="_blank" rel="noopener">AAFCO</a>, <a href="https://europeanpetfood.org/" target="_blank" rel="noopener">FEDIAF</a>, NRC, <a href="https://www.merckvetmanual.com/es-us" target="_blank" rel="noopener">Merck Veterinary Manual</a>) cuando aplican directamente al dato que declaramos.</li>
         <li>No convertimos unidades ni estimamos valores faltantes — comparamos la información tal como la declara el fabricante.</li>
         <li>Cuando no existe una fuente que respalde un umbral, lo decimos explícitamente como decisión metodológica propia de Mestix — nunca como si fuera una norma oficial.</li>
         <li>Un dato faltante nunca se inventa ni se asume: simplemente esa variable no suma puntos para ese producto.</li>
@@ -170,8 +194,8 @@
     </div>
 
     <div class="faq-tabs">
-      <button class="faq-tab active" data-tab="perros">🐶 Perros</button>
-      <button class="faq-tab" data-tab="gatos">🐱 Gatos</button>
+      <button class="faq-tab active" data-tab="perros"><span class="icon-inline"><svg class="icon-paw" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="16" height="16"><path d="M12 21c-3.5 0-6.5-1.8-6.5-4.5 0-1.8 1.3-2.7 1.3-4.3 0-1.2-.8-1.7-.8-2.9 0-1.4 1.1-2.3 2.3-2.3 1.1 0 1.7.7 2.2 1.6.4.7.9 1.1 1.5 1.1s1.1-.4 1.5-1.1c.5-.9 1.1-1.6 2.2-1.6 1.2 0 2.3.9 2.3 2.3 0 1.2-.8 1.7-.8 2.9 0 1.6 1.3 2.5 1.3 4.3C18.5 19.2 15.5 21 12 21z" fill="currentColor"/><ellipse cx="7" cy="6.2" rx="1.6" ry="2.4" fill="currentColor"/><ellipse cx="17" cy="6.2" rx="1.6" ry="2.4" fill="currentColor"/></svg></span> Perros</button>
+      <button class="faq-tab" data-tab="gatos"><span class="icon-inline"><svg class="icon-paw" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="16" height="16"><path d="M12 21c-3.5 0-6.5-1.8-6.5-4.5 0-1.8 1.3-2.7 1.3-4.3 0-1.2-.8-1.7-.8-2.9 0-1.4 1.1-2.3 2.3-2.3 1.1 0 1.7.7 2.2 1.6.4.7.9 1.1 1.5 1.1s1.1-.4 1.5-1.1c.5-.9 1.1-1.6 2.2-1.6 1.2 0 2.3.9 2.3 2.3 0 1.2-.8 1.7-.8 2.9 0 1.6 1.3 2.5 1.3 4.3C18.5 19.2 15.5 21 12 21z" fill="currentColor"/><path d="M5.5 7.5L7.8 4l1 4.3z" fill="currentColor"/><path d="M18.5 7.5L16.2 4l-1 4.3z" fill="currentColor"/></svg></span> Gatos</button>
     </div>
 
     <!-- ===================== PERROS ===================== -->
@@ -195,8 +219,8 @@
             <span class="macc-caret">▾</span>
           </button>
           <div class="macc-body">
-            <p>Es una capa separada del puntaje — responde una pregunta distinta: no "qué tan optimizado está" sino "es seguro para esta etapa de vida de mi perro". Un alimento puede tener un puntaje más bajo y aun así ser perfectamente apto para su etapa, o viceversa. <b>Apto</b> significa que cumple el mínimo objetivo publicado por AAFCO para esa etapa, <b>Podría consumir</b> que está fuera de lo óptimo pero dentro de un margen razonable, y <b>Información insuficiente</b> que el fabricante no declaró los datos necesarios.</p>
-            <p>Para la etapa Senior, que AAFCO no define de forma oficial, usamos la base de Adulto con un ajuste preventivo adicional relacionado a la función renal, documentado como decisión propia y no como cifra oficial.</p>
+            <p>Es una capa separada del puntaje — responde una pregunta distinta: no "qué tan optimizado está" sino "es seguro para esta etapa de vida de mi perro". Un alimento puede tener un puntaje más bajo y aun así ser perfectamente apto para su etapa, o viceversa. <b>Apto</b> significa que cumple el mínimo objetivo publicado por <a href="https://www.aafco.org/" target="_blank" rel="noopener">AAFCO</a> para esa etapa, <b>Podría consumir</b> que está fuera de lo óptimo pero dentro de un margen razonable, y <b>Información insuficiente</b> que el fabricante no declaró los datos necesarios.</p>
+            <p>Para la etapa Senior, que <a href="https://www.aafco.org/" target="_blank" rel="noopener">AAFCO</a> no define de forma oficial, usamos la base de Adulto con un ajuste preventivo adicional relacionado a la función renal, documentado como decisión propia y no como cifra oficial.</p>
           </div>
         </div>
         <div class="macc-item">
@@ -216,7 +240,7 @@
             <span class="macc-caret">▾</span>
           </button>
           <div class="macc-body">
-            <p>No basta con que cada mineral esté dentro de su rango individual — el equilibrio entre ambos también afecta cómo el cuerpo los absorbe. Existe un óptimo clínico reconocido por el Merck Veterinary Manual, distinto del rango de seguridad más amplio que exige AAFCO — nuestro modelo distingue entre ambos en vez de tratarlos como si fueran lo mismo.</p>
+            <p>No basta con que cada mineral esté dentro de su rango individual — el equilibrio entre ambos también afecta cómo el cuerpo los absorbe. Existe un óptimo clínico reconocido por el <a href="https://www.merckvetmanual.com/es-us" target="_blank" rel="noopener">Merck Veterinary Manual</a>, distinto del rango de seguridad más amplio que exige <a href="https://www.aafco.org/" target="_blank" rel="noopener">AAFCO</a> — nuestro modelo distingue entre ambos en vez de tratarlos como si fueran lo mismo.</p>
           </div>
         </div>
         <div class="macc-item">
@@ -226,7 +250,7 @@
             <span class="macc-caret">▾</span>
           </button>
           <div class="macc-body">
-            <p>Ni AAFCO ni FEDIAF ni el NRC fijan un máximo oficial para ceniza o fibra en alimento seco de perro. Mestix no inventa un umbral disfrazado de norma — construye su propio criterio y lo pesa menos que las variables que sí cuentan con respaldo regulatorio directo.</p>
+            <p>Ni <a href="https://www.aafco.org/" target="_blank" rel="noopener">AAFCO</a> ni <a href="https://europeanpetfood.org/" target="_blank" rel="noopener">FEDIAF</a> ni el NRC fijan un máximo oficial para ceniza o fibra en alimento seco de perro. Mestix no inventa un umbral disfrazado de norma — construye su propio criterio y lo pesa menos que las variables que sí cuentan con respaldo regulatorio directo.</p>
           </div>
         </div>
         <div class="macc-item">
@@ -236,7 +260,7 @@
             <span class="macc-caret">▾</span>
           </button>
           <div class="macc-body">
-            <p>La FDA describe un rango típico para alimento seco comercial, y FEDIAF marca el punto en que un producto deja de considerarse "seco" para pasar a semi-húmedo. Mestix usa esos dos puntos de referencia para verificar que el producto cumple con lo esperado para su categoría — no para medir calidad nutricional.</p>
+            <p>La FDA describe un rango típico para alimento seco comercial, y <a href="https://europeanpetfood.org/" target="_blank" rel="noopener">FEDIAF</a> marca el punto en que un producto deja de considerarse "seco" para pasar a semi-húmedo. Mestix usa esos dos puntos de referencia para verificar que el producto cumple con lo esperado para su categoría — no para medir calidad nutricional.</p>
           </div>
         </div>
         <div class="macc-item">
@@ -273,8 +297,8 @@
             <span class="macc-caret">▾</span>
           </button>
           <div class="macc-body">
-            <p>Se evalúan proteína, grasa, calcio y fósforo contra los mínimos publicados por AAFCO para cada etapa. A diferencia de perros, ninguno de los dos minerales tiene un techo máximo en gatos — AAFCO no fija un límite superior de calcio ni fósforo para la especie en ninguna etapa de vida.</p>
-            <p>AAFCO usa el mismo perfil nutricional para gatitos y para hembras gestantes o lactantes, por eso ambos casos comparten el mismo resultado en Mestix.</p>
+            <p>Se evalúan proteína, grasa, calcio y fósforo contra los mínimos publicados por <a href="https://www.aafco.org/" target="_blank" rel="noopener">AAFCO</a> para cada etapa. A diferencia de perros, ninguno de los dos minerales tiene un techo máximo en gatos — <a href="https://www.aafco.org/" target="_blank" rel="noopener">AAFCO</a> no fija un límite superior de calcio ni fósforo para la especie en ninguna etapa de vida.</p>
+            <p><a href="https://www.aafco.org/" target="_blank" rel="noopener">AAFCO</a> usa el mismo perfil nutricional para gatitos y para hembras gestantes o lactantes, por eso ambos casos comparten el mismo resultado en Mestix.</p>
           </div>
         </div>
         <div class="macc-item">
@@ -295,7 +319,7 @@
             <span class="macc-caret">▾</span>
           </button>
           <div class="macc-body">
-            <p>No basta con que cada mineral esté dentro de su rango individual — el equilibrio entre ambos también afecta cómo el cuerpo los absorbe. A diferencia de perros, AAFCO no fija una relación Ca:P específica para gatos, así que nos apoyamos en el organismo europeo de referencia (FEDIAF) para esta variable en particular.</p>
+            <p>No basta con que cada mineral esté dentro de su rango individual — el equilibrio entre ambos también afecta cómo el cuerpo los absorbe. A diferencia de perros, <a href="https://www.aafco.org/" target="_blank" rel="noopener">AAFCO</a> no fija una relación Ca:P específica para gatos, así que nos apoyamos en el organismo europeo de referencia (<a href="https://europeanpetfood.org/" target="_blank" rel="noopener">FEDIAF</a>) para esta variable en particular.</p>
           </div>
         </div>
         <div class="macc-item">
@@ -305,7 +329,7 @@
             <span class="macc-caret">▾</span>
           </button>
           <div class="macc-body">
-            <p>A diferencia del perro, el gato no puede sintetizar taurina en cantidad suficiente por sí mismo. Su deficiencia tiene consecuencias clínicas graves y documentadas: cardiomiopatía dilatada y degeneración retinal. Si el fabricante solo menciona "contiene taurina" sin dar una cifra exacta, igual reconocemos esa declaración — AAFCO no exige ese nivel de detalle en la etiqueta, y Mestix no exige más transparencia de la que la propia norma requiere.</p>
+            <p>A diferencia del perro, el gato no puede sintetizar taurina en cantidad suficiente por sí mismo. Su deficiencia tiene consecuencias clínicas graves y documentadas: cardiomiopatía dilatada y degeneración retinal. Si el fabricante solo menciona "contiene taurina" sin dar una cifra exacta, igual reconocemos esa declaración — <a href="https://www.aafco.org/" target="_blank" rel="noopener">AAFCO</a> no exige ese nivel de detalle en la etiqueta, y Mestix no exige más transparencia de la que la propia norma requiere.</p>
           </div>
         </div>
         <div class="macc-item">
@@ -315,7 +339,7 @@
             <span class="macc-caret">▾</span>
           </button>
           <div class="macc-body">
-            <p>Ni AAFCO ni FEDIAF ni el NRC fijan un máximo oficial para ceniza o fibra en alimento seco de gato. Por esta razón, su peso dentro del Score es menor al de las variables que sí cuentan con respaldo regulatorio directo.</p>
+            <p>Ni <a href="https://www.aafco.org/" target="_blank" rel="noopener">AAFCO</a> ni <a href="https://europeanpetfood.org/" target="_blank" rel="noopener">FEDIAF</a> ni el NRC fijan un máximo oficial para ceniza o fibra en alimento seco de gato. Por esta razón, su peso dentro del Score es menor al de las variables que sí cuentan con respaldo regulatorio directo.</p>
           </div>
         </div>
         <div class="macc-item">
@@ -345,7 +369,7 @@
       <div><h4>Metodología</h4><ul><li><a href="preguntas-frecuentes.html">Cómo evaluamos</a></li><li><a href="preguntas-frecuentes.html">Fuentes técnicas</a></li><li><a href="preguntas-frecuentes.html">Etapas de vida</a></li></ul></div>
       <div><h4>Mestix</h4><ul><li><a href="sobre-mestix.html">Sobre nosotros</a></li><li><a href="contacto.html">Contacto</a></li><li><a href="terminos-privacidad.html">Términos y privacidad</a></li></ul></div>
     </div>
-    <div class="footer-bottom"><span>© 2026 Mestix. Prototipo de diseño — datos de demostración.</span><span>Hecho en Chile 🇨🇱</span></div>
+    <div class="footer-bottom"><span>© 2026 Mestix. Prototipo de diseño — datos de demostración.</span><span>Hecho en Chile <span class="flag"><svg class="flag-svg" viewBox="0 0 24 16" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="16" rx="2" fill="#fff"/><path d="M0 8h24v6a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2z" fill="#D52B1E"/><path d="M0 2a2 2 0 0 1 2-2h6v8H0z" fill="#0039A6"/><path d="M5 2.6l.5 1.5h1.6l-1.3 1 .5 1.5L5 5.6l-1.3.9.5-1.5-1.3-1h1.6z" fill="#fff"/></svg></span></span></div>
   </div>
 </footer>
 
@@ -357,32 +381,79 @@
   <div class="ad-slot"><span class="ad-label">Publicidad</span><span class="ad-size">728 × 90 · 320 × 50 en mobile · fijo</span></div>
 </div>
 
+<script src="js/mestix-search-data.js"></script>
+<script src="js/mestix-search.js"></script>
+
 <script>
   (function(){
-    const wrap = document.getElementById('countrySelect');
-    if (!wrap) return;
-    const btn = document.getElementById('countryBtn');
-    const links = wrap.querySelectorAll('.country-dropdown a');
-    btn.addEventListener('click', (e) => { e.stopPropagation(); wrap.classList.toggle('open'); });
-    links.forEach(a => a.addEventListener('click', (e) => {
-      e.preventDefault();
-      links.forEach(l => l.classList.remove('active'));
-      a.classList.add('active');
-      btn.innerHTML = '<span class="flag">' + a.dataset.flag + '</span> ' + a.dataset.code + ' <span class="caret">▾</span>';
-      wrap.classList.remove('open');
-    }));
-    document.addEventListener('click', () => wrap.classList.remove('open'));
+    // Selector de país — hay 2 instancias en la página (la del header,
+    // oculta bajo 1023px, y la del panel mobile, que antes no existía).
+    // Se manejan juntas acá para que elegir un país en una quede reflejado
+    // también en la otra si el usuario cambia de tamaño de pantalla.
+    const instancias = [
+      { wrap: document.getElementById('countrySelect'), btn: document.getElementById('countryBtn'), estilo: 'dropdown' },
+      { wrap: document.getElementById('mobileCountrySelect'), btn: document.getElementById('mobileCountryBtn'), estilo: 'acordeon' }
+    ].filter(i => i.wrap && i.btn);
+
+    const FLAGS_SVG = { CL: `<svg class="flag-svg" viewBox="0 0 24 16" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="16" rx="2" fill="#fff"/><path d="M0 8h24v6a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2z" fill="#D52B1E"/><path d="M0 2a2 2 0 0 1 2-2h6v8H0z" fill="#0039A6"/><path d="M5 2.6l.5 1.5h1.6l-1.3 1 .5 1.5L5 5.6l-1.3.9.5-1.5-1.3-1h1.6z" fill="#fff"/></svg>`, AR: `<svg class="flag-svg" viewBox="0 0 24 16" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="16" rx="2" fill="#fff"/><path d="M0 2a2 2 0 0 1 2-2h20a2 2 0 0 1 2 2v3.33H0z" fill="#75AADB"/><path d="M0 10.67h24V14a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2z" fill="#75AADB"/><circle cx="12" cy="8" r="1.7" fill="#F6B40E" stroke="#85340A" stroke-width=".3"/></svg>`, PE: `<svg class="flag-svg" viewBox="0 0 24 16" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="16" rx="2" fill="#fff"/><path d="M0 2a2 2 0 0 1 2-2h6v16H2a2 2 0 0 1-2-2z" fill="#D91023"/><path d="M16 0h6a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-6z" fill="#D91023"/></svg>`, CO: `<svg class="flag-svg" viewBox="0 0 24 16" xmlns="http://www.w3.org/2000/svg"><path d="M0 2a2 2 0 0 1 2-2h20a2 2 0 0 1 2 2v6H0z" fill="#FCD116"/><path d="M0 8h24v4H0z" fill="#003893"/><path d="M0 12h24v2a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2z" fill="#CE1126"/></svg>`, MX: `<svg class="flag-svg" viewBox="0 0 24 16" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="16" rx="2" fill="#fff"/><path d="M0 2a2 2 0 0 1 2-2h6v16H2a2 2 0 0 1-2-2z" fill="#006847"/><path d="M16 0h6a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-6z" fill="#CE1126"/></svg>`, ES: `<svg class="flag-svg" viewBox="0 0 24 16" xmlns="http://www.w3.org/2000/svg"><path d="M0 2a2 2 0 0 1 2-2h20a2 2 0 0 1 2 2v2H0z" fill="#AA151B"/><path d="M0 4h24v8H0z" fill="#F1BF00"/><path d="M0 12h24v2a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2z" fill="#AA151B"/></svg>` };
+
+    function actualizarBoton(inst, code, name){
+      const flagSvg = FLAGS_SVG[code] || '';
+      inst.btn.innerHTML = inst.estilo === 'dropdown'
+        ? '<span class="flag">' + flagSvg + '</span> ' + code + ' <span class="caret">▾</span>'
+        : '<span><span class="flag">' + flagSvg + '</span> ' + name + '</span> <span class="caret">▾</span>';
+    }
+
+    instancias.forEach(inst => {
+      const links = inst.wrap.querySelectorAll('a[data-code]');
+      inst.btn.addEventListener('click', (e) => { e.stopPropagation(); inst.wrap.classList.toggle('open'); });
+      links.forEach(a => a.addEventListener('click', (e) => {
+        e.preventDefault();
+        const { code, name } = a.dataset;
+        instancias.forEach(otro => {
+          otro.wrap.querySelectorAll('a[data-code]').forEach(l => l.classList.toggle('active', l.dataset.code === code));
+          actualizarBoton(otro, code, name);
+          otro.wrap.classList.remove('open');
+        });
+      }));
+    });
+    document.addEventListener('click', () => instancias.forEach(i => i.wrap.classList.remove('open')));
   })();
 
   (function(){
-    const toggle = document.getElementById('navToggle');
-    const panel = document.getElementById('mobilePanel');
-    if (!toggle || !panel) return;
-    toggle.addEventListener('click', () => {
-      panel.classList.toggle('open');
-      toggle.classList.toggle('active');
-    });
-  })();
+  // Menú mobile: mide el alto real del header (puede variar levemente entre
+  // páginas) para que el panel quede pegado justo debajo vía --header-h, y
+  // bloquea el scroll del body mientras está abierto para que header + panel
+  // se muevan siempre como una sola pieza (antes el panel, al no ser
+  // sticky/fixed como el header, se desincronizaba al scrollear).
+  const toggle = document.getElementById('navToggle');
+  const panel = document.getElementById('mobilePanel');
+  const header = document.querySelector('header.site');
+  if (!toggle || !panel) return;
+
+  function setHeaderHeight(){
+    if (header) document.documentElement.style.setProperty('--header-h', header.offsetHeight + 'px');
+  }
+  setHeaderHeight();
+  window.addEventListener('resize', setHeaderHeight);
+
+  function closePanel(){
+    toggle.classList.remove('open');
+    panel.classList.remove('open');
+    document.body.classList.remove('menu-open');
+    document.documentElement.classList.remove('menu-open');
+  }
+  function openPanel(){
+    setHeaderHeight();
+    toggle.classList.add('open');
+    panel.classList.add('open');
+    document.body.classList.add('menu-open');
+    document.documentElement.classList.add('menu-open');
+  }
+  toggle.addEventListener('click', () => {
+    panel.classList.contains('open') ? closePanel() : openPanel();
+  });
+})();
 
   // Tabs Perros/Gatos
   document.querySelectorAll('.faq-tab').forEach(tab => {

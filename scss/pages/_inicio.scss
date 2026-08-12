@@ -8,9 +8,19 @@
   display:flex;
   align-items:center;
   background:$ink;
-  @include tablet{ min-height:0; padding:0; }
+  // En tablet/mobile el slide activo deja de ser position:absolute (ver abajo),
+  // así que el alto de .hero pasa a depender de su contenido real —ya no hace
+  // falta (ni conviene) forzar un min-height fijo a ojo, que se rompía y
+  // colapsaba todo el hero a 0px de alto.
+  @include tablet{ min-height:0; padding:0; display:block; }
 }
-.hero-slides-wrap{ position:absolute; inset:0; }
+.hero-slides-wrap{
+  position:absolute; inset:0;
+  // Mismo motivo: en tablet/mobile el wrap deja de estirarse con inset:0
+  // (eso es lo que colapsaba a 0 al perder el min-height del padre) y pasa
+  // a comportarse como un bloque normal, con el alto que le da el slide activo.
+  @include tablet{ position:static; inset:auto; }
+}
 
 .hero-slide-full{
   position:absolute; inset:0;
@@ -21,16 +31,53 @@
   background-color:$ink;
   &.active{ opacity:1; visibility:visible; z-index:1; }
   &.no-photo{ background:linear-gradient(120deg, $brown 0%, $orange-dark 55%, $orange 100%); }
+  // En tablet/mobile no se hace crossfade entre slides absolutos superpuestos
+  // (eso exige una altura fija que no existe de forma responsiva); el slide
+  // inactivo directamente no se renderiza (display:none) y el activo ocupa
+  // su lugar normal en el flujo, aportando su propio alto real a .hero.
+  @include tablet{
+    position:static; inset:auto;
+    display:none; opacity:1; visibility:visible; transition:none;
+    height: 80vh;
+    &.active{ display:flex; }
+    .lead{
+      display: none;
+    }
+  }
 }
 
 .hero-content{
   position:relative; z-index:2;
-  padding:90px 0;
-  background-size:contain;
-  background-position:right center;
-  background-repeat:no-repeat;
+  display:grid; grid-template-columns:1.3fr .9fr; gap:40px; align-items:center;
+  // OJO: padding en formato abreviado (2 o 3 valores) pisa también el
+  // padding lateral que pone .wrap (32px/20px) dejando el texto pegado al
+  // borde en pantallas angostas — por eso acá solo se toca arriba/abajo.
+  padding-top:90px; padding-bottom:90px;
   width: 100%;
-  @include tablet{ padding:56px 0 40px; background-image:none !important; }
+  // Entre 768–1023px las flechas prev/next siguen visibles (position:absolute
+  // sobre .hero, a 20px del borde) — se reserva espacio extra para que el
+  // texto no quede debajo de ellas. Por debajo de 767px las flechas ya se
+  // ocultan (ver .hero-arrow), así que ese espacio extra deja de hacer falta.
+  // Ya no hace falta el padding lateral extra para las flechas (ver
+  // .hero-arrow: se ocultan en todo el rango tablet), así que acá solo
+  // ajustamos el espaciado vertical entre imagen y texto.
+  @include tablet{
+    grid-template-columns:1fr; gap:24px;
+    padding-top:40px; padding-bottom:40px;
+    justify-items: center;
+  }
+  @include movil{ padding-top:32px; padding-bottom:32px; padding-left:20px; padding-right:20px; justify-items: center;}
+}
+// Columna de imagen real (no fondo): un <img> de verdad, así se ve completo
+// en cualquier tamaño de pantalla — en vez de recortarla o esconderla, en
+// mobile pasa a ir ARRIBA del texto (order:-1) y se le baja la altura.
+.hero-image{
+  img{ width:100%; height:auto; max-height:480px; object-fit:contain; display:block; transform: scale(1.5);}
+  @include tablet{
+    order:-1; align-self:center;
+    img{ max-height:280px; margin:0 auto; transform: scale(1.3);}
+  }
+  @include movil{ img{ max-height:220px; } }
 }
 .hero-text{ max-width:600px; }
 .hero .eyebrow{ color:$amber; }
@@ -38,7 +85,7 @@
   font-size:52px;
   letter-spacing:-0.01em;
   color:$off-white;
-  @include tablet{ font-size:34px; }
+  @include tablet{ font-size:32px; margin-bottom: 20px;}
 }
 .hero h1 .accent{ color:$orange; }
 .hero p.lead{
@@ -47,7 +94,17 @@
   max-width:480px;
   margin:20px 0 30px;
 }
-.hero-ctas{ display:flex; gap:14px; flex-wrap:wrap; }
+.hero-ctas{
+  display:flex; gap:14px; flex-wrap:wrap;
+  // En mobile, cada botón pasa a ocupar el ancho completo, uno debajo del
+  // otro — antes quedaban en la misma fila apretados por flex-shrink, y el
+  // texto se cortaba a la mitad ("Ver la metodología" en una línea, la
+  // flecha "→" sola en la siguiente, dentro de la misma píldora).
+  @include movil{
+    flex-direction:column; align-items:stretch;
+    .btn, .btn-outline{ width:100%; white-space:nowrap; }
+  }
+}
 .hero .btn-outline{
   border-color:rgba(232,242,251,0.6);
   color:$off-white;
@@ -61,8 +118,14 @@
   backdrop-filter:blur(6px);
   border-radius:$radius; padding:20px;
   box-shadow:$shadow-lift;
-  @include tablet{ display:none; }
+  @include tablet{ margin: 20px auto 0px; max-width: 600px; width: 100%;}
 }
+.hfc-tag{
+  font-family:$font-mono; font-size:11px; color:$orange-dark;
+  text-transform:uppercase; letter-spacing:.05em; font-weight:700;
+}
+.hfc-title{ font-family:$font-display; font-weight:600; font-size:16px; margin:8px 0 6px; color:$ink; }
+.hfc-meta{ font-family:$font-mono; font-size:11.5px; color:$ink-faint; }
 
 // ---------- Flechas ----------
 .hero-arrow{
@@ -76,6 +139,11 @@
   &.prev{ left:20px; }
   &.next{ right:20px; }
   @include mobile{ width:36px; height:36px; font-size:16px; }
+  // Con imagen + texto apilados en columna (tablet para abajo), el alto del
+  // slide varía mucho de un slide a otro y ya no hay un "centro vertical"
+  // fijo donde las flechas no choquen con el texto — se ocultan y queda
+  // navegación por los puntos / swipe nativo, igual que ya pasaba en mobile.
+  @include tablet{ display:none; }
 }
 
 .hero-dots-global{
@@ -95,10 +163,14 @@
 }
 .trust-strip .wrap{
   display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:20px;
+  // El space-between con 4 textos de largo distinto quedaba armando una
+  // grilla despareja al envolver (2 arriba desalineados, 2 abajo) — en
+  // mobile se apila en una sola columna, prolijo y legible de arriba a
+  // abajo.
+  @include movil{ flex-direction:column; align-items:flex-start; gap:14px; }
 }
 .trust-item{
-  display:flex; align-items:center; gap:10px;
-  font-family:$font-display; font-size:13.5px; font-weight:600; color:$ink-soft;
+  display:flex; align-items:center; gap:10px; font-size:13.5px; font-weight:600; color:$ink-soft;
 }
 .trust-item .dot{ width:8px; height:8px; border-radius:50%; background:$orange; }
 
@@ -141,7 +213,9 @@
   display:flex; flex-wrap:wrap; gap:20px; margin-top:32px;
   > *{ flex:1 1 calc(25% - 15px); }
   @include tablet{ > *{ flex:1 1 calc(50% - 10px); } }
-  @include mobile{ > *{ flex:1 1 100%; } }
+  // Antes colapsaba a 1 columna en mobile — igual que se hizo en el
+  // catálogo, se deja en 2 columnas para ver más productos con menos scroll.
+  @include mobile{ gap:12px; > *{ flex:1 1 calc(50% - 6px); } }
 }
 
 .section-head{
@@ -175,3 +249,4 @@
   h2{ color:$off-white; font-size:30px; margin-bottom:12px; }
   p{ color:rgba(232,242,251,0.85); max-width:480px; margin:0 auto 26px; }
 }
+

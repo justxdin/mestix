@@ -20,6 +20,7 @@
 // Components
 @use 'components/components';
 @use 'components/ads';
+@use 'components/search';
 
 // Pages
 @use 'pages/inicio';
@@ -27,3 +28,8 @@
 @use 'pages/comparador';
 @use 'pages/blog';
 @use 'pages/articulo';
+@use 'pages/contacto';
+@use 'pages/preguntas-frecuentes';
+@use 'pages/terminos';
+@use 'pages/error-404';
+@use 'pages/embed';

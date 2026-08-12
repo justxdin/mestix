@@ -3,8 +3,18 @@
 // ============================================================
 @use 'variables' as *;
 
-@mixin tablet { @media (max-width: $bp-tablet) { @content; } }
-@mixin mobile { @media (max-width: $bp-mobile) { @content; } }
+// Sistema de breakpoints — de mayor a menor ancho de pantalla.
+// "tablet" y "mobile" son los que ya usa la mayoría del sitio (histórico);
+// "movil" se suma como escalón intermedio entre tablet y mobile (celulares
+// grandes / tablets chicas en horizontal), y "desktop"/"laptop" para afinar
+// pantallas grandes. Antes había un @mixin tablet duplicado (860px y 1023px
+// en el mismo archivo) — Sass se queda silenciosamente con el último, lo que
+// hacía muy confuso saber qué ancho aplicaba realmente. Queda uno solo acá.
+@mixin desktop { @media (max-width: $bp-desktop) { @content; } }
+@mixin laptop  { @media (max-width: $bp-laptop)  { @content; } }
+@mixin tablet  { @media (max-width: $bp-tablet)  { @content; } }
+@mixin movil   { @media (max-width: $bp-movil)   { @content; } }
+@mixin mobile  { @media (max-width: $bp-mobile)  { @content; } }
 
 @mixin panel {
   background: $surface;
@@ -40,26 +50,12 @@
   text-decoration: none;
 }
 
-@mixin desktop {
-  @media (max-width: 1500px) {
-    @content;
-  }
-}
-
-@mixin laptop {
-  @media (max-width: 1365px) {
-    @content;
-  }
-}
-
-@mixin tablet {
-    @media (max-width: 1023px) {
-        @content;
-    }
-}
-
-@mixin movil {
-    @media (max-width:767px) {
-        @content;
-    }
+// Para carruseles de scroll horizontal nativo (compare-header, explore-ranked):
+// oculta la scrollbar del navegador sin sacar el scroll — así se ve como un
+// carrusel de verdad (swipe + tarjetas asomando) en vez de un <div> con una
+// barra de scroll gris cruda abajo, que es lo que se ve por defecto.
+@mixin hide-scrollbar {
+  scrollbar-width: none; // Firefox
+  -ms-overflow-style: none; // Edge viejo
+  &::-webkit-scrollbar { display: none; } // Chrome/Safari
 }

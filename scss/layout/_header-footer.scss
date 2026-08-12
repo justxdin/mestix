@@ -1,6 +1,23 @@
 @use '../utilities/variables' as *;
 @use '../utilities/mixins' as *;
 
+// Banderas e íconos de especie (perro/gato) como SVG en vez de emoji — en
+// Windows/Chrome, Unicode de banderas y algunos emoji (como el hueso 🦴)
+// no siempre tienen la fuente instalada y se ven como un cuadro vacío.
+// El SVG con currentColor/colores fijos se ve igual en cualquier sistema.
+.flag{
+  display:inline-flex; align-items:center; line-height:0;
+  .flag-svg{ width:1.3em; height:auto; display:block; border-radius:2px; }
+}
+// Seguro por si el SVG de bandera aparece sin el wrapper .flag en algún
+// lado (como pasó en el footer): sin esto, un <svg> sin width/height propio
+// cae al tamaño por defecto del navegador (300×150px) y se ve gigante.
+.flag-svg{ width:20px; height:auto; display:inline-block; vertical-align:middle; border-radius:2px; }
+.icon-inline{
+  display:inline-flex; align-items:center; vertical-align:-2px; margin-right:2px;
+  svg{ width:14px; height:14px; }
+}
+
 header.site{
   background:$ink;
   padding:18px 0;
@@ -144,6 +161,17 @@ header.site{
   background:$ink;
   border-top:1px solid rgba(232,242,251,0.12);
   padding:8px 0 20px;
+  // El panel es hermano de <header>, no vive adentro — como el header es
+  // sticky, al abrir el menú y scrollear la página el panel (que no era
+  // sticky/fixed) se quedaba en su lugar del documento y se desincronizaba
+  // del header, dando la sensación de que "no baja con el contenido". Ahora
+  // queda fixed pegado justo debajo del header, y bloqueamos el scroll del
+  // body mientras está abierto (ver JS) para que todo se mueva como una
+  // sola pieza.
+  position:fixed; left:0; right:0; top:var(--header-h, 66px);
+  max-height:calc(100vh - var(--header-h, 66px));
+  overflow-y:auto;
+  z-index:49;
   &.open{ display:block; }
 }
 .mobile-panel .wrap{ display:flex; flex-direction:column; }
@@ -157,9 +185,9 @@ header.site{
   &.active{ color:$orange; }
 }
 .mobile-panel .mobile-sub{
-  display:flex; gap:10px; padding:4px 0 14px;
+  display:flex; flex-direction:column; gap:8px; padding:4px 0 14px;
   li{ list-style:none; }
-  a{ border:none; padding:8px 16px; background:rgba(232,242,251,0.06); border-radius:100px; font-size:14px; }
+  a{ display:block; border:none; padding:10px 16px; background:rgba(232,242,251,0.06); border-radius:12px; font-size:14px; }
 }
 .mobile-panel .mobile-search{
   margin-top:12px;
@@ -167,6 +195,36 @@ header.site{
   border-radius:100px; padding:11px 18px; display:flex; align-items:center; gap:8px;
   input{ background:none; border:none; outline:none; color:$off-white; font-family:$font-body; font-size:14px; width:100%;
     &::placeholder{ color:rgba(232,242,251,0.45); } }
+}
+
+// Selector de país dentro del panel mobile — no existía antes (el de arriba,
+// .country-select, se oculta bajo 1023px sin nada que lo reemplace). Acá va
+// como un acordeón simple: el botón ocupa todo el ancho, y al abrir despliega
+// la lista debajo en el flujo normal (no un dropdown flotante, para no pelear
+// con el overflow:auto del panel).
+.mobile-country{
+  margin-top:14px; padding-top:14px; border-top:1px solid rgba(232,242,251,0.12);
+}
+.mobile-country-btn{
+  width:100%; display:flex; align-items:center; justify-content:space-between;
+  background:rgba(232,242,251,0.06); border:1px solid rgba(232,242,251,0.16);
+  border-radius:12px; padding:12px 16px;
+  font-family:$font-body; font-size:14px; font-weight:600; color:$off-white; cursor:pointer;
+  .flag{ font-size:16px; margin-right:8px; }
+  .caret{ font-size:10px; opacity:.6; transition:transform .15s ease; }
+}
+.mobile-country.open .mobile-country-btn .caret{ transform:rotate(180deg); }
+.mobile-country-dropdown{
+  list-style:none; margin:0; padding:0;
+  max-height:0; overflow:hidden; transition:max-height .2s ease;
+}
+.mobile-country.open .mobile-country-dropdown{ max-height:320px; overflow-y:auto; margin-top:8px; }
+.mobile-country-dropdown a{
+  display:flex; align-items:center; justify-content:flex-start; gap:10px; padding:11px 14px; border-radius:10px;
+  font-size:14px; color:rgba(232,242,251,0.75);
+  .flag{ font-size:15px; }
+  .check{ margin-left:auto; color:$orange; }
+  &.active{ background:rgba(232,242,251,0.06); color:$off-white; font-weight:600; }
 }
 
 footer.site{

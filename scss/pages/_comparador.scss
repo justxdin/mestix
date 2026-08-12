@@ -293,8 +293,27 @@ section.methodology{
   &.cols-1{ justify-content:center; > *{ flex:0 1 420px; } }
   &.cols-2{ max-width:760px; margin-left:auto; margin-right:auto; > *{ flex:1 1 calc(50% - 10px); } }
   &.cols-3{ > *{ flex:1 1 calc(33.333% - 13.333px); } }
-  @include tablet{ &.cols-2 > *, &.cols-3 > *{ flex:1 1 calc(50% - 10px); } }
-  @include mobile{ &.cols-2, &.cols-3{ max-width:420px; margin-left:auto; margin-right:auto; } &.cols-2 > *, &.cols-3 > *{ flex:1 1 100%; } }
+  // Con 2-3 tarjetas apretadas en columnas desde tablet para abajo (antes
+  // se armaba una grilla de 2 columnas envuelta) quedaba todo muy chico —
+  // ahora pasa a ser un carrusel de scroll horizontal con snap: una
+  // tarjeta a la vez, con un adelanto de la siguiente asomando al borde
+  // para que se note que se puede deslizar. Es scroll nativo (funciona con
+  // swipe/touch solo), no necesita JS de flechas ni puntos.
+  @include tablet{
+    &.cols-2, &.cols-3{
+      flex-wrap:nowrap; overflow-x:auto; scroll-snap-type:x mandatory;
+      -webkit-overflow-scrolling:touch; margin-left:0; margin-right:0; max-width:none;
+      padding-bottom:6px;
+      @include hide-scrollbar;
+      > *{ flex:0 0 78%; scroll-snap-align:center; }
+    }
+  }
+  @include movil{
+    &.cols-2 > *, &.cols-3 > *{ flex-basis:82%; }
+  }
+  @include mobile{
+    &.cols-2 > *, &.cols-3 > *{ flex-basis:86%; }
+  }
 }
 .chead-col{
   background: #FFFFFF;position:relative; overflow:visible;
@@ -322,6 +341,26 @@ section.methodology{
 }
 .precio-label{ font-size:13px; color:$ink-faint; }
 .precio-value{ font-family:$font-mono; font-weight:700; font-size:14px; color:$ink; }
+// Cita de procedencia de los datos, al final de toda la sección Precio (no
+// dentro de cada tarjeta): es una nota de transparencia sobre TODA la ficha
+// del producto, no solo el precio, así que va una sola vez, discreta y en
+// cursiva — como se citan fuentes normalmente, no como un dato destacado.
+.fuentes-citas{
+  margin-top:22px; padding-top:18px; border-top:1px solid $line;display: flex; flex-wrap: wrap;
+  p{
+    font-size:12.5px; font-style:italic; color:$ink-faint; line-height:1.6;
+    margin:0 0 4px;
+    flex: 1 1 calc(33.333% - 10.667px);
+    padding: 20px 22px;
+    &:last-child{ margin-bottom:0; }
+    @include tablet{
+      padding: 0; font-size: 11px;
+    }
+  }
+  @include tablet{
+    flex-direction: column;
+  }
+}
 #pageTitle{
   display:flex; flex-direction:column; gap:4px;
 }
@@ -382,7 +421,7 @@ section.methodology{
 .methodology-header{
   padding-top:70px; margin-bottom:20px;
   h2{ font-size:26px; margin-bottom:8px; }
-  p{ font-size:15px; color:$ink-soft; max-width:620px; margin:0; }
+  p{ font-size:15px; color:$ink-soft; margin:0; }
 }
 .recap-bar{ background:$ink; padding:20px 0; }
 .recap-inner{
@@ -403,6 +442,11 @@ section.methodology{
   @include panel; display:flex; align-items:center; gap:20px; padding:18px 22px; cursor:pointer;
   transition:.15s;
   &:hover{ border-color:$orange; }
+  // En fila (miniaturas + texto + botón) no entraba en mobile: el texto
+  // quedaba comprimido a una columna angosta y cada palabra caía en su
+  // propia línea, encimándose con el botón. Se apila: miniaturas arriba,
+  // texto abajo a ancho completo, botón al final.
+  @include movil{ flex-direction:column; align-items:flex-start; gap:14px; }
 }
 .explore-suggest-thumbs{
   display:flex; align-items:center; gap:8px; flex-shrink:0;
@@ -417,9 +461,39 @@ section.methodology{
 .explore-suggest-btn{
   font-family:$font-display; font-weight:600; font-size:13.5px; color:$off-white;
   background:$ink; padding:10px 18px; border-radius:100px; white-space:nowrap; border:none; cursor:pointer;
+  @include movil{ width:100%; text-align:center; }
 }
+// Flechas de los carruseles (compare-header, explore-ranked) — sin esto,
+// con la scrollbar nativa oculta por estética, no quedaba ninguna señal de
+// que el bloque se puede deslizar. Solo existen visualmente desde tablet
+// para abajo (ahí es donde el contenido realmente se comporta como
+// carrusel); en desktop, donde todo se ve sin scroll, quedan ocultas.
+.carousel-wrap{ position:relative; }
+.carousel-arrow{
+  display:none;
+  position:absolute; top:45%; transform:translateY(-50%); z-index:5;
+  width:34px; height:34px; border-radius:50%;
+  background:$surface; border:1px solid $line; box-shadow:$shadow-lift;
+  color:$ink; font-size:18px; line-height:1; cursor:pointer;
+  align-items:center; justify-content:center; transition:.15s;
+  &:hover{ background:$off-white; border-color:$orange; }
+  @include tablet{ display:flex; }
+  @include movil{ width:30px; height:30px; font-size:16px; }
+}
+.carousel-arrow-prev{ left:-4px; }
+.carousel-arrow-next{ right:-4px; }
 .explore-ranked{
   display:flex; gap:12px; overflow-x:auto; padding-bottom:8px;
+  @include hide-scrollbar;
+  // "Lo mejor de la categoría" — 5 tarjetas fijas al 20% de ancho se veían
+  // bien en desktop, pero en mobile eso las dejaba en ~70px, ilegibles.
+  // Desde tablet para abajo pasan a comportarse como el resto de los
+  // carruseles del sitio (mismo patrón que .compare-header): tarjetas más
+  // anchas con scroll-snap, mostrando ~2 completas + un adelanto de la
+  // siguiente en vez de las 5 apretadas.
+  @include tablet{
+    scroll-snap-type:x mandatory; -webkit-overflow-scrolling:touch;
+  }
 }
 .explore-chip{
   max-width: 20%; width: 100%; @include panel; box-shadow:none; padding:14px 12px; text-align:center;
@@ -427,6 +501,9 @@ section.methodology{
   &:hover{ border-color:$orange; }
   &.active{ border-color:$orange;}
   img{ width:100%; object-fit:contain; margin-bottom:8px; }
+  @include tablet{ flex:0 0 30%; max-width:30%; scroll-snap-align:start; }
+  @include movil{ flex:0 0 42%; max-width:42%; }
+  @include mobile{ flex:0 0 46%; max-width:46%; }
 }
 .explore-chip-rank{
   position:absolute; top:8px; left:8px;
@@ -455,9 +532,17 @@ section.methodology{
 .fgroup.radar{ background:$ink; padding:56px 0; }
 .radar-box{
   display:flex; align-items:center; gap:20px; flex-wrap:wrap; justify-content: space-around;
+  // Con las 3 columnas (leyenda 20% + radar hasta 50% + tarjeta hasta 25%)
+  // apretadas entre 560–767px quedaba todo amontonado y difícil de leer —
+  // se apila antes, en "movil" (767px), no recién en "mobile" (560px).
+  @include tablet{ align-items:stretch; }
+}
+.radar-legend{
+  display:flex; flex-direction:column; gap:20px; flex-shrink:0; width: 20%;
+  @include tablet{ width:100%; flex-direction: row;}
+  @include movil{ width:100%; flex-direction:row; flex-wrap:wrap; gap:14px 24px; }
   @include mobile{ flex-direction:column; }
 }
-.radar-legend{ display:flex; flex-direction:column; gap:20px; flex-shrink:0; width: 20%;}
 .radar-legend-item{
   display:flex; align-items:center; gap:12px; cursor:pointer; padding:6px; margin:-6px; border-radius:10px;
   transition:.15s; opacity:.65;
@@ -469,16 +554,20 @@ section.methodology{
   display:block; font-size:12px; color:rgba(232,242,251,0.65); line-height:1.4; margin-bottom:2px;
 }
 .radar-legend-score{ font-family:$font-mono; font-weight:700; font-size:26px; }
-.radar-svg{ flex:1; min-width:280px; max-width:50%; width: 100%; height:auto; }
+.radar-svg{
+  flex:1; min-width:280px; max-width:50%; width: 100%; height:auto;
+  @include movil{ max-width:420px; margin:0 auto; }
+}
 
 .radar-winner-card{
   flex-shrink:0; max-width:25%; width: 100%; background:rgba(232,242,251,0.04);
   border:1px solid rgba(232,242,251,0.12); border-radius:$radius;
   padding:20px; text-align:center;
+  @include movil{ max-width:240px; margin:0 auto; }
 }
 .radar-winner-tag{
   display:inline-block; font-size:14px;
-  color:$ink; background:$amber; padding:5px 12px; border-radius:100px; margin-bottom:14px;
+  color:$ink; background:$amber; padding:5px 12px; border-radius:100px;
 }
 .radar-winner-card img{ width:100%; object-fit:contain; margin-bottom:14px; }
 .radar-winner-brand{ font-family:$font-mono; font-size:10.5px; color:rgba(232,242,251,0.5); text-transform:uppercase; letter-spacing:.05em; }
@@ -549,6 +638,55 @@ section.methodology{
   color:$orange-dark; margin:40px 0 14px;
   &:first-child{ margin-top:0; }
 }
+// Fila para el botón de insertar widget, justo DEBAJO del título "Visión
+// general" (no arriba compitiendo con él en la misma línea, ni tampoco
+// hasta el final después de toda la comparación). Sigue sin ir en ningún
+// otro lugar del sitio, solo acá.
+.embed-share-row{
+  display:flex; justify-content:flex-start; margin:-4px 0 22px;
+  @include tablet{
+    display: none;
+  }
+}
+.embed-share-btn{
+  display:inline-flex; align-items:center; gap:7px;
+  font-family:$font-mono; font-size:11px; font-weight:100;
+  color:rgba(232,242,251,0.75); background:rgba(232,242,251,0.06);
+  border:1px solid rgba(232,242,251,0.16); border-radius:100px;
+  padding:8px 16px; cursor:pointer; transition:.15s;
+  &:hover{ background:rgba(232,242,251,0.12); color:$off-white; border-color:rgba(232,242,251,0.28); }
+}
+
+// Modal "Insertar en tu sitio"
+.embed-modal-overlay{
+  display:none; position:fixed; inset:0; z-index:300;
+  background:rgba(23,22,26,0.6); backdrop-filter:blur(3px);
+  align-items:center; justify-content:center; padding:20px;
+  &.open{ display:flex; }
+}
+.embed-modal{
+  position:relative; width:100%; max-width:520px;
+  background:$surface; border-radius:$radius-lg; padding:32px;
+  box-shadow:$shadow-lift;
+  h3{ font-family:$font-display; font-size:19px; margin:0 0 10px; padding-right:24px; }
+}
+.embed-modal-close{
+  position:absolute; top:18px; right:18px;
+  width:32px; height:32px; border-radius:50%; border:none;
+  background:$off-white; color:$ink-soft; font-size:14px; cursor:pointer;
+  display:flex; align-items:center; justify-content:center;
+  &:hover{ background:$line; }
+}
+.embed-modal-desc{ font-size:14px; color:$ink-soft; line-height:1.6; margin:0 0 18px; }
+.embed-modal-label{ display:block; font-size:12.5px; font-weight:700; color:$ink-faint; margin-bottom:6px; }
+.embed-modal-textarea{
+  width:100%; resize:vertical; font-family:$font-mono; font-size:12.5px; line-height:1.6;
+  color:$ink; background:$off-white; border:1px solid $line; border-radius:12px;
+  padding:14px; margin-bottom:14px;
+  &:focus{ outline:none; border-color:$orange; }
+}
+.embed-modal-note{ font-size:12.5px; color:$ink-faint; line-height:1.6; margin:14px 0 0; }
+
 .fgrid{
   display:flex; flex-wrap:wrap; gap:16px; margin-bottom:20px; align-items:stretch;
   &.fgrid-3 > *{ flex:1 1 calc(33.333% - 10.667px); }

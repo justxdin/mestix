@@ -1,6 +1,12 @@
 @use '../utilities/variables' as *;
 @use '../utilities/mixins' as *;
 
+main{
+  article{
+    @include tablet{ padding: 0 20px; }
+  }
+}
+
 .article-hero{
   padding:40px 0 0;
 }
@@ -69,7 +75,6 @@
 
 .article-sidebar{
   display:flex; flex-direction:column; gap:28px;
-  @include tablet{ order:-1; }
 }
 .sidebar-block h4{ font-family:$font-display; font-size:13px; font-weight:700; margin-bottom:16px; color:$ink; }
 .related-item{

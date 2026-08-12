@@ -3,10 +3,32 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sobre Mestix — Comparador nutricional de alimentos para mascotas</title>
+<title>Sobre Mestix — Un comparador que nació de una pregunta simple</title>
+<meta name="description" content="Por qué existe Mestix, qué evaluamos y en qué nos basamos para comparar alimentos de mascotas sin depender del marketing.">
+<link rel="canonical" href="https://mestix.cl/sobre-mestix.html">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Mestix">
+<meta property="og:title" content="Sobre Mestix — Un comparador que nació de una pregunta simple">
+<meta property="og:description" content="Por qué existe Mestix, qué evaluamos y en qué nos basamos para comparar alimentos de mascotas sin depender del marketing.">
+<meta property="og:image" content="https://mestix.cl/img/og-image.png">
+<meta property="og:url" content="https://mestix.cl/sobre-mestix.html">
+<meta property="og:locale" content="es_CL">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Sobre Mestix — Un comparador que nació de una pregunta simple">
+<meta name="twitter:description" content="Por qué existe Mestix, qué evaluamos y en qué nos basamos para comparar alimentos de mascotas sin depender del marketing.">
+<meta name="twitter:image" content="https://mestix.cl/img/og-image.png">
+
+<link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+<link rel="shortcut icon" href="img/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<meta name="theme-color" content="#F8931D">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito+Sans:wght@400;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=1786380800">
+<link rel="stylesheet" href="css/style.css?v=1786552287">
 </head>
 <body class="has-bottom-ad">
 
@@ -19,8 +41,8 @@
         <li class="nav-item">
           <a href="categoria.html">Catálogo</a><span class="caret">▾</span>
           <ul class="dropdown">
-            <li><a href="categoria.html">🐶 Perros</a></li>
-            <li><a href="categoria-gatos.html">🐱 Gatos</a></li>
+            <li><a href="categoria.html"><span class="icon-inline"><svg class="icon-paw" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="16" height="16"><path d="M12 21c-3.5 0-6.5-1.8-6.5-4.5 0-1.8 1.3-2.7 1.3-4.3 0-1.2-.8-1.7-.8-2.9 0-1.4 1.1-2.3 2.3-2.3 1.1 0 1.7.7 2.2 1.6.4.7.9 1.1 1.5 1.1s1.1-.4 1.5-1.1c.5-.9 1.1-1.6 2.2-1.6 1.2 0 2.3.9 2.3 2.3 0 1.2-.8 1.7-.8 2.9 0 1.6 1.3 2.5 1.3 4.3C18.5 19.2 15.5 21 12 21z" fill="currentColor"/><ellipse cx="7" cy="6.2" rx="1.6" ry="2.4" fill="currentColor"/><ellipse cx="17" cy="6.2" rx="1.6" ry="2.4" fill="currentColor"/></svg></span> Perros</a></li>
+            <li><a href="categoria-gatos.html"><span class="icon-inline"><svg class="icon-paw" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="16" height="16"><path d="M12 21c-3.5 0-6.5-1.8-6.5-4.5 0-1.8 1.3-2.7 1.3-4.3 0-1.2-.8-1.7-.8-2.9 0-1.4 1.1-2.3 2.3-2.3 1.1 0 1.7.7 2.2 1.6.4.7.9 1.1 1.5 1.1s1.1-.4 1.5-1.1c.5-.9 1.1-1.6 2.2-1.6 1.2 0 2.3.9 2.3 2.3 0 1.2-.8 1.7-.8 2.9 0 1.6 1.3 2.5 1.3 4.3C18.5 19.2 15.5 21 12 21z" fill="currentColor"/><path d="M5.5 7.5L7.8 4l1 4.3z" fill="currentColor"/><path d="M18.5 7.5L16.2 4l-1 4.3z" fill="currentColor"/></svg></span> Gatos</a></li>
           </ul>
         </li>
         <li><a href="blog.html">Blog</a></li>
@@ -30,10 +52,14 @@
     </nav>
     <div class="header-search"><span>⌕</span><input type="text" placeholder="Buscar alimento o marca…"></div>
     <div class="country-select" id="countrySelect">
-      <button class="country-select-btn" id="countryBtn"><span class="flag">🇨🇱</span> CL <span class="caret">▾</span></button>
+      <button class="country-select-btn" id="countryBtn"><span class="flag"><svg class="flag-svg" viewBox="0 0 24 16" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="16" rx="2" fill="#fff"/><path d="M0 8h24v6a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2z" fill="#D52B1E"/><path d="M0 2a2 2 0 0 1 2-2h6v8H0z" fill="#0039A6"/><path d="M5 2.6l.5 1.5h1.6l-1.3 1 .5 1.5L5 5.6l-1.3.9.5-1.5-1.3-1h1.6z" fill="#fff"/></svg></span> CL <span class="caret">▾</span></button>
       <ul class="country-dropdown">
-        <li><a href="#" class="active" data-flag="🇨🇱" data-code="CL"><span class="flag">🇨🇱</span> Chile <span class="check">✓</span></a></li>
-        <li><a href="#" data-flag="🇦🇷" data-code="AR"><span class="flag">🇦🇷</span> Argentina</a></li>
+        <li><a href="#" class="active" data-code="CL" data-name="Chile"><span class="flag"><svg class="flag-svg" viewBox="0 0 24 16" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="16" rx="2" fill="#fff"/><path d="M0 8h24v6a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2z" fill="#D52B1E"/><path d="M0 2a2 2 0 0 1 2-2h6v8H0z" fill="#0039A6"/><path d="M5 2.6l.5 1.5h1.6l-1.3 1 .5 1.5L5 5.6l-1.3.9.5-1.5-1.3-1h1.6z" fill="#fff"/></svg></span> Chile <span class="check">✓</span></a></li>
+        <li><a href="#" data-code="AR" data-name="Argentina"><span class="flag"><svg class="flag-svg" viewBox="0 0 24 16" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="16" rx="2" fill="#fff"/><path d="M0 2a2 2 0 0 1 2-2h20a2 2 0 0 1 2 2v3.33H0z" fill="#75AADB"/><path d="M0 10.67h24V14a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2z" fill="#75AADB"/><circle cx="12" cy="8" r="1.7" fill="#F6B40E" stroke="#85340A" stroke-width=".3"/></svg></span> Argentina</a></li>
+        <li><a href="#" data-code="PE" data-name="Perú"><span class="flag"><svg class="flag-svg" viewBox="0 0 24 16" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="16" rx="2" fill="#fff"/><path d="M0 2a2 2 0 0 1 2-2h6v16H2a2 2 0 0 1-2-2z" fill="#D91023"/><path d="M16 0h6a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-6z" fill="#D91023"/></svg></span> Perú</a></li>
+        <li><a href="#" data-code="CO" data-name="Colombia"><span class="flag"><svg class="flag-svg" viewBox="0 0 24 16" xmlns="http://www.w3.org/2000/svg"><path d="M0 2a2 2 0 0 1 2-2h20a2 2 0 0 1 2 2v6H0z" fill="#FCD116"/><path d="M0 8h24v4H0z" fill="#003893"/><path d="M0 12h24v2a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2z" fill="#CE1126"/></svg></span> Colombia</a></li>
+        <li><a href="#" data-code="MX" data-name="México"><span class="flag"><svg class="flag-svg" viewBox="0 0 24 16" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="16" rx="2" fill="#fff"/><path d="M0 2a2 2 0 0 1 2-2h6v16H2a2 2 0 0 1-2-2z" fill="#006847"/><path d="M16 0h6a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-6z" fill="#CE1126"/></svg></span> México</a></li>
+        <li><a href="#" data-code="ES" data-name="España"><span class="flag"><svg class="flag-svg" viewBox="0 0 24 16" xmlns="http://www.w3.org/2000/svg"><path d="M0 2a2 2 0 0 1 2-2h20a2 2 0 0 1 2 2v2H0z" fill="#AA151B"/><path d="M0 4h24v8H0z" fill="#F1BF00"/><path d="M0 12h24v2a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2z" fill="#AA151B"/></svg></span> España</a></li>
       </ul>
     </div>
     <button class="nav-toggle" id="navToggle" aria-label="Abrir menú"><span></span></button>
@@ -47,14 +73,27 @@
       <li>
         <a href="categoria.html">Catálogo</a>
         <ul class="mobile-sub">
-          <li><a href="categoria.html">🐶 Perros</a></li>
-          <li><a href="categoria-gatos.html">🐱 Gatos</a></li>
+          <li><a href="categoria.html"><span class="icon-inline"><svg class="icon-paw" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="16" height="16"><path d="M12 21c-3.5 0-6.5-1.8-6.5-4.5 0-1.8 1.3-2.7 1.3-4.3 0-1.2-.8-1.7-.8-2.9 0-1.4 1.1-2.3 2.3-2.3 1.1 0 1.7.7 2.2 1.6.4.7.9 1.1 1.5 1.1s1.1-.4 1.5-1.1c.5-.9 1.1-1.6 2.2-1.6 1.2 0 2.3.9 2.3 2.3 0 1.2-.8 1.7-.8 2.9 0 1.6 1.3 2.5 1.3 4.3C18.5 19.2 15.5 21 12 21z" fill="currentColor"/><ellipse cx="7" cy="6.2" rx="1.6" ry="2.4" fill="currentColor"/><ellipse cx="17" cy="6.2" rx="1.6" ry="2.4" fill="currentColor"/></svg></span> Perros</a></li>
+          <li><a href="categoria-gatos.html"><span class="icon-inline"><svg class="icon-paw" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="16" height="16"><path d="M12 21c-3.5 0-6.5-1.8-6.5-4.5 0-1.8 1.3-2.7 1.3-4.3 0-1.2-.8-1.7-.8-2.9 0-1.4 1.1-2.3 2.3-2.3 1.1 0 1.7.7 2.2 1.6.4.7.9 1.1 1.5 1.1s1.1-.4 1.5-1.1c.5-.9 1.1-1.6 2.2-1.6 1.2 0 2.3.9 2.3 2.3 0 1.2-.8 1.7-.8 2.9 0 1.6 1.3 2.5 1.3 4.3C18.5 19.2 15.5 21 12 21z" fill="currentColor"/><path d="M5.5 7.5L7.8 4l1 4.3z" fill="currentColor"/><path d="M18.5 7.5L16.2 4l-1 4.3z" fill="currentColor"/></svg></span> Gatos</a></li>
         </ul>
       </li>
       <li><a href="blog.html">Blog</a></li>
       <li><a href="sobre-mestix.html" class="active">Sobre Mestix</a></li>
       <li><a href="preguntas-frecuentes.html">Preguntas frecuentes</a></li>
     </ul>
+    <div class="mobile-country" id="mobileCountrySelect">
+      <button class="mobile-country-btn" id="mobileCountryBtn" type="button">
+        <span><span class="flag"><svg class="flag-svg" viewBox="0 0 24 16" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="16" rx="2" fill="#fff"/><path d="M0 8h24v6a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2z" fill="#D52B1E"/><path d="M0 2a2 2 0 0 1 2-2h6v8H0z" fill="#0039A6"/><path d="M5 2.6l.5 1.5h1.6l-1.3 1 .5 1.5L5 5.6l-1.3.9.5-1.5-1.3-1h1.6z" fill="#fff"/></svg></span> Chile</span> <span class="caret">▾</span>
+      </button>
+      <ul class="mobile-country-dropdown">
+        <li><a href="#" class="active" data-code="CL" data-name="Chile"><span class="flag"><svg class="flag-svg" viewBox="0 0 24 16" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="16" rx="2" fill="#fff"/><path d="M0 8h24v6a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2z" fill="#D52B1E"/><path d="M0 2a2 2 0 0 1 2-2h6v8H0z" fill="#0039A6"/><path d="M5 2.6l.5 1.5h1.6l-1.3 1 .5 1.5L5 5.6l-1.3.9.5-1.5-1.3-1h1.6z" fill="#fff"/></svg></span> Chile <span class="check">✓</span></a></li>
+        <li><a href="#" data-code="AR" data-name="Argentina"><span class="flag"><svg class="flag-svg" viewBox="0 0 24 16" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="16" rx="2" fill="#fff"/><path d="M0 2a2 2 0 0 1 2-2h20a2 2 0 0 1 2 2v3.33H0z" fill="#75AADB"/><path d="M0 10.67h24V14a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2z" fill="#75AADB"/><circle cx="12" cy="8" r="1.7" fill="#F6B40E" stroke="#85340A" stroke-width=".3"/></svg></span> Argentina</a></li>
+        <li><a href="#" data-code="PE" data-name="Perú"><span class="flag"><svg class="flag-svg" viewBox="0 0 24 16" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="16" rx="2" fill="#fff"/><path d="M0 2a2 2 0 0 1 2-2h6v16H2a2 2 0 0 1-2-2z" fill="#D91023"/><path d="M16 0h6a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-6z" fill="#D91023"/></svg></span> Perú</a></li>
+        <li><a href="#" data-code="CO" data-name="Colombia"><span class="flag"><svg class="flag-svg" viewBox="0 0 24 16" xmlns="http://www.w3.org/2000/svg"><path d="M0 2a2 2 0 0 1 2-2h20a2 2 0 0 1 2 2v6H0z" fill="#FCD116"/><path d="M0 8h24v4H0z" fill="#003893"/><path d="M0 12h24v2a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2z" fill="#CE1126"/></svg></span> Colombia</a></li>
+        <li><a href="#" data-code="MX" data-name="México"><span class="flag"><svg class="flag-svg" viewBox="0 0 24 16" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="16" rx="2" fill="#fff"/><path d="M0 2a2 2 0 0 1 2-2h6v16H2a2 2 0 0 1-2-2z" fill="#006847"/><path d="M16 0h6a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-6z" fill="#CE1126"/></svg></span> México</a></li>
+        <li><a href="#" data-code="ES" data-name="España"><span class="flag"><svg class="flag-svg" viewBox="0 0 24 16" xmlns="http://www.w3.org/2000/svg"><path d="M0 2a2 2 0 0 1 2-2h20a2 2 0 0 1 2 2v2H0z" fill="#AA151B"/><path d="M0 4h24v8H0z" fill="#F1BF00"/><path d="M0 12h24v2a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2z" fill="#AA151B"/></svg></span> España</a></li>
+      </ul>
+    </div>
     <div class="mobile-search"><span>⌕</span><input type="text" placeholder="Buscar alimento o marca…"></div>
   </div>
 </div>
@@ -71,7 +110,7 @@
   </div>
 </section>
 
-<section class="section">
+<section class="section bgWhite">
   <div class="wrap" style="max-width:760px;">
     <h2>Por qué existe Mestix</h2>
     <p>Elegir el alimento de un perro o un gato debería ser simple. En la práctica, no lo es: cada bolsa dice ser la mejor opción, usa palabras que suenan bien pero que no dicen mucho ("premium", "natural", "balanceado"), y comparar dos productos lado a lado termina siendo un ejercicio de paciencia — hay que buscar la tabla nutricional chica, entender qué significa cada número, y hacerlo de nuevo con el siguiente producto.</p>
@@ -80,7 +119,7 @@
   </div>
 </section>
 
-<section class="section" style="background:#F4F5F3;">
+<section class="section bgGrey">
   <div class="wrap" style="max-width:760px;">
     <h2>Qué evaluamos</h2>
     <p>Mestix tiene un modelo separado para perros y para gatos — son especies distintas, con necesidades nutricionales distintas, y no tendría sentido medirlas con la misma vara. Cada modelo mira:</p>
@@ -93,7 +132,7 @@
   </div>
 </section>
 
-<section class="section">
+<section class="section bgWhite">
   <div class="wrap" style="max-width:760px;">
     <h2>Qué premiamos: la transparencia</h2>
     <p>Hay marcas que ponen en su etiqueta solo lo mínimo exigido. Y hay marcas que van más allá — declaran cada mineral, cada vitamina, de dónde viene cada ingrediente. Esa diferencia nos importa, y creemos que también debería importarle a quien compra.</p>
@@ -102,7 +141,7 @@
   </div>
 </section>
 
-<section class="section" style="background:#F4F5F3;">
+<section class="section bgGrey">
   <div class="wrap" style="max-width:760px;">
     <h2>En qué nos basamos</h2>
     <p>No inventamos nuestros propios estándares de qué es "bueno" o "malo" para una mascota. Cuando existe un organismo internacional de referencia en nutrición animal, es ahí donde buscamos primero — y solo cuando esas fuentes no tienen una respuesta, tomamos una decisión propia, que dejamos siempre identificada como tal, nunca disfrazada de norma oficial.</p>
@@ -132,7 +171,7 @@
       <div><h4>Metodología</h4><ul><li><a href="#">Cómo evaluamos</a></li><li><a href="#">Fuentes técnicas</a></li><li><a href="#">Etapas de vida</a></li></ul></div>
       <div><h4>Mestix</h4><ul><li><a href="sobre-mestix.html">Sobre nosotros</a></li><li><a href="contacto.html">Contacto</a></li><li><a href="terminos-privacidad.html">Términos y privacidad</a></li></ul></div>
     </div>
-    <div class="footer-bottom"><span>© 2026 Mestix. Prototipo de diseño — datos de demostración.</span><span>Hecho en Chile 🇨🇱</span></div>
+    <div class="footer-bottom"><span>© 2026 Mestix. Prototipo de diseño — datos de demostración.</span><span>Hecho en Chile <span class="flag"><svg class="flag-svg" viewBox="0 0 24 16" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="16" rx="2" fill="#fff"/><path d="M0 8h24v6a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2z" fill="#D52B1E"/><path d="M0 2a2 2 0 0 1 2-2h6v8H0z" fill="#0039A6"/><path d="M5 2.6l.5 1.5h1.6l-1.3 1 .5 1.5L5 5.6l-1.3.9.5-1.5-1.3-1h1.6z" fill="#fff"/></svg></span></span></div>
   </div>
 </footer>
 
@@ -144,32 +183,79 @@
   <div class="ad-slot"><span class="ad-label">Publicidad</span><span class="ad-size">728 × 90 · 320 × 50 en mobile · fijo</span></div>
 </div>
 
+<script src="js/mestix-search-data.js"></script>
+<script src="js/mestix-search.js"></script>
+
 <script>
   (function(){
-    const wrap = document.getElementById('countrySelect');
-    if (!wrap) return;
-    const btn = document.getElementById('countryBtn');
-    const links = wrap.querySelectorAll('.country-dropdown a');
-    btn.addEventListener('click', (e) => { e.stopPropagation(); wrap.classList.toggle('open'); });
-    links.forEach(a => a.addEventListener('click', (e) => {
-      e.preventDefault();
-      links.forEach(l => l.classList.remove('active'));
-      a.classList.add('active');
-      btn.innerHTML = '<span class="flag">' + a.dataset.flag + '</span> ' + a.dataset.code + ' <span class="caret">▾</span>';
-      wrap.classList.remove('open');
-    }));
-    document.addEventListener('click', () => wrap.classList.remove('open'));
+    // Selector de país — hay 2 instancias en la página (la del header,
+    // oculta bajo 1023px, y la del panel mobile, que antes no existía).
+    // Se manejan juntas acá para que elegir un país en una quede reflejado
+    // también en la otra si el usuario cambia de tamaño de pantalla.
+    const instancias = [
+      { wrap: document.getElementById('countrySelect'), btn: document.getElementById('countryBtn'), estilo: 'dropdown' },
+      { wrap: document.getElementById('mobileCountrySelect'), btn: document.getElementById('mobileCountryBtn'), estilo: 'acordeon' }
+    ].filter(i => i.wrap && i.btn);
+
+    const FLAGS_SVG = { CL: `<svg class="flag-svg" viewBox="0 0 24 16" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="16" rx="2" fill="#fff"/><path d="M0 8h24v6a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2z" fill="#D52B1E"/><path d="M0 2a2 2 0 0 1 2-2h6v8H0z" fill="#0039A6"/><path d="M5 2.6l.5 1.5h1.6l-1.3 1 .5 1.5L5 5.6l-1.3.9.5-1.5-1.3-1h1.6z" fill="#fff"/></svg>`, AR: `<svg class="flag-svg" viewBox="0 0 24 16" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="16" rx="2" fill="#fff"/><path d="M0 2a2 2 0 0 1 2-2h20a2 2 0 0 1 2 2v3.33H0z" fill="#75AADB"/><path d="M0 10.67h24V14a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2z" fill="#75AADB"/><circle cx="12" cy="8" r="1.7" fill="#F6B40E" stroke="#85340A" stroke-width=".3"/></svg>`, PE: `<svg class="flag-svg" viewBox="0 0 24 16" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="16" rx="2" fill="#fff"/><path d="M0 2a2 2 0 0 1 2-2h6v16H2a2 2 0 0 1-2-2z" fill="#D91023"/><path d="M16 0h6a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-6z" fill="#D91023"/></svg>`, CO: `<svg class="flag-svg" viewBox="0 0 24 16" xmlns="http://www.w3.org/2000/svg"><path d="M0 2a2 2 0 0 1 2-2h20a2 2 0 0 1 2 2v6H0z" fill="#FCD116"/><path d="M0 8h24v4H0z" fill="#003893"/><path d="M0 12h24v2a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2z" fill="#CE1126"/></svg>`, MX: `<svg class="flag-svg" viewBox="0 0 24 16" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="16" rx="2" fill="#fff"/><path d="M0 2a2 2 0 0 1 2-2h6v16H2a2 2 0 0 1-2-2z" fill="#006847"/><path d="M16 0h6a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-6z" fill="#CE1126"/></svg>`, ES: `<svg class="flag-svg" viewBox="0 0 24 16" xmlns="http://www.w3.org/2000/svg"><path d="M0 2a2 2 0 0 1 2-2h20a2 2 0 0 1 2 2v2H0z" fill="#AA151B"/><path d="M0 4h24v8H0z" fill="#F1BF00"/><path d="M0 12h24v2a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2z" fill="#AA151B"/></svg>` };
+
+    function actualizarBoton(inst, code, name){
+      const flagSvg = FLAGS_SVG[code] || '';
+      inst.btn.innerHTML = inst.estilo === 'dropdown'
+        ? '<span class="flag">' + flagSvg + '</span> ' + code + ' <span class="caret">▾</span>'
+        : '<span><span class="flag">' + flagSvg + '</span> ' + name + '</span> <span class="caret">▾</span>';
+    }
+
+    instancias.forEach(inst => {
+      const links = inst.wrap.querySelectorAll('a[data-code]');
+      inst.btn.addEventListener('click', (e) => { e.stopPropagation(); inst.wrap.classList.toggle('open'); });
+      links.forEach(a => a.addEventListener('click', (e) => {
+        e.preventDefault();
+        const { code, name } = a.dataset;
+        instancias.forEach(otro => {
+          otro.wrap.querySelectorAll('a[data-code]').forEach(l => l.classList.toggle('active', l.dataset.code === code));
+          actualizarBoton(otro, code, name);
+          otro.wrap.classList.remove('open');
+        });
+      }));
+    });
+    document.addEventListener('click', () => instancias.forEach(i => i.wrap.classList.remove('open')));
   })();
 
   (function(){
-    const toggle = document.getElementById('navToggle');
-    const panel = document.getElementById('mobilePanel');
-    if (!toggle || !panel) return;
-    toggle.addEventListener('click', () => {
-      panel.classList.toggle('open');
-      toggle.classList.toggle('active');
-    });
-  })();
+  // Menú mobile: mide el alto real del header (puede variar levemente entre
+  // páginas) para que el panel quede pegado justo debajo vía --header-h, y
+  // bloquea el scroll del body mientras está abierto para que header + panel
+  // se muevan siempre como una sola pieza (antes el panel, al no ser
+  // sticky/fixed como el header, se desincronizaba al scrollear).
+  const toggle = document.getElementById('navToggle');
+  const panel = document.getElementById('mobilePanel');
+  const header = document.querySelector('header.site');
+  if (!toggle || !panel) return;
+
+  function setHeaderHeight(){
+    if (header) document.documentElement.style.setProperty('--header-h', header.offsetHeight + 'px');
+  }
+  setHeaderHeight();
+  window.addEventListener('resize', setHeaderHeight);
+
+  function closePanel(){
+    toggle.classList.remove('open');
+    panel.classList.remove('open');
+    document.body.classList.remove('menu-open');
+    document.documentElement.classList.remove('menu-open');
+  }
+  function openPanel(){
+    setHeaderHeight();
+    toggle.classList.add('open');
+    panel.classList.add('open');
+    document.body.classList.add('menu-open');
+    document.documentElement.classList.add('menu-open');
+  }
+  toggle.addEventListener('click', () => {
+    panel.classList.contains('open') ? closePanel() : openPanel();
+  });
+})();
 </script>
 
 <script>

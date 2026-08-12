@@ -1,0 +1,89 @@
+@use '../utilities/variables' as *;
+@use '../utilities/mixins' as *;
+
+// ============================================================
+// Widget embebible del comparador (embed-comparador.html /
+// embed-comparador-gatos.html) — vive dentro de un <iframe> en sitios de
+// terceros. Reutiliza el CSS del sitio (mismas clases .radar-*, .fgroup,
+// etc.) pero SIN todo el resto de la página: nada de header, nav, footer
+// real, ni publicidad. Solo el radar + una franja de marca fija abajo que
+// no se puede sacar sin romper el widget.
+// ============================================================
+.embed-body{
+  margin:0; background:$ink; font-family:$font-body;
+  display:flex; flex-direction:column; min-height:100vh;
+  overflow-x:hidden;
+  .radar-legend-name{
+    font-size: 11px;
+  }
+  .radar-dot {
+    width: 10px;
+    height: 10px;
+  }
+  .radar-legend-item {
+    gap: 5px;
+  }
+  #radarContainer{
+    .fgroup-label{
+      margin: 0;
+    }
+  }
+}
+.embed-root{
+  flex:1 1 auto;
+  .fgroup.radar{ padding:28px 18px; }
+  // El radar viene con su propio .wrap (max-width:1100px centrado, pensado
+  // para vivir dentro de la página completa) — acá no hace falta, el ancho
+  // real ya lo define el iframe.
+  .wrap{ max-width:none; padding:0; margin:0; }
+}
+.embed-empty{
+  padding:60px 20px; text-align:center;
+  color:rgba(232,242,251,0.65); font-family:$font-body; font-size:14px;
+}
+
+// Logo Mestix arriba de "Visión general" — además de la franja de marca
+// del pie, para que quede clarísimo desde el primer vistazo de quién es
+// el widget, sin tener que llegar hasta abajo.
+.embed-brand-row{ margin-bottom:16px; }
+.embed-brand-logo{ height:22px; display:block; }
+
+// Sin la tarjeta del ganador, quedan solo 2 columnas (leyenda + radar) en
+// vez de 3 — se les da más aire para que no quede una franja vacía a la
+// derecha donde antes iba la tarjeta. OJO: esto solo vale en desktop — el
+// 26%/66% tiene más especificidad que la regla responsiva de .radar-legend
+// (que usa un solo selector) y le ganaba incluso en mobile, dejando la
+// leyenda comprimida a un cuarto del ancho real. Por eso acá adentro se
+// vuelve a resetear explícitamente en cada breakpoint angosto.
+.radar-box-embed{
+  .radar-legend{ width:26%; }
+  .radar-svg{ max-width:66%; }
+  @include movil{
+    .radar-legend{ width:100%; gap: 12px 15px;}
+    .radar-svg{ max-width:420px; margin:0 auto; }
+  }
+  @include mobile{
+    .radar-legend{ flex-direction:column; }
+    .radar-svg{ max-width:100%; }
+  }
+}
+
+// Franja de marca — SIEMPRE visible, horneada en el HTML del widget (no es
+// un agregado opcional del sitio que lo embebe). Logo con link + texto de
+// atribución + link a la comparación completa en Mestix.
+.embed-footer{
+  display:flex; align-items:center; gap:14px; flex-wrap:wrap;
+  padding:14px 18px;
+  background:rgba(255,255,255,0.03);
+  border-top:1px solid rgba(232,242,251,0.1);
+}
+.embed-brand{ line-height:0; flex-shrink:0; }
+.embed-brand img{ height:20px; display:block; }
+.embed-attrib{
+  font-size:11.5px; color:rgba(232,242,251,0.5); flex:1 1 140px; min-width:140px;
+}
+.embed-cta{
+  font-family:$font-display; font-size:12px; color:$orange;
+  text-decoration:none; white-space:nowrap;
+  &:hover{ text-decoration:underline; }
+}

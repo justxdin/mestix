@@ -1,0 +1,132 @@
+@use '../utilities/variables' as *;
+@use '../utilities/mixins' as *;
+
+// ============================================================
+// Buscador con sugerencias en vivo (dropdown estilo "resultados al tipear")
+// ============================================================
+.search-has-dropdown{ position:relative; }
+
+// Se posiciona con position:fixed calculado en JS (top/left/right vía
+// getBoundingClientRect del input), y se cuelga de <body> — así nunca lo
+// recorta un ancestro con overflow:hidden/auto (el panel del menú mobile
+// necesita su propio scroll para la lista de links, y antes se comía el
+// dropdown).
+.search-dropdown{
+  display:none;
+  position:fixed;
+  width:380px; max-width:min(380px, 92vw);
+  background:$surface; border-radius:$radius; box-shadow:$shadow-lift;
+  border:1px solid $line;
+  max-height:70vh; overflow-y:auto;
+  z-index:200; text-align:left;
+  &.open{ display:block; }
+}
+// El buscador de la página de resultados/404 (.search-page-input) es ancho
+// y ocupa casi todo el bloque de contenido — ahí el dropdown se estira al
+// ancho del input (JS ya le pone left+width en vez de right).
+.search-dropdown-pagebar{ width:auto; max-width:none; }
+// El buscador mobile vive dentro de un panel angosto — el dropdown se
+// comporta igual pero no necesita tanto ancho mínimo.
+.mobile-search .search-dropdown{ max-height:60vh; }
+
+.sd-suggestion{
+  display:flex; flex-direction:column; gap:2px;
+  padding:12px 18px; border-bottom:1px solid $line;
+  text-decoration:none;
+  &:hover{ background:$off-white; }
+}
+.sd-suggestion-label{ font-size:11px; color:$ink-faint; text-transform:uppercase; letter-spacing:.02em; }
+.sd-suggestion-text{ font-family:$font-display; font-weight:600; font-size:14.5px; color:$ink; }
+
+.sd-section-label{
+  font-family:$font-display; font-weight:600; font-size:11.5px; letter-spacing:.04em;
+  text-transform:uppercase; color:$orange-dark;
+  padding:12px 18px 6px;
+}
+
+.sd-result{
+  display:flex; align-items:center; gap:12px;
+  padding:9px 18px; text-decoration:none;
+  &:hover{ background:$off-white; }
+}
+.sd-thumb{
+  flex-shrink:0; width:38px; height:38px; border-radius:10px;
+  background:$off-white; border:1px solid $line;
+  display:flex; align-items:center; justify-content:center; overflow:hidden;
+  img{ width:100%; height:100%; object-fit:contain; }
+}
+.sd-thumb-fallback{ font-size:17px; }
+.sd-thumb-article{ font-size:15px; background:rgba(248,147,29,0.08); border-color:rgba(248,147,29,0.2); }
+
+.sd-result-text{ display:flex; flex-direction:column; gap:2px; min-width:0; }
+.sd-result-name{
+  font-size:13.5px; font-weight:700; color:$ink;
+  white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+}
+.sd-result-meta{ display:flex; align-items:center; gap:6px; font-size:11.5px; color:$ink-faint; }
+.sd-score{
+  display:inline-flex; align-items:center; justify-content:center;
+  min-width:20px; height:18px; padding:0 5px; border-radius:100px;
+  font-family:$font-mono; font-weight:700; font-size:10.5px; color:$surface;
+  &.sd-score-good{ background:$score-good; }
+  &.sd-score-mid{ background:$score-mid; color:$ink; }
+  &.sd-score-bad{ background:$score-bad; }
+}
+
+.sd-viewall{
+  display:block; text-align:center;
+  padding:13px 18px; margin-top:4px;
+  font-family:$font-display; font-weight:600; font-size:13.5px; color:$orange-dark;
+  border-top:1px solid $line; text-decoration:none;
+  &:hover{ background:$off-white; }
+}
+
+.search-dropdown-empty{
+  padding:20px 18px;
+  p{ margin:0 0 6px; font-size:13.5px; color:$ink-soft; }
+  .sd-hint{ font-size:12.5px; color:$ink-faint; margin-bottom:0; }
+}
+
+// ============================================================
+// Página de resultados (buscar.html) — tarjetas de resultado a ancho
+// completo, más grandes que las del dropdown.
+// ============================================================
+// OJO: esta barra reutiliza la clase .header-search (para heredar el
+// enganche del JS del buscador) pero es un componente visualmente distinto
+// — un input grande y solo, no el mini-buscador oscuro del header. Por eso
+// acá se resetea display/padding/fondo/gap que trae .header-search, en vez
+// de sumarse a ellos: si no, quedaban dos "pills" superpuestas (la del
+// header-search por fuera y la del input por dentro) y la lupa se
+// posicionaba mal, pegada al borde.
+.search-page-input{
+  display:block; padding:0; background:none; border:none; gap:0; max-width:none;
+  input{
+    display:block; width:100%; border:1.5px solid $line; background:$surface;
+    border-radius:100px; padding:14px 20px 14px 44px; font-size:15px; color:$ink;
+    &::placeholder{ color:$ink-faint; }
+    &:focus{ outline:none; border-color:$orange; }
+  }
+  span{ position:absolute; left:18px; top:50%; transform:translateY(-50%); color:$ink-faint; pointer-events:none; }
+}
+
+.search-results-list{ display:flex; flex-direction:column; gap:10px; margin-bottom:32px; }
+
+.search-result-card{
+  display:flex; align-items:center; gap:16px;
+  padding:14px 18px; border-radius:$radius; border:1px solid $line; background:$surface;
+  text-decoration:none; transition:.15s;
+  &:hover{ border-color:$orange; box-shadow:$shadow; }
+}
+.search-result-thumb{
+  flex-shrink:0; width:52px; height:52px; border-radius:12px;
+  background:$off-white; border:1px solid $line;
+  display:flex; align-items:center; justify-content:center; overflow:hidden;
+  font-size:22px;
+  img{ width:100%; height:100%; object-fit:contain; }
+  &.search-result-thumb-article{ background:rgba(248,147,29,0.08); border-color:rgba(248,147,29,0.2); font-size:19px; }
+}
+.search-result-body{ display:flex; flex-direction:column; gap:4px; min-width:0; flex:1; }
+.search-result-name{ font-family:$font-display; font-weight:600; font-size:15.5px; color:$ink; }
+.search-result-meta{ display:flex; align-items:center; gap:6px; font-size:13px; color:$ink-faint; }
+.search-result-arrow{ flex-shrink:0; color:$ink-faint; font-size:16px; }
+.search-result-card:hover .search-result-arrow{ color:$orange-dark; }
