@@ -570,7 +570,7 @@ header.site {
   display: none;
   background: #17161A;
   border-top: 1px solid rgba(232, 242, 251, 0.12);
-  padding: 8px 0 20px;
+  padding: 8px 0 calc(28px + env(safe-area-inset-bottom));
   position: fixed;
   left: 0;
   right: 0;
@@ -1474,8 +1474,35 @@ body.has-bottom-ad .compare-bar {
   max-width: none;
 }
 
+.search-dropdown-inline {
+  position: static;
+  width: 100%;
+  max-width: none;
+  margin-top: 10px;
+  max-height: 50vh;
+}
+
 .mobile-search .search-dropdown {
   max-height: 60vh;
+}
+
+.search-dropdown-inline .sd-suggestion {
+  padding: 12px 18px;
+  justify-content: flex-start;
+  border-bottom: 1px solid #EDE0CC;
+}
+.search-dropdown-inline .sd-result {
+  padding: 9px 18px;
+  justify-content: flex-start;
+  border-bottom: none;
+}
+.search-dropdown-inline .sd-viewall {
+  padding: 13px 18px;
+  justify-content: center;
+}
+.search-dropdown-inline .sd-suggestion, .search-dropdown-inline .sd-result, .search-dropdown-inline .sd-viewall {
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 400;
 }
 
 .sd-suggestion {
@@ -2373,7 +2400,7 @@ body.has-bottom-ad .compare-bar {
   padding: 9px 16px;
   cursor: pointer;
 }
-@media (max-width: 767px) {
+@media (max-width: 1023px) {
   .filters-toggle-btn {
     display: inline-flex;
   }
@@ -2476,7 +2503,7 @@ body.has-bottom-ad .compare-bar {
   display: none;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 1023px) {
   .filters-backdrop {
     display: block;
     position: fixed;
@@ -5106,6 +5133,11 @@ section.methodology a {
 }
 .article-body table tr:nth-child(even) td {
   background: #f4f5f3;
+}
+@media (max-width: 1023px) {
+  .article-body table {
+    font-size: 12px;
+  }
 }
 .article-body .source-note {
   font-family: "JetBrains Mono", monospace;

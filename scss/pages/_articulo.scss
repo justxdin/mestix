@@ -64,6 +64,8 @@ main{
     th{ background:$ink; color:$off-white; font-family:$font-display; font-weight:600; text-align:left; padding:10px 14px; }
     td{ padding:10px 14px; border-bottom:1px solid $line; }
     tr:nth-child(even) td{ background:$off-white; }
+
+    @include tablet{font-size:12px;}
   }
 
   .source-note{

@@ -22,15 +22,15 @@
   // botón fuera de la pantalla.
   @include movil{ max-width:150px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; padding:9px 10px; font-size:12.5px; }
 }
-// Botón "Filtros" — solo existe visualmente desde $bp-movil para abajo (en
-// tablet/desktop los filtros ya están siempre visibles al lado, no hace
-// falta un botón para mostrarlos).
+// Botón "Filtros" — visible desde tablet (1023px) para abajo, así también
+// se ve en iPad (768px), no solo en celular. Desde 1024px para arriba los
+// filtros ya están siempre visibles al lado, no hace falta un botón.
 .filters-toggle-btn{
   display:none; align-items:center; gap:7px;
   font-family:$font-body; font-weight:700; font-size:13.5px; color:$ink;
   background:$surface; border:1.5px solid $ink; border-radius:100px;
   padding:9px 16px; cursor:pointer;
-  @include movil{ display:inline-flex; }
+  @include tablet{ display:inline-flex; }
 }
 
 // Envuelve .layout: es alto (mide lo mismo que todo el grid de productos) y
@@ -88,11 +88,15 @@
 .filters-close-btn{ display:none; }
 .filters-apply-btn{ display:none; }
 .filter-block-toggle{
-  display:contents; // en desktop/tablet no actúa como botón, el h4 se ve como siempre
+  display:contents; // en desktop no actúa como botón, el h4 se ve como siempre
 }
 .filter-block-caret{ display:none; }
 
-@include movil{
+// El acordeón de filtros (antes solo bajo 767px) se extiende hasta tablet
+// (1023px) — un iPad en vertical (768px) cae justo en ese rango y mostraba
+// el sidebar de filtros siempre abierto, igual que desktop, tapando toda
+// la pantalla antes de llegar a ver un solo producto.
+@include tablet{
   .filters-backdrop{
     display:block; position:fixed; inset:0; z-index:210;
     background:rgba(23,22,26,0.55);

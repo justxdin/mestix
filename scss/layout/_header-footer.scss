@@ -160,7 +160,7 @@ header.site{
   display:none;
   background:$ink;
   border-top:1px solid rgba(232,242,251,0.12);
-  padding:8px 0 20px;
+  padding:8px 0 calc(28px + env(safe-area-inset-bottom));
   // El panel es hermano de <header>, no vive adentro — como el header es
   // sticky, al abrir el menú y scrollear la página el panel (que no era
   // sticky/fixed) se quedaba en su lugar del documento y se desincronizaba

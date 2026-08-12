@@ -25,9 +25,39 @@
 // y ocupa casi todo el bloque de contenido — ahí el dropdown se estira al
 // ancho del input (JS ya le pone left+width en vez de right).
 .search-dropdown-pagebar{ width:auto; max-width:none; }
+// El buscador del panel mobile: en flujo normal (no position:fixed), justo
+// debajo del input, adentro del propio panel — se mueve solo con cualquier
+// scroll (lo dispare el teclado, el usuario, lo que sea) sin que haya que
+// perseguirlo con JS. Antes, con position:fixed calculado por JS, al abrir
+// el teclado en un celular real el navegador re-scrollea el panel para
+// mantener visible el input, y esas coordenadas quedaban desactualizadas
+// — daba la sensación de que el buscador "se perdía".
+.search-dropdown-inline{
+  position:static; width:100%; max-width:none;
+  margin-top:10px; max-height:50vh;
+}
 // El buscador mobile vive dentro de un panel angosto — el dropdown se
 // comporta igual pero no necesita tanto ancho mínimo.
 .mobile-search .search-dropdown{ max-height:60vh; }
+
+// El dropdown mobile ahora vive en flujo normal ADENTRO de .mobile-panel
+// (ver mestix-search.js, .search-dropdown-inline) — eso significa que sus
+// <a> heredan el estilo genérico ".mobile-panel a" pensado para los links
+// del menú (Inicio, Catálogo...): padding:14px 0 (pisa el padding
+// horizontal propio de estos elementos) + justify-content:space-between
+// (separa miniatura y texto con un hueco enorme) + borde inferior. Como
+// ".mobile-panel a" tiene más especificidad (clase + etiqueta) que las
+// reglas propias de estos elementos (solo clase), había que pisarlo con
+// selectores igual de específicos — mismo patrón que ya hizo falta para
+// el selector de país.
+.search-dropdown-inline{
+  .sd-suggestion{ padding:12px 18px; justify-content:flex-start; border-bottom:1px solid $line; }
+  .sd-result{ padding:9px 18px; justify-content:flex-start; border-bottom:none; }
+  .sd-viewall{ padding:13px 18px; justify-content:center; }
+  .sd-suggestion, .sd-result, .sd-viewall{
+    font-family:$font-body; font-weight:400;
+  }
+}
 
 .sd-suggestion{
   display:flex; flex-direction:column; gap:2px;
